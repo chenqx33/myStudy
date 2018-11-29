@@ -1,9 +1,16 @@
-package com.chenqx;
+package chenqx;
 
 import com.chenqx.pojo.serializablePojo.FlyPig;
+
 import org.junit.Test;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 //https://blog.csdn.net/qq_27093465/article/details/78544505
 public class SerializablePojoTest {
     @Test

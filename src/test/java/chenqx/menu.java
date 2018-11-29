@@ -1,4 +1,4 @@
-package com.chenqx;
+package chenqx;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
@@ -8,7 +8,6 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.chenqx.pojo.Book;
 import com.chenqx.pojo.MenuItemConfigObject;
-import com.sun.xml.internal.ws.api.addressing.AddressingPropertySet;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
@@ -16,9 +15,6 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-import javax.jws.soap.SOAPBinding;
 
 /**
  * @author cqx

@@ -1,4 +1,4 @@
-package com.chenqx.cacheTest;
+package chenqx.cacheTest;
 
 import org.junit.Test;
 

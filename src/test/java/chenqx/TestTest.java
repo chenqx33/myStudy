@@ -1,9 +1,7 @@
-package com.chenqx;
+package chenqx;
 
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -21,11 +19,9 @@ import com.github.fge.jsonschema.main.JsonSchemaFactory;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
@@ -41,13 +37,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -56,7 +49,7 @@ import java.util.stream.Collectors;
  */
 public class TestTest {
 
-    @org.junit.Test
+    @Test
     public void hello() {
         MyIntegerface<String> impl = new MyImpl();
         impl.printAll(Arrays.asList("1", "2", "3"));

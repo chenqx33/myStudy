@@ -1,4 +1,4 @@
-package com.chenqx.aopTest;
+package chenqx.aopTest;
 
 import org.junit.Test;
 
