@@ -34,7 +34,6 @@ public class HttpInvoker {
     private static final RequestConfig REQUEST_CONFIG;
 
     private final static Object SYNC_LOCK = new Object();
-
     static {
         Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory>create()
                 .register("http", PlainConnectionSocketFactory.getSocketFactory())

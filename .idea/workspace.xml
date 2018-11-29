@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1142e0d5-0ed0-49a1-bdb3-c0366e3ad414" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myStudy.iml" afterPath="$PROJECT_DIR$/myStudy.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/chenqx/JsonPathTest.java" afterPath="$PROJECT_DIR$/src/test/java/chenqx/JsonPathTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/chenqx/SerializablePojoTest.java" afterPath="$PROJECT_DIR$/src/test/java/chenqx/SerializablePojoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/chenqx/TestTest.java" afterPath="$PROJECT_DIR$/src/test/java/chenqx/TestTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/chenqx/aopTest/AopTest.java" afterPath="$PROJECT_DIR$/src/test/java/chenqx/aopTest/AopTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/chenqx/cacheTest/TestCache.java" afterPath="$PROJECT_DIR$/src/test/java/chenqx/cacheTest/TestCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/chenqx/menu.java" afterPath="$PROJECT_DIR$/src/test/java/chenqx/menu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/chenqx/http/HttpInvoker.java" afterPath="$PROJECT_DIR$/src/main/java/chenqx/http/HttpInvoker.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,8 +33,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/http/HttpInvoker.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-              <folding />
+              <caret line="35" column="57" lean-forward="false" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+              <folding>
+                <element signature="e#1392#1417#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,6 +58,7 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/test/java/chenqx/JsonPathTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/http/HttpInvoker.java" />
       </list>
     </option>
   </component>
@@ -278,7 +273,7 @@
       <option name="presentableId" value="Default" />
       <updated>1543462403437</updated>
       <workItem from="1543462408128" duration="376000" />
-      <workItem from="1543463238681" duration="893000" />
+      <workItem from="1543463238681" duration="995000" />
     </task>
     <task id="LOCAL-00001" summary="方法">
       <created>1543463260707</created>
@@ -294,11 +289,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543463391904</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="方法">
+      <created>1543464178847</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1543464178847</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1269000" />
+    <option name="totallyTimeSpent" value="1371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -532,8 +534,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/http/HttpInvoker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding />
+          <caret line="35" column="57" lean-forward="false" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+          <folding>
+            <element signature="e#1392#1417#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
