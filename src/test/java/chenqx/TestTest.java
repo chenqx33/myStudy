@@ -5,12 +5,6 @@ import com.google.common.collect.Lists;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.chenqx.pojo.Book;
-import com.chenqx.pojo.MenuItemConfigObject;
-import com.chenqx.pojo.MyImpl;
-import com.chenqx.pojo.MyIntegerface;
-import com.chenqx.pojo.hha;
-import com.chenqx.pojo.hhaa;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.fge.jackson.JsonLoader;
 import com.github.fge.jsonschema.core.report.ProcessingReport;
@@ -42,6 +36,13 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
+
+import chenqx.pojo.Book;
+import chenqx.pojo.MenuItemConfigObject;
+import chenqx.pojo.MyImpl;
+import chenqx.pojo.MyIntegerface;
+import chenqx.pojo.hha;
+import chenqx.pojo.hhaa;
 
 /**
  * @author cqx
@@ -127,6 +128,7 @@ public class TestTest {
         List<Book> list = Lists.newArrayList(s, ss, s22);
 //        list.sort(Comparator.naturalOrder());
 //        list.sort(Comparator.reverseOrder());
+        //空排序
         list.sort(Comparator.comparing(Book::getAuth, Comparator.nullsLast(String::compareTo)));
 //        list.retainAll(list1);
         System.out.println(list.toString());
@@ -387,7 +389,7 @@ public class TestTest {
 
     @Test
     public void getCep() {
-        System.out.println((("627104".hashCode() % 1024) / 64 + 1));
+        System.out.println((("615315".hashCode() % 1024) / 64 + 1));
     }
 
     @Test

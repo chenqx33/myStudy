@@ -6,8 +6,6 @@ import com.google.common.collect.Sets;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.chenqx.pojo.Book;
-import com.chenqx.pojo.MenuItemConfigObject;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
@@ -15,6 +13,9 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
+
+import chenqx.pojo.Book;
+import chenqx.pojo.MenuItemConfigObject;
 
 /**
  * @author cqx

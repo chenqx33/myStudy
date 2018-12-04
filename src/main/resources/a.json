@@ -1,1 +1,898 @@
-{"package":"CRM","api_name":"AccountObj_layout_generate_by_UDObjectServer__c","ref_object_api_name":"AccountObj","layout_type":"detail","display_name":"客户默认布局","layout_description":"客户默认布局","is_default":true,"api_version":1.0,"components":[{"type":"form","buttons":[],"api_name":"form_component_generate_by_UDObjectServer__c","field_section":[{"title":"基本信息","column":"2","header":"基本信息","is_show":true,"api_name":"base_field_section__c","tab_index":"ltr","form_fields":[{"field_name":"account_type","is_readonly":false,"is_required":false,"render_type":"select_one"},{"field_name":"account_level","is_readonly":false,"is_required":false,"render_type":"select_one"},{"field_name":"remark","is_readonly":false,"is_required":false,"render_type":"long_text"},{"field_name":"account_status","is_readonly":false,"is_required":false,"render_type":"select_one"},{"field_name":"account_no","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"partner_id","is_readonly":false,"is_required":false,"render_type":"object_reference"},{"field_name":"tel","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"out_resources","is_readonly":false,"is_required":false,"render_type":"select_one"},{"field_name":"fax","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"email","is_readonly":false,"is_required":false,"render_type":"email"},{"field_name":"owner","is_readonly":false,"is_required":false,"render_type":"employee"},{"field_name":"lock_status","is_readonly":false,"is_required":false,"render_type":"select_one"},{"field_name":"url","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"back_reason","is_readonly":false,"is_required":false,"render_type":"select_one"},{"field_name":"name","is_readonly":false,"is_required":true,"render_type":"text"},{"field_name":"industry_level2","is_readonly":false,"is_required":false,"render_type":"select_one"},{"field_name":"industry_level1","is_readonly":false,"is_required":false,"render_type":"select_one"},{"field_name":"UDSText1__c","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"high_seas_name","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"account_source","is_readonly":false,"is_required":false,"render_type":"select_one"}],"show_header":true},{"title":"地区定位","column":"2","header":"地区定位","is_show":true,"api_name":"area_location","tab_index":"ltr","form_fields":[{"field_name":"location","is_required":false,"render_type":"location"},{"field_name":"country","is_required":false,"render_type":"country"},{"field_name":"province","is_required":false,"render_type":"province"},{"field_name":"city","is_required":false,"render_type":"city"},{"field_name":"district","is_required":false,"render_type":"district"},{"field_name":"address","is_required":false,"render_type":"text"}],"show_header":true},{"title":"系统信息","column":"2","header":"系统信息","is_show":true,"api_name":"system_form_field_generate_by_UDObjectServer__c","tab_index":"ltr","form_fields":[{"field_name":"owner_department","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"deal_status","is_readonly":false,"is_required":false,"render_type":"select_one"},{"field_name":"recycled_reason","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"last_followed_time","is_readonly":false,"is_required":false,"render_type":"date_time"},{"field_name":"completion_rate","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"remaining_time","is_readonly":false,"is_required":false,"render_type":"text"},{"field_name":"transfer_count","is_readonly":false,"is_required":false,"render_type":"number"}],"show_header":true}]}]}
+{
+  "code": 0,
+  "msg": "",
+  "result": [
+    {
+      "createTime": 1503583371964,
+      "deleted": false,
+      "config": {
+        "edit": 1,
+        "remove": 0
+      },
+      "tenantId": "53395",
+      "id": "599edc8b5c6c25ee1ad6bcfc",
+      "lastModifiedBy": "4533",
+      "layoutType": "detail",
+      "components": [
+        {
+          "fieldSections": [
+            {
+              "fields": [
+                {
+                  "required": false,
+                  "renderType": "currency",
+                  "fieldName": "UDMoney2__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "currency",
+                    "field_name": "UDMoney2__c"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "select_one",
+                  "fieldName": "unit",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "unit"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "text",
+                  "fieldName": "product_spec",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "product_spec"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "currency",
+                  "fieldName": "UDMoney1__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "currency",
+                    "field_name": "UDMoney1__c"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "select_one",
+                  "fieldName": "UDSSel1__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "UDSSel1__c"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "image",
+                  "fieldName": "UDImg1__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "UDImg1__c"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "text",
+                  "fieldName": "UDSText1__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "UDSText1__c"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "text",
+                  "fieldName": "barcode",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "barcode"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "text",
+                  "fieldName": "product_code",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "product_code"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "long_text",
+                  "fieldName": "remark",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "long_text",
+                    "field_name": "remark"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "text",
+                  "fieldName": "name",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "name"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "select_one",
+                  "fieldName": "category",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "category"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "text",
+                  "fieldName": "model",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "model"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "currency",
+                  "fieldName": "price",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "currency",
+                    "field_name": "price"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "select_one",
+                  "fieldName": "product_status",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "product_status"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "number",
+                  "fieldName": "maintenance_period",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "number",
+                    "field_name": "maintenance_period"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "number",
+                  "fieldName": "safety_stock",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "number",
+                    "field_name": "safety_stock"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "number",
+                  "fieldName": "replacement_period",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "number",
+                    "field_name": "replacement_period"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "image",
+                  "fieldName": "picture_path",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "picture_path"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "select_one",
+                  "fieldName": "lock_status",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "lock_status"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "text",
+                  "fieldName": "owner_department",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "owner_department"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "long_text",
+                  "fieldName": "technical_parameter",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "long_text",
+                    "field_name": "technical_parameter"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "file_attachment",
+                  "fieldName": "UDAttach1__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "file_attachment",
+                    "field_name": "UDAttach1__c"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "select_one",
+                  "fieldName": "UDSSel4__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "UDSSel4__c"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "select_one",
+                  "fieldName": "UDSSel5__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "UDSSel5__c"
+                  }
+                },
+                {
+                  "required": true,
+                  "renderType": "text",
+                  "fieldName": "UDSText5__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "UDSText5__c"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "image",
+                  "fieldName": "UDImg2__c",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "UDImg2__c"
+                  }
+                }
+              ],
+              "name": "base_field_section__c",
+              "header": "基本信息",
+              "containerDocument": {
+                "form_fields": [
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "currency",
+                    "field_name": "UDMoney2__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "unit"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "product_spec"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "currency",
+                    "field_name": "UDMoney1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "UDSSel1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "UDImg1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "UDSText1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "barcode"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "product_code"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "long_text",
+                    "field_name": "remark"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "name"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "category"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "model"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "currency",
+                    "field_name": "price"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "product_status"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "number",
+                    "field_name": "maintenance_period"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "number",
+                    "field_name": "safety_stock"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "number",
+                    "field_name": "replacement_period"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "picture_path"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "lock_status"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "owner_department"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "long_text",
+                    "field_name": "technical_parameter"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "file_attachment",
+                    "field_name": "UDAttach1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "UDSSel4__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "UDSSel5__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "UDSText5__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "UDImg2__c"
+                  }
+                ],
+                "api_name": "base_field_section__c",
+                "tab_index": "ltr",
+                "column": 2,
+                "header": "基本信息",
+                "is_show": true
+              }
+            },
+            {
+              "fields": [
+                {
+                  "required": false,
+                  "renderType": "date_time",
+                  "fieldName": "on_shelves_time",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "on_shelves_time"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "date_time",
+                  "fieldName": "off_shelves_time",
+                  "readOnly": false,
+                  "containerDocument": {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "off_shelves_time"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "date_time",
+                  "fieldName": "create_time",
+                  "readOnly": true,
+                  "containerDocument": {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "create_time"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "date_time",
+                  "fieldName": "last_modified_time",
+                  "readOnly": true,
+                  "containerDocument": {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "last_modified_time"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "employee",
+                  "fieldName": "created_by",
+                  "readOnly": true,
+                  "containerDocument": {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "employee",
+                    "field_name": "created_by"
+                  }
+                },
+                {
+                  "required": false,
+                  "renderType": "employee",
+                  "fieldName": "last_modified_by",
+                  "readOnly": true,
+                  "containerDocument": {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "employee",
+                    "field_name": "last_modified_by"
+                  }
+                }
+              ],
+              "name": "system_form_field_generate_by_UDObjectServer__c",
+              "header": "系统信息",
+              "containerDocument": {
+                "form_fields": [
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "on_shelves_time"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "off_shelves_time"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "create_time"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "last_modified_time"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "employee",
+                    "field_name": "created_by"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "employee",
+                    "field_name": "last_modified_by"
+                  }
+                ],
+                "api_name": "system_form_field_generate_by_UDObjectServer__c",
+                "tab_index": "ltr",
+                "column": 2,
+                "header": "系统信息",
+                "is_show": true
+              }
+            }
+          ],
+          "order": 2,
+          "buttons": [],
+          "type": "form",
+          "name": "form_component",
+          "hidden": false,
+          "header": "详细信息",
+          "containerDocument": {
+            "field_section": [
+              {
+                "form_fields": [
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "currency",
+                    "field_name": "UDMoney2__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "unit"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "product_spec"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "currency",
+                    "field_name": "UDMoney1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "UDSSel1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "UDImg1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "UDSText1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "barcode"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "product_code"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "long_text",
+                    "field_name": "remark"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "name"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "category"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "model"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "currency",
+                    "field_name": "price"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "product_status"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "number",
+                    "field_name": "maintenance_period"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "number",
+                    "field_name": "safety_stock"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "number",
+                    "field_name": "replacement_period"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "picture_path"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "lock_status"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "owner_department"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "long_text",
+                    "field_name": "technical_parameter"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "file_attachment",
+                    "field_name": "UDAttach1__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "UDSSel4__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "UDSSel5__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "UDSText5__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "UDImg2__c"
+                  }
+                ],
+                "api_name": "base_field_section__c",
+                "tab_index": "ltr",
+                "column": 2,
+                "header": "基本信息",
+                "is_show": true
+              },
+              {
+                "form_fields": [
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "on_shelves_time"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "off_shelves_time"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "create_time"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "last_modified_time"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "employee",
+                    "field_name": "created_by"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "employee",
+                    "field_name": "last_modified_by"
+                  }
+                ],
+                "api_name": "system_form_field_generate_by_UDObjectServer__c",
+                "tab_index": "ltr",
+                "column": 2,
+                "header": "系统信息",
+                "is_show": true
+              }
+            ],
+            "buttons": [],
+            "api_name": "form_component",
+            "is_hidden": false,
+            "header": "详细信息",
+            "type": "form",
+            "order": 2
+          }
+        },
+        {
+          "fields": [],
+          "header": "摘要",
+          "order": 1,
+          "buttons": [],
+          "type": "related_record",
+          "name": "sale_log",
+          "hidden": false,
+          "containerDocument": {
+            "buttons": [],
+            "api_name": "sale_log",
+            "is_hidden": false,
+            "header": "摘要",
+            "type": "related_record",
+            "order": 1
+          }
+        },
+        {}
+      ]
+    }
+  ]
+}
