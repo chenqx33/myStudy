@@ -4,6 +4,7 @@ package chenqx;
 import com.google.common.collect.Lists;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.fge.jackson.JsonLoader;
@@ -396,7 +397,9 @@ public class TestTest {
     public void hsdfs() {
         new Thread().start();
     }
+
     static ExecutorService executorService = Executors.newFixedThreadPool(5);
+
     public static void main(String[] args) {
 
         System.out.println("fdfsdfsdfs");
@@ -410,6 +413,7 @@ public class TestTest {
         }
         executorService.shutdown();
     }
+
     public static void a() {
 
 //        new Thread(TestTest::bb).start();
@@ -425,11 +429,11 @@ public class TestTest {
 
     private static void bb() {
 //        new Thread(()-> System.out.println("bb")).start();
-        executorService.execute(()-> System.out.println("bb"));
+        executorService.execute(() -> System.out.println("bb"));
     }
 
     @Test
-    public void heh(){
+    public void heh() {
         StringBuilder values = new StringBuilder();
         values.append("sds");
         System.out.println(values.toString());
@@ -439,4 +443,19 @@ public class TestTest {
         System.out.println(values.toString());
     }
 
+    @Test
+    public void addList() {
+        List<String> list = Lists.newArrayList("ww");
+        try{
+            list.forEach(o->{
+                try {
+                    Integer.valueOf(o);
+                }catch (Exception e){
+                    throw new RuntimeException(e);
+                }
+            });
+        }catch (Exception e){
+            System.out.println("ff");
+        }
+    }
 }

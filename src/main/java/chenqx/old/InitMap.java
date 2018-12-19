@@ -14,5 +14,7 @@ public class InitMap {
             put("a","b");
         }};
         System.out.println(h.toString());
+
+        while (1==1);
     }
 }
