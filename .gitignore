@@ -6,6 +6,7 @@ target/
 .idea/
 *.swp
 rebel.xml
+workspace.xml
 logs/
 gitPullCommitPush.sh
 .metadata
