@@ -12,6 +12,10 @@ public class Compete extends Thread {
     public synchronized void run() {
         count--;
         System.out.println(this.currentThread().getName() + " count" + count);
+        String s = "";
+        //language=JSON
+        String ss = "{\"hello\": \"sdfsd\"}";
+
     }
 
     public static void main(String[] args) {

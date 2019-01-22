@@ -1,49 +1,25 @@
 package chenqx;
 
 
-import com.google.common.collect.Lists;
-
+import chenqx.pojo.*;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.fge.jackson.JsonLoader;
 import com.github.fge.jsonschema.core.report.ProcessingReport;
 import com.github.fge.jsonschema.main.JsonSchemaFactory;
-
+import com.google.common.collect.Lists;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
-
-import chenqx.pojo.Book;
-import chenqx.pojo.MenuItemConfigObject;
-import chenqx.pojo.MyImpl;
-import chenqx.pojo.MyIntegerface;
-import chenqx.pojo.hha;
-import chenqx.pojo.hhaa;
 
 /**
  * @author cqx
@@ -69,8 +45,8 @@ public class TestTest {
     @Test
     public void codeReview2() {
         List<String> list = new ArrayList<>();
-        list.add("ni");
-        list.add(2, "n");
+        list.add("ni你好");
+        list.add(1, "n");
         System.out.println(list.toString());
     }
 
@@ -445,17 +421,18 @@ public class TestTest {
 
     @Test
     public void addList() {
-        List<String> list = Lists.newArrayList("ww");
-        try{
-            list.forEach(o->{
-                try {
-                    Integer.valueOf(o);
-                }catch (Exception e){
-                    throw new RuntimeException(e);
-                }
-            });
-        }catch (Exception e){
-            System.out.println("ff");
+        System.out.println(1+-+- -+- +-+-+-+-+1);
+    }
+    @Test
+    public void skip() {
+        List<String> spuIds = Lists.newArrayList();
+        for (int i = 0; i < 1000; i++) {
+            spuIds.add(String.valueOf(i));
+        }
+        for (int j = 0; j < spuIds.size(); j = j + 100) {
+            String collect = spuIds.stream().skip(j).limit(100).collect(Collectors.joining("','", "('", "')"));
+            System.out.println(collect);
+
         }
     }
 }

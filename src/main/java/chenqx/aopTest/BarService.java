@@ -1,5 +1,5 @@
 package chenqx.aopTest;
 
 public interface BarService {
-    void doSomething();
+    String doSomething(String s,int a);
 }

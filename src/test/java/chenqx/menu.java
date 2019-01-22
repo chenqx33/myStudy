@@ -1,21 +1,18 @@
 package chenqx;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
-
+import chenqx.pojo.MenuItemConfigObject;
+import chenqx.pojo.spec;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-
+import com.google.common.collect.Lists;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
-
-import chenqx.pojo.Book;
-import chenqx.pojo.MenuItemConfigObject;
 
 /**
  * @author cqx
@@ -25,7 +22,7 @@ public class menu {
     @Test
     public void menuu() throws IOException {
         String iconString = IOUtils.toString(getClass().getClassLoader().getResource("iconPath.json"), "UTF-8");
-        ;
+
         String menuConfig = IOUtils.toString(getClass().getClassLoader().getResource("menuItemConfig.json"), "UTF-8");
 
         List<MenuItemConfigObject> menuItemConfigObjects = JSON.parseArray(menuConfig, MenuItemConfigObject.class);
@@ -44,51 +41,59 @@ public class menu {
 
     @Test
     public void vvvv() throws IOException {
-//        String json = IOUtils.toString(getClass().getClassLoader().getResource("test.json"), "UTF-8");
-//        List<JSONObject> jsonArray = JSON.parseArray(json,JSONObject.class);
-//        List<String> list = Lists.newArrayList();
-//        for (JSONObject o : jsonArray) {
-//            deal(o, list, "17");
-//        }
-//        System.out.println(list.toString());
-        List<Book> list = Lists.newArrayList();
-        Book book = new Book("1","1");
-        list.add(book);
-        List<Book> list2 = Lists.newCopyOnWriteArrayList(list);
-        book.setAuth("2");
-        list.add(book);
-        System.out.println(list.toString());
-        System.out.println(list2.toString());
-        Set<String> set = Sets.newHashSet();
-        set.add(null);
-        set.add(null);
-        System.out.println("2");
+        String iconString = IOUtils.toString(getClass().getClassLoader().getResource("b.json"), "UTF-8");
 
-
+        List<spec> menuItemConfigObjects = JSON.parseArray(iconString, spec.class);
+        for (int i = 0; i < menuItemConfigObjects.size(); i++) {
+            spec spec = menuItemConfigObjects.get(i);
+            spec.setName(String.valueOf(i)+"我就是笑哈哈的测试");
+            spec.setOrder_field(String.valueOf(i)+"我就是笑哈哈的测试");
+        }
+        System.out.println("e");
+        JSON.toJSON(menuItemConfigObjects);
     }
 
-    public void deal(JSONObject cate, List<String> ids, String id) {
-        JSONArray children = cate.getJSONArray("Children");
-        String cateId = cate.get("CategoryCode").toString();
-        if (cateId.equals(id) || id == null) {
-            if (children != null) {
-                for (Object child : children) {
-                    JSONObject childObj = (JSONObject) child;
-                    deal(childObj, ids, null);
-                }
-            }
-            ids.add(cateId);
-        }else{
-            if (children != null) {
-                for (Object child : children) {
-                    JSONObject childObj = (JSONObject) child;
-                    deal(childObj, ids, id);
-                }
+
+    @Test
+    public void haha(){
+        emptyElse(null,null);
+    }
+    public static void emptyElse(String var1, Object var2) {
+        switch (var1){
+            case "lk":
+                System.out.println("23");
+        }
+    }
+    @Test
+    public void t(){
+        String s = "1234";
+        String ss =s.substring(2,3);
+        String sss =s.substring(2,3);
+        System.out.println(sss==ss);
+    }
+    @Test
+    public void errorMessage(){
+        List<String> list = Lists.newArrayList();
+        List<String> list1 = Lists.newArrayList();
+        for (int i = 0; i < 300000; i++) {
+            list.add(String.valueOf(i));
+        }
+        for (int i = 0; i < 200000; i++) {
+            list1.add(String.valueOf(i));
+        }
+        removeAll(list,list1);
+        System.out.println(removeAll(list,list1));
+    }
+    public static List removeAll(List src,List oth) {
+        LinkedList result = new LinkedList(src);//大集合用linkedlist
+        HashSet othHash = new HashSet(oth);//小集合用hashset
+        Iterator iter = result.iterator();//采用Iterator迭代器进行数据的操作
+        while (iter.hasNext()) {
+            if (othHash.contains(iter.next())) {
+                iter.remove();
             }
         }
-
-
-
-
+        return result;
     }
+
 }

@@ -13,7 +13,9 @@ public class AopTest {
                 Thread.currentThread().getContextClassLoader(),
                 new Class[]{BarService.class},
                 new LogPrintHandler(new BarServiceImp()));
-        service.doSomething();
+        String sql = "";
+        String json = "";
+        service.doSomething("1",7);
     }
 
     //动态代码字节生成
