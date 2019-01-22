@@ -30,5 +30,6 @@ class Zi extends Fu {
         System.out.println("zi");
     }
 
+
     public String name = "haha";
 }
