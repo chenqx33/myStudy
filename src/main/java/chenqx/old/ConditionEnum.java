@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public enum ConditionEnum {
 
-    YEAR("YEAR") {
+    YEAR("year") {
         @Override
         public boolean checkTime(Long firstTime, Long secondTime) {
             if (super.checkTime(firstTime, secondTime)) {
@@ -17,7 +17,7 @@ public enum ConditionEnum {
             return dateConverter(firstTime).getYear() == dateConverter(secondTime).getYear();
         }
     },
-    MONTH("MONTH") {
+    MONTH("month") {
         @Override
         public boolean checkTime(Long firstTime, Long secondTime) {
             if (super.checkTime(firstTime, secondTime)) {
@@ -28,7 +28,7 @@ public enum ConditionEnum {
             return t1.getYear() == t2.getYear() && t1.getMonthValue() == t2.getMonthValue();
         }
     },
-    DAY("DAY") {
+    DAY("day") {
         @Override
         public boolean checkTime(Long firstTime, Long secondTime) {
             if (super.checkTime(firstTime, secondTime)) {
@@ -41,7 +41,7 @@ public enum ConditionEnum {
                     && t1.getDayOfMonth() == t2.getDayOfMonth();
         }
     },
-    NONE("NONE") {
+    NONE("none") {
         @Override
         public boolean checkTime(Long firstTime, Long secondTime) {
             return true;
