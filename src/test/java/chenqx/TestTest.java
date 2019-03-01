@@ -435,4 +435,16 @@ public class TestTest {
 
         }
     }
+
+    @Test
+    public void any11() {
+        List<String> spuIds = Lists.newArrayList("1","2");
+        System.out.println(spuIds.stream().anyMatch(o->o.equals("1")));
+
+        List<Book> books = Lists.newArrayList(new Book("1","1"),new Book("1","1"));
+        List<Book> collect = books.stream().distinct().collect(Collectors.toList());
+        System.out.println(books);
+        System.out.println(collect);
+
+    }
 }
