@@ -41,6 +41,7 @@ public class MathGame {
     }
 
     public List<Integer> primeFactors(int number) {
+
         if (number < 2) {
             illegalArgumentCount++;
             throw new IllegalArgumentException("number is: " + number + ", need >= 2");
