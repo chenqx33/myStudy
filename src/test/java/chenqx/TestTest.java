@@ -9,6 +9,7 @@ import com.github.fge.jackson.JsonLoader;
 import com.github.fge.jsonschema.core.report.ProcessingReport;
 import com.github.fge.jsonschema.main.JsonSchemaFactory;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
@@ -410,13 +411,11 @@ public class TestTest {
 
     @Test
     public void heh() {
-        StringBuilder values = new StringBuilder();
-        values.append("sds");
-        System.out.println(values.toString());
-        values.setLength(0);
-        System.out.println(values.toString());
-        values.append("sd");
-        System.out.println(values.toString());
+        Map<String,String> map = Maps.newHashMap();
+        String put = map.put("sd", "dd");
+        String wput = map.put("sd", "d2d");
+        String ss = map.computeIfAbsent("ss", o -> new String("3333"));
+        System.out.println(ss);
     }
 
     @Test
