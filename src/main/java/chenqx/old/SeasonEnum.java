@@ -26,11 +26,8 @@ public enum SeasonEnum {
 
 class tests{
     public static void main(String[] args) {
-        SeasonEnum.SPRING.setSeason("h");
-        System.out.println(SeasonEnum.SPRING.getSeason());
-        System.out.println(SeasonEnum.SPRING.toString());
-        System.out.println(SeasonEnum.SPRING.ordinal());
-        System.out.println(SeasonEnum.WINTER.getDeclaringClass());
-        System.out.println(SeasonEnum.WINTER.getThis());
+
     }
+
+
 }

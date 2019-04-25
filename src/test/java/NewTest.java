@@ -2,9 +2,11 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 
 public class NewTest {
 
@@ -376,5 +378,13 @@ public class NewTest {
             stringBuilder.append(column).append(s).append(";").append("\n");
         }
         System.out.println(stringBuilder.toString());
+    }
+
+    @Test
+    public void ss(){
+        Map<String,String> map = Maps.newHashMap();
+        map.put("1","11");
+        map.computeIfPresent("1",(k,v)->v.concat("22"));
+        System.out.println(map);
     }
 }

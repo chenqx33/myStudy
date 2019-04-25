@@ -2,9 +2,11 @@ package chenqx.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Book {
     private String auth;
     private String name;
@@ -16,4 +18,7 @@ public class Book {
                 .append("\"").append(",").append("\"name\"").append("\"").append(name).append("\"").append("}");
         return sb.toString();
     }
+
+
+
 }
