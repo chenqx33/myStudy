@@ -29,7 +29,6 @@ public class BookTest {
                     throw new RuntimeException("2");
                 }else {
                     System.out.println("1");
-                    System.out.println("123");
                 }
             });
         }catch (Exception e){
