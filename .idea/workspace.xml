@@ -2,34 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="410452e8-c720-4eb9-bf73-c79983139263" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item25/Chapter-4-Item-25-Limit-source-files-to-a-single-top-level-class.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/Chapter-5-Introduction.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item26/Chapter-5-Item-26-Do-not-use-raw-types.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item26/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item27/Chapter-5-Item-27-Eliminate-unchecked-warnings.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item28/Chapter-5-Item-28-Prefer-lists-to-arrays.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item29/Chapter-5-Item-29-Favor-generic-types.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item30/Chapter-5-Item-30-Favor-generic-methods.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item31/Chapter-5-Item-31-Use-bounded-wildcards-to-increase-API-flexibility.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item32/Chapter-5-Item-32-Combine-generics-and-varargs-judiciously.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item33/Chapter-5-Item-33-Consider-typesafe-heterogeneous-containers.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/Chapter-6-Introduction.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item34/Chapter-6-Item-34-Use-enums-instead-of-int-constants.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item34/Operation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item34/Operation2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item35/Chapter-6-Item-35-Use-instance-fields-instead-of-ordinals.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item36/Chapter-6-Item-36-Use-EnumSet-instead-of-bit-fields.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item37/Chapter-6-Item-37-Use-EnumMap-instead-of-ordinal-indexing.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item38/Chapter-6-Item-38-Emulate-extensible-enums-with-interfaces.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/pojo/SupBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/quartz/HelloJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/sql/uuid.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/netty/IOClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/netty/IOServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/netty/NIOServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/netty/NettyClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/netty/NettyServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/pojo/CategoryObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/utils/MongoUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/utils/TimeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/BigDecimaltest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/NewTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/pojo/CategoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/pojo/CategoryTest1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/chenqx/TestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chenqx/TestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/chenqx/pojo/BookCopyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chenqx/pojo/BookCopyTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,22 +58,85 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+            <state relative-caret-position="244">
+              <caret line="132" column="27" selection-start-line="132" selection-start-column="27" selection-end-line="132" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/netty/NettyServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#824#1386#0" expanded="true" />
+                <element signature="e#1053#1344#0" expanded="true" />
+                <element signature="e#1343#1344#0" expanded="true" />
+                <element signature="e#1385#1386#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final.jar!/io/netty/bootstrap/ServerBootstrap.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="100" column="50" selection-start-line="100" selection-start-column="50" selection-end-line="100" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final.jar!/io/netty/channel/ChannelHandler.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/pojo/BookCopyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.0/commons-lang3-3.0.jar!/org/apache/commons/lang3/StringUtils.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+              <folding>
+                <element signature="e#1129#1130#0" expanded="true" />
+                <element signature="e#1182#1183#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/CharSequence.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,22 +145,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/quartz/HelloJob.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/IconTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/net/InetAddress.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20745">
-              <caret line="1470" column="30" selection-start-line="1470" selection-start-column="30" selection-end-line="1470" selection-end-column="30" />
+            <state relative-caret-position="480">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
             </state>
           </provider>
         </entry>
@@ -125,12 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>{\&quot;type\&quot;:\&quot;object\&quot;,\&quot;properties\&quot;:{\&quot;type\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;,\&quot;minLength\&quot;:10,\&quot;maxLength\&quot;:13},\&quot;value\&quot;:{\&quot;type\&quot;:[\&quot;object\&quot;,\&quot;string\&quot;],\&quot;properties\&quot;:{\&quot;conditions\&quot;:{\&quot;type\&quot;:\&quot;array\&quot;,\&quot;items\&quot;:{\&quot;type\&quot;:\&quot;object\&quot;,\&quot;properties\&quot;:{\&quot;type\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;},\&quot;conditions\&quot;:{\&quot;type\&quot;:\&quot;array\&quot;,\&quot;items\&quot;:{\&quot;type\&quot;:\&quot;object\&quot;,\&quot;properties\&quot;:{\&quot;left\&quot;:{\&quot;type\&quot;:\&quot;object\&quot;,\&quot;properties\&quot;:{\&quot;expression\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;,\&quot;minLength\&quot;:0,\&quot;maxLength\&quot;:20}}},\&quot;right\&quot;:{\&quot;type\&quot;:\&quot;object\&quot;},\&quot;type\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;,\&quot;minLength\&quot;:0,\&quot;maxLength\&quot;:5}},\&quot;required\&quot;:[\&quot;left\&quot;,\&quot;right\&quot;,\&quot;type\&quot;]}}},\&quot;required\&quot;:[\&quot;type\&quot;,\&quot;conditions\&quot;]},\&quot;minItems\&quot;:1},\&quot;type\&quot;:{\&quot;type\&quot;:\&quot;string\&quot;}},\&quot;required\&quot;:[\&quot;conditions\&quot;,\&quot;type\&quot;]}},\&quot;required\&quot;:[\&quot;type\&quot;,\&quot;value\&quot;]}</find>
-      <find>++-</find>
-      <find>+-</find>
-      <find>-</find>
-      <find>hash</find>
-      <find>w</find>
       <find>2Kg*15</find>
       <find>5kg</find>
       <find>1Kg</find>
@@ -142,10 +187,8 @@
       <find>save_module_status</find>
       <find>spring</find>
       <find>getinstance</find>
-      <find>hashcode</find>
       <find>has</find>
       <find>next</find>
-      <find>enum</find>
       <find>system.</find>
       <find>@interface</find>
       <find>paa</find>
@@ -155,6 +198,14 @@
       <find>lom</find>
       <find>password</find>
       <find>FS4e2%Y#X@~g.+F&lt;</find>
+      <find>JobKey</find>
+      <find>hashcode</find>
+      <find>fs_paas_auditlog</find>
+      <find>enum</find>
+      <find>valueof</find>
+      <find>findFirst().get()</find>
+      <find>iconpath</find>
+      <find>netty</find>
     </findStrings>
     <replaceStrings>
       <replace>Integer</replace>
@@ -169,20 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/Chapter-3-Introduction.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item11/AtomicIntegerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item10/Chapter-3-Item-10-Obey-the-general-contract-when-overriding-equals.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item10/AtomicIntegerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item11/Chapter-3-Item-12-Always-override-toString.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item11/Chapter-3-Item-11-Always-override-hashCode-when-you-override-equals.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item13/Chapter-3-Item-13-Override-clone-judiciously.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item14/Chapter-3-Item-14-Consider-implementing-Comparable.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item15/Chapter-4-Introduction.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item15/Chapter-4-Item-15-Minimize-the-accessibility-of-classes-and-members.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item16/Chapter-4-Item-16-In-public-classes-use-accessor-methods-not-public-fields.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item17/Chapter-4-Item-17-Minimize-mutability.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item18/Chapter-4-Item-18-Favor-composition-over-inheritance.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item19/Super.java" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item19/Sub.java" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item19/Chapter-4-Item-19-Design-and-document-for-inheritance-or-else-prohibit-it.md" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter4/item20/Chapter-4-Item-20-Prefer-interfaces-to-abstract-classes.md" />
@@ -216,11 +253,36 @@
         <option value="$PROJECT_DIR$/src/main/java/chenqx/old/ArrayToString.java" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/SupBook.java" />
         <option value="$PROJECT_DIR$/src/test/java/chenqx/TestTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/quartz/HelloJob.java" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/utils/TimeUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/utils/MongoUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/newTest/BigDecimaltest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/CategoryObject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/newTest/NewTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/pojo/CategoryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/pojo/CategoryTest1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/IOService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/IOClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/IOServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/NIOServer.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/NettyServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/NettyClient.java" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/pojo/BookCopyTest.java" />
       </list>
+    </option>
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="MavenProjectNavigator">
@@ -230,20 +292,14 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="myStudy" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="myStudy" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1680" />
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="57" />
+    <option name="width" value="1680" />
+    <option name="height" value="954" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -253,6 +309,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -293,14 +350,34 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="chenqx" type="462c0819:PsiDirectoryNode" />
-              <item name="quartz" type="462c0819:PsiDirectoryNode" />
+              <item name="netty" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="chenqx" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -315,8 +392,11 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -344,33 +424,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CronScheduler">
-    <configuration name="ArrayToString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chenqx.old.ArrayToString" />
-      <module name="myStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="chenqx.old.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Book" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chenqx.pojo.Book" />
-      <module name="myStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="chenqx.pojo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BookCopyTest.t">
     <configuration name="ClassUpdateTest" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chenqx.old.ClassUpdateTest" />
       <module name="myStudy" />
@@ -384,12 +438,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CronScheduler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chenqx.quartz.CronScheduler" />
+    <configuration name="IOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chenqx.netty.IOClient" />
       <module name="myStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chenqx.quartz.*" />
+          <option name="PATTERN" value="chenqx.netty.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -397,12 +451,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Operation2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chenqx.effectivejava.chapter6.item34.Operation2" />
+    <configuration name="NIOServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chenqx.netty.NIOServer" />
       <module name="myStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chenqx.effectivejava.chapter6.item34.*" />
+          <option name="PATTERN" value="chenqx.netty.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -410,17 +464,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTest.addList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NettyClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chenqx.netty.NettyClient" />
       <module name="myStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chenqx.*" />
+          <option name="PATTERN" value="chenqx.netty.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="chenqx" />
-      <option name="MAIN_CLASS_NAME" value="chenqx.TestTest" />
-      <option name="METHOD_NAME" value="addList" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chenqx.netty.NettyServer" />
+      <module name="myStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="chenqx.netty.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookCopyTest.t" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="chenqx.pojo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="chenqx.pojo" />
+      <option name="MAIN_CLASS_NAME" value="chenqx.pojo.BookCopyTest" />
+      <option name="METHOD_NAME" value="t" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -428,11 +508,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CronScheduler" />
-        <item itemvalue="Application.Book" />
-        <item itemvalue="JUnit.TestTest.addList" />
-        <item itemvalue="Application.ArrayToString" />
-        <item itemvalue="Application.Operation2" />
+        <item itemvalue="JUnit.BookCopyTest.t" />
+        <item itemvalue="Application.NettyClient" />
+        <item itemvalue="Application.NettyServer" />
+        <item itemvalue="Application.IOClient" />
+        <item itemvalue="Application.NIOServer" />
       </list>
     </recent_temporary>
   </component>
@@ -523,6 +603,19 @@
       <workItem from="1558959975675" duration="12000" />
       <workItem from="1558959996888" duration="1237000" />
       <workItem from="1559023566504" duration="598000" />
+      <workItem from="1559112922172" duration="3899000" />
+      <workItem from="1559117221449" duration="721000" />
+      <workItem from="1559119085986" duration="53000" />
+      <workItem from="1559119184024" duration="77000" />
+      <workItem from="1559119291895" duration="4439000" />
+      <workItem from="1559180952169" duration="1394000" />
+      <workItem from="1559312898309" duration="640000" />
+      <workItem from="1559563067483" duration="422000" />
+      <workItem from="1559563606062" duration="85000" />
+      <workItem from="1559563713894" duration="732000" />
+      <workItem from="1559640833073" duration="8155000" />
+      <workItem from="1559785288457" duration="6014000" />
+      <workItem from="1559957668626" duration="4837000" />
     </task>
     <task id="LOCAL-00001" summary="format">
       <created>1548644308550</created>
@@ -552,78 +645,90 @@
       <option name="project" value="LOCAL" />
       <updated>1556509310048</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="effectivejava 2">
+      <created>1559112995227</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1559112995227</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NewTest_ss - 2019.04.24 at 14h 56m 20s.xml">
-      <configuration name="NewTest.ss" configurationId="JUnit" />
+    <history-entry file="CategoryTest1_test - 2019.06.06 at 11h 24m 39s.xml">
+      <configuration name="CategoryTest1.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewTest_ss - 2019.04.25 at 16h 47m 51s.xml">
-      <configuration name="NewTest.ss" configurationId="JUnit" />
+    <history-entry file="CategoryTest1_test - 2019.06.06 at 11h 25m 09s.xml">
+      <configuration name="CategoryTest1.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AtomicIntegerTest_main - 2019.04.25 at 19h 47m 21s.xml">
-      <configuration name="AtomicIntegerTest.main" configurationId="JUnit" />
+    <history-entry file="BookCopyTest_t - 2019.06.12 at 11h 52m 03s.xml">
+      <configuration name="BookCopyTest.t" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTest_any11 - 2019.04.29 at 17h 00m 22s.xml">
-      <configuration name="TestTest.any11" configurationId="JUnit" />
+    <history-entry file="BookCopyTest_t - 2019.06.12 at 11h 52m 18s.xml">
+      <configuration name="BookCopyTest.t" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTest_any11 - 2019.04.29 at 17h 00m 33s.xml">
-      <configuration name="TestTest.any11" configurationId="JUnit" />
+    <history-entry file="BookCopyTest_t - 2019.06.12 at 11h 52m 30s.xml">
+      <configuration name="BookCopyTest.t" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTest_addList - 2019.05.13 at 17h 14m 34s.xml">
-      <configuration name="TestTest.addList" configurationId="JUnit" />
+    <history-entry file="BookCopyTest_t - 2019.06.12 at 13h 33m 49s.xml">
+      <configuration name="BookCopyTest.t" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTest_addList - 2019.05.13 at 17h 15m 08s.xml">
-      <configuration name="TestTest.addList" configurationId="JUnit" />
+    <history-entry file="BookCopyTest_t - 2019.06.12 at 17h 04m 15s.xml">
+      <configuration name="BookCopyTest.t" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTest_addList - 2019.05.13 at 17h 15m 36s.xml">
-      <configuration name="TestTest.addList" configurationId="JUnit" />
+    <history-entry file="BookCopyTest_t - 2019.06.12 at 17h 04m 32s.xml">
+      <configuration name="BookCopyTest.t" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTest_addList - 2019.05.13 at 17h 15m 47s.xml">
-      <configuration name="TestTest.addList" configurationId="JUnit" />
+    <history-entry file="BookCopyTest_t - 2019.06.12 at 17h 04m 58s.xml">
+      <configuration name="BookCopyTest.t" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTest_addList - 2019.05.13 at 17h 16m 22s.xml">
-      <configuration name="TestTest.addList" configurationId="JUnit" />
+    <history-entry file="BookCopyTest_t - 2019.06.12 at 17h 05m 42s.xml">
+      <configuration name="BookCopyTest.t" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189700000" />
+    <option name="totallyTimeSpent" value="221168000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="950" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976744" visible="true" weight="0.22310969" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976744" visible="true" weight="0.23443224" />
       <window_info id="Structure" order="1" sideWeight="0.5023256" side_tool="true" weight="0.35531136" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="JRebel" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.36994818" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.37696335" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.36829838" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33449882" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5652174" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5656682" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.34418604" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3225131" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3216783" />
       <window_info anchor="bottom" id="Problems" order="13" weight="0.32906976" />
+      <window_info anchor="bottom" id="JRebel Console" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="JRebel Executor" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969475" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.32967034" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.32960597" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" weight="0.32967034" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32967034" />
+      <window_info anchor="right" id="JRebel Setup Guide" order="10" weight="0.32905984" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976744" visible="true" weight="0.3809524" />
@@ -732,10 +837,28 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java</url>
-          <line>24</line>
+          <url>file://$PROJECT_DIR$/src/main/java/chenqx/utils/TimeUtil.java</url>
+          <line>15</line>
           <properties />
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/chenqx/pojo/CategoryTest1.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/chenqx/pojo/BookCopyTest.java</url>
+          <line>16</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/chenqx/pojo/BookCopyTest.java</url>
+          <line>15</line>
+          <properties />
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -752,76 +875,164 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>ia.getLocalHost()</expression-string>
+        <expression-string>null instanceof String</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>cronTrigger.get()</expression-string>
+        <expression-string>null instanceof Integer</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>cronTrigger.getTimeZone()</expression-string>
+        <expression-string>s instanceof Integer</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>cronTrigger.getExpressionSummary()</expression-string>
+        <expression-string>s instanceof String</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>cronTrigger.getCronExpression()</expression-string>
+        <expression-string>&quot;22&quot; instanceof String</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>com.sun.jndi.ldap.Obj</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>&quot;22&quot; instanceof Object</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>com.sun.jndi.ldap.Obj</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>b.getAuth() instanceof Object</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>com.sun.jndi.ldap.Obj</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>b.getAuth() instanceof String</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Json.parse(&quot;[\&quot;594592\&quot;]&quot;).asArray().</expression-string>
+        <expression-string>ss instanceof String</expression-string>
         <language-id>JAVA</language-id>
-        <custom-info>com.eclipsesource.json.Json</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Json.parse(&quot;[\&quot;594592\&quot;]&quot;).asArray().forEach(O-&gt;O.toString());</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>com.eclipsesource.json.Json</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Json.parse(&quot;[\&quot;594592\&quot;]&quot;).asArray()</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>com.eclipsesource.json.Json</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Json.parse(&quot;{\&quot;tenantId\&quot;:\&quot;594592\&quot;,\&quot;dataId\&quot;:\&quot;5cd12590ab4296000187fbb7\&quot;}&quot;).asObject().get(&quot;tenantId&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>com.eclipsesource.json.Json</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0.jar!/org/quartz/Scheduler.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="320">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/Shape.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/Scheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="346">
+          <caret line="940" column="7" lean-forward="true" selection-start-line="940" selection-start-column="7" selection-end-line="940" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/utils/Key.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/JobKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/utils/MongoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="71" lean-forward="true" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/utils/TimeUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/Number.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-464">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/math/BigDecimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="808" column="11" selection-start-line="808" selection-start-column="11" selection-end-line="808" selection-end-column="11" />
+          <folding>
+            <element signature="e#15818#15819#0" expanded="true" />
+            <element signature="e#15875#15876#0" expanded="true" />
+            <element signature="e#34202#34203#0" expanded="true" />
+            <element signature="e#34258#34259#0" expanded="true" />
+            <element signature="e#90119#90120#0" expanded="true" />
+            <element signature="e#90174#90175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/test-classes/chenqx/newTest/BookTest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-106">
+          <folding>
+            <element signature="e#0#3277#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/test-classes/chenqx/newTest/BigDecimaltest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#570#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="3097" column="32" selection-start-line="3097" selection-start-column="25" selection-end-line="3097" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter2/item3/Chapter-2-Item-3-Enforce-the-singleton-property-with-a-private-constructor-or-an-enum-type.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1560">
-            <caret line="104" column="148" selection-start-line="104" selection-start-column="148" selection-end-line="104" selection-end-column="148" />
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="76" selection-start-line="2" selection-start-column="76" selection-end-line="2" selection-end-column="76" />
           </first_editor>
           <second_editor />
         </state>
@@ -829,213 +1040,132 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter2/item3/MyDataBaseSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+        <state relative-caret-position="120">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item34/Operation.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/BookTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state relative-caret-position="1200">
+          <caret line="92" column="21" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item34/Operation2.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/experimental/categories/Category.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="38" column="60" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
+        <state relative-caret-position="135">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/gsontest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Optional.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3675">
+          <caret line="285" column="35" selection-start-line="285" selection-start-column="35" selection-end-line="285" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/function/Supplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/BigDecimaltest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item34/Chapter-6-Item-34-Use-enums-instead-of-int-constants.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="6660">
-            <caret line="444" selection-start-line="444" selection-end-line="444" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item35/Chapter-6-Item-35-Use-instance-fields-instead-of-ordinals.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="705">
-            <caret line="47" selection-start-line="47" selection-end-line="47" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item36/Chapter-6-Item-36-Use-EnumSet-instead-of-bit-fields.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="1035">
-            <caret line="69" selection-start-line="69" selection-end-line="69" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item37/Chapter-6-Item-37-Use-EnumMap-instead-of-ordinal-indexing.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="774">
-            <caret line="250" selection-start-line="250" selection-end-line="250" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/utils/MinStack.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/NewTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/SerializablePojoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/stacktest/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="377">
+          <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/io/PrintStream.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-813">
-          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+        <state relative-caret-position="278">
+          <caret line="1142" column="36" selection-start-line="1142" selection-start-column="36" selection-end-line="1142" selection-end-column="36" />
+          <folding>
+            <element signature="e#44297#44298#0" expanded="true" />
+            <element signature="e#44329#44330#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/old/InitMap.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Collection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="278">
+          <caret line="408" column="20" selection-start-line="408" selection-start-column="20" selection-end-line="408" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/old/ClassUpdateTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/pojo/CategoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="270">
+          <caret line="24" column="31" selection-end-line="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/annotation/ElementType.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/pojo/CategoryTest1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+        <state relative-caret-position="645">
+          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/annotation/Annotation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/iconPath.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+        <state relative-caret-position="240">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/annotation/Target.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/CategoryObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/sql/uuid.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/annotataion/UserCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item38/Chapter-6-Item-38-Emulate-extensible-enums-with-interfaces.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="354">
-            <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/aopTest/AopTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/com/github/colin-lee/auto-config/1.1.3/auto-config-1.1.3.pom">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/BookTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/cacheTest/TestCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/annotataion/UserCaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Specification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/old/ArrayToString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/SupBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="150">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/TestTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="425" column="9" lean-forward="true" selection-start-line="425" selection-start-column="9" selection-end-line="425" selection-end-column="9" />
+        <state relative-caret-position="396">
+          <caret line="248" column="17" selection-start-line="248" selection-start-column="17" selection-end-line="248" selection-end-column="17" />
           <folding>
             <element signature="e#43077#43078#0" expanded="true" />
             <element signature="e#43139#43140#0" expanded="true" />
@@ -1043,48 +1173,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/colin-lee/config-admin-api/1.1.3/config-admin-api-1.1.3.jar!/com/github/autoconf/admin/ConfigAdminClient.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/netty/IOServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/colin-lee/config-admin-api/1.1.3/config-admin-api-1.1.3.jar!/com/github/autoconf/admin/api/IConfigAdmin.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/annotataion/PassWordUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/colin-lee/config-admin-api/1.1.3/config-admin-api-1.1.3-sources.jar!/com/github/autoconf/admin/api/IConfigAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/colin-lee/config-admin-api/1.1.3/config-admin-api-1.1.3-sources.jar!/com/github/autoconf/admin/ConfigAdminClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="35" column="35" lean-forward="true" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="421" column="25" selection-start-line="421" selection-start-column="25" selection-end-line="421" selection-end-column="25" />
+        <state relative-caret-position="212">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
           <folding>
-            <element signature="e#16338#16339#0" expanded="true" />
-            <element signature="e#16420#16421#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/nio/channels/SelectionKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="266" column="28" selection-start-line="266" selection-start-column="28" selection-end-line="266" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/http/HttpInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/jsonpath/JsonPathUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/NewTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/netty/IOClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final.jar!/io/netty/channel/socket/nio/NioServerSocketChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final.jar!/io/netty/channel/ChannelInitializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final.jar!/io/netty/channel/AbstractChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="92" column="27" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
+          <folding>
+            <element signature="e#4171#4172#0" expanded="true" />
+            <element signature="e#4207#4208#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/netty/NIOServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/netty/NettyClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#619#853#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/JsonPathTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1672">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/IconTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/netty/NettyServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#824#1386#0" expanded="true" />
+            <element signature="e#1053#1344#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="e#1385#1386#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1092,118 +1306,130 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        <state relative-caret-position="244">
+          <caret line="132" column="27" selection-start-line="132" selection-start-column="27" selection-end-line="132" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0.jar!/org/quartz/impl/RemoteMBeanScheduler.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final.jar!/io/netty/bootstrap/ServerBootstrap.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="93" column="17" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
+        <state relative-caret-position="155">
+          <caret line="100" column="50" selection-start-line="100" selection-start-column="50" selection-end-line="100" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0.jar!/org/quartz/Scheduler.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final.jar!/io/netty/channel/ChannelHandler.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/IllegalArgumentException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0.jar!/org/quartz/CronExpression.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="59" column="40" lean-forward="true" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0.jar!/org/quartz/CronScheduleBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0.jar!/org/quartz/TriggerBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0.jar!/org/quartz/JobBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="25" column="56" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0.jar!/org/quartz/SimpleScheduleBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="107" column="33" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
-          <folding>
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0.jar!/org/quartz/Job.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        <state relative-caret-position="90">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        <state relative-caret-position="171">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/quartz/HelloJob.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/CharSequence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="21" />
+        <state relative-caret-position="181">
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.0/commons-lang3-3.0.jar!/org/apache/commons/lang3/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/net/InetAddress.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/pojo/BookCopyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20745">
-          <caret line="1470" column="30" selection-start-line="1470" selection-start-column="30" selection-end-line="1470" selection-end-column="30" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

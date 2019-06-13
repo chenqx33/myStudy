@@ -21,13 +21,16 @@ public class Book {
 
     public static void main(String[] args) {
 
+        InetAddress ia=null;
         try {
-            InetAddress ia=InetAddress.getLocalHost();
+            ia=ia.getLocalHost();
 
             String localname=ia.getHostName();
             String localip=ia.getHostAddress();
+            String canonicalHostName = ia.getCanonicalHostName();
             System.out.println("本机名称是："+ localname);
             System.out.println("本机的ip是 ："+localip);
+            System.out.println("canonicalHostName ："+canonicalHostName);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

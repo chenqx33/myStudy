@@ -20,6 +20,19 @@ public class CronScheduler {
         Scheduler scheduler = stdSchedulerFactory.getScheduler();
         scheduler.start();
         scheduler.scheduleJob(jobDetail,cronTrigger);
+
+
+
+        JobDetail jobDetail1 = JobBuilder.newJob(HelloJob.class).withIdentity("cronJob1").build();
+        //cronTrigger
+        //每日的9点40触发任务
+        CronTrigger cronTrigger1 = TriggerBuilder.newTrigger().withIdentity("cronTrigger1").withSchedule(CronScheduleBuilder.cronSchedule("7 * * * * ? ")).build();
+        scheduler.scheduleJob(jobDetail1,cronTrigger1);
+        JobKey jobKey = JobKey.jobKey("cronJob");
+        scheduler.deleteJob(jobKey);
+        System.out.println("11");
+
+
     }
 
 }

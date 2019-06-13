@@ -11,6 +11,10 @@ public class BookCopyTest {
         System.out.println("1".compareTo("1"));
         System.out.println("11".compareTo("101"));
         System.out.println("1".compareTo("2"));
+        Book b = new Book("1","2");
+        Object s = b.getAuth();
+        Integer ss = (Integer) s;
+        System.out.println(ss);
     }
 
 }
