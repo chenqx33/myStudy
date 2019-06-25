@@ -32,8 +32,8 @@ public class menu {
             o.setIcon_path_home(null);
         });
         menuItemConfigObjects.forEach(o -> {
-            o.setIcon_path_home((String) jsonObject.get(o.getDisplay_name() + "大.png"));
-            o.setIcon_path_menu((String) jsonObject.get(o.getDisplay_name() + "小.png"));
+            o.setIcon_path_home((String) jsonObject.get(o.getDisplay_name() + ".svg"));
+            o.setIcon_path_menu((String) jsonObject.get(o.getDisplay_name() + ".svg"));
         });
         List<MenuItemConfigObject> o = (List<MenuItemConfigObject>) JSON.toJSON(menuItemConfigObjects);
         System.out.println(o);
