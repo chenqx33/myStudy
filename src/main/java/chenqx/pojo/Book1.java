@@ -2,14 +2,16 @@ package chenqx.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
 
-@ToString
-@AllArgsConstructor
+
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book1 {
     private String auth;
     private String name;
+    private Boolean flag;
 
 
 }

@@ -4,12 +4,12 @@ import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 
 public class CronScheduler {
-    public static void main(String[] args) throws SchedulerException, InterruptedException{
+    public static void main(String[] args) throws SchedulerException, InterruptedException {
         //jobDetail
         JobDetail jobDetail = JobBuilder.newJob(HelloJob.class).withIdentity("cronJob").build();
         //cronTrigger
         //每日的9点40触发任务
-        CronTrigger cronTrigger = TriggerBuilder.newTrigger().withIdentity("cronTrigger").withSchedule(CronScheduleBuilder.cronSchedule("7 * * * * ? *")).build();
+        CronTrigger cronTrigger = TriggerBuilder.newTrigger().withIdentity("cronTrigger").withSchedule(CronScheduleBuilder.cronSchedule("0/3 * * * * ? *")).build();
 //        TriggerBuilder.newTrigger().withIdentity("").withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(2).repeatForever());
         //1.每日10点15分触发      0 15 10 ？* *
         //2.每天下午的2点到2点59分（正点开始，隔5分触发）       0 0/5 14 * * ?
@@ -20,8 +20,7 @@ public class CronScheduler {
         StdSchedulerFactory stdSchedulerFactory = new StdSchedulerFactory();
         Scheduler scheduler = stdSchedulerFactory.getScheduler();
         scheduler.start();
-        scheduler.scheduleJob(jobDetail,cronTrigger);
-
+        scheduler.scheduleJob(jobDetail, cronTrigger);
 
 
 //        JobDetail jobDetail1 = JobBuilder.newJob(HelloJob.class).withIdentity("cronJob1").build();
@@ -32,8 +31,10 @@ public class CronScheduler {
 //        JobKey jobKey = JobKey.jobKey("cronJob");
 //        scheduler.deleteJob(jobKey);
 //        System.out.println("11");
-
-
+        JobKey jobKey = JobKey.jobKey("cronJob");
+//        scheduler.deleteJob(jobKey);
+        scheduler.scheduleJob(JobBuilder.newJob(HelloJob.class).withIdentity("cronJob1").build(),
+                TriggerBuilder.newTrigger().withIdentity("cronTrigger1").withSchedule(CronScheduleBuilder.cronSchedule("* * * * * ? *")).build());
     }
 
 }

@@ -1,34 +1,33 @@
 {
-  "code": 200,
-  "msg": "ok",
-  "list": [
+  "components": [
     {
-      "id": 20,
-      "no": "1000020",
-      "items": [
+      "api_name": "table_component",
+      "ref_object_api_name": "UnitInfoObj",
+      "include_fields": [
         {
-          "name": "n1",
-          "price": 21,
-          "infos": {
-            "feature": ""
-          }
+          "api_name": "name",
+          "render_type": "text",
+          "field_name": "name"
+        },
+        {
+          "api_name": "life_status",
+          "render_type": "select_one",
+          "is_show_field_name": false,
+          "field_name": "life_status"
         }
-      ]
+      ],
+      "type": "table"
     }
   ],
-  "metainfo": {
-    "total": 20,
-    "info": {
-      "owner": "qinshu",
-      "parts": [
-        {
-          "count": 13,
-          "time": {
-            "start": 1230002456,
-            "end": 234001234
-          }
-        }
-      ]
-    }
-  }
+  "buttons": [],
+  "package": "CRM",
+  "ref_object_api_name": "UnitInfoObj",
+  "layout_type": "list",
+  "display_name": "单位列表布局",
+  "is_default": false,
+  "version": 1,
+  "agent_type": "agent_type_mobile",
+  "is_deleted": false,
+  "api_name": "layout_UnitInfoObj_mobile",
+  "is_show_fieldname": true
 }
