@@ -22,7 +22,7 @@ public class Test6 {
     }
 
     @Test
-    public void should_class_for_n123ame() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public void should_class_for_n1223ame() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         Class<?> aClass = Class.forName("chenqx.pojo.Book1");
         Book1 book1 = (Book1)aClass.newInstance();
         System.out.println(book1);
