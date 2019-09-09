@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="unnamed" />
+      <artifact name="demo:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
@@ -10,26 +10,46 @@
     <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-payment/src/main/java/com/facishare/crm/payment/action/CustomerPaymentChangeOwnerAction.java" description="IObjectData data = serviceFacade.findObjectDataInc..." line="17" />
     <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-payment/src/main/java/com/facishare/crm/payment/service/CustomerPaymentService.java" description="List&lt;IObjectData&gt; orderPayments = findOrderPayment..." line="1103" />
     <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-payment/src/main/java/com/facishare/crm/payment/service/CustomerPaymentService.java" description="if (orderPayments.isEmpty()) {" line="1104" />
-    <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-sales/src/main/java/com/facishare/crm/sfa/predefine/service/PriceBookStandardService.java" description="String unitReferenceBySkuIdSql = findUnitReference..." line="351" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-sales/src/main/java/com/facishare/crm/sfa/predefine/service/PriceBookStandardService.java" description="String unitReferenceBySkuIdSql = findUnitReference..." line="345" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-sales/src/main/java/com/facishare/crm/sfa/predefine/service/CrmMenuAdminService.java" description="if (CollectionUtils.isEmpty(dataQueryResult.getDat..." line="725" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-crm-metadata/fs-crm-metadata-console/src/main/java/com/facishare/crm/common/services/rest/CRMRestServiceImpl.java" line="90" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-paas-appframework/fs-paas-app-core/src/main/java/com/facishare/paas/appframework/core/predef/controller/StandardRelatedListController.java" description="IObjectDescribe describe = serviceFacade.findObjec..." line="264" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-sales/src/main/java/com/facishare/crm/sfa/predefine/controller/CasesDetailController.java" description="components" line="23" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-sales/src/main/java/com/facishare/crm/sfa/predefine/service/PriceBookService.java" description="return PriceBookResult.Result.builder().build();" line="83" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-sales/src/main/java/com/facishare/crm/sfa/predefine/service/PriceBookService.java" description="return ProductResult.Result.builder().build();" line="166" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-sales/src/main/java/com/facishare/crm/sfa/utilities/util/PreDefLayoutUtil.java" description="List&lt;String&gt; relatedObjects = Collections.singleto..." line="234" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-paas-appframework/fs-paas-app-privilege/src/main/java/com/facishare/paas/appframework/privilege/dto/QueryRoleInfoListByUsersModel.java" description="private String roleCode;" line="36" />
+    <bookmark url="file://$PROJECT_DIR$/../fs-crm/fs-crm-sales/src/main/java/com/facishare/crm/sfa/predefine/action/RefundAddAction.java" description="super.before(arg);" line="29" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="410452e8-c720-4eb9-bf73-c79983139263" name="Default Changelist" comment="commit 1111">
-      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/http/HttpUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test5.java" afterDir="false" />
+    <list default="true" id="410452e8-c720-4eb9-bf73-c79983139263" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/designpattern/ReadMe.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/designpattern/abstractFactory/AbstractFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/pojo/Obj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/tdd/FizzBuzz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/chenqx/tdd/GameNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/chenqx/tdd/GameNumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item10/AtomicIntegerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item10/AtomicIntegerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/chenqx/pojo/Book1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chenqx/pojo/Book1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/b.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/b.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/f.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/iconPath.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/iconPath.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/menuItemConfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/menuItemConfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test5.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/fscrm/target/" />
+    <ignored path="$PROJECT_DIR$/fsstudy/target/" />
+    <ignored path="$PROJECT_DIR$/fs/target/" />
+    <ignored path="$PROJECT_DIR$/demo/target/" />
+    <ignored path="$PROJECT_DIR$/spring-demo/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,31 +85,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test2.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test6.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1335">
-              <caret line="91" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="405">
+              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter2/item3/MyDataBaseSource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test3.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+            <state relative-caret-position="246">
+              <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,37 +118,67 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/f.json">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/28.0-jre/guava-28.0-jre.jar!/com/google/common/util/concurrent/RateLimiter.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="291">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/simpl/RAMJobStore.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test4.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20730">
-              <caret line="1447" selection-start-line="1447" selection-end-line="1447" />
+            <state relative-caret-position="420">
+              <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/core/QuartzScheduler.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11100">
-              <caret line="856" selection-start-line="856" selection-end-line="856" />
+            <state relative-caret-position="195">
+              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/core/QuartzSchedulerThread.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3240">
-              <caret line="249" selection-start-line="249" selection-end-line="249" />
+            <state relative-caret-position="105">
+              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Scanner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19170">
+              <caret line="1332" column="19" selection-start-line="1332" selection-start-column="19" selection-end-line="1332" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -141,27 +191,14 @@
         <option value="JUnit4 Test Class" />
         <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="spring-beans.schema" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lom</find>
-      <find>password</find>
-      <find>FS4e2%Y#X@~g.+F&lt;</find>
-      <find>JobKey</find>
-      <find>hashcode</find>
-      <find>fs_paas_auditlog</find>
-      <find>enum</find>
-      <find>valueof</find>
-      <find>findFirst().get()</find>
-      <find>iconpath</find>
-      <find>netty</find>
-      <find>thread</find>
-      <find>payment_time</find>
-      <find>time</find>
-      <find>JobDetail</find>
       <find>cronExpression</find>
       <find>3153</find>
       <find>withIntervalInSeconds</find>
@@ -177,6 +214,21 @@
       <find>SpecificationValueObj</find>
       <find>SpecificationObj</find>
       <find>auto</find>
+      <find>newTreeMap</find>
+      <find>PriceBookProductObj_table_component</find>
+      <find>war</find>
+      <find>web</find>
+      <find>test</find>
+      <find>spring-test</find>
+      <find>spring</find>
+      <find>spock</find>
+      <find>25</find>
+      <find>null</find>
+      <find>main</find>
+      <find>junit</find>
+      <find>pricebook_id</find>
+      <find>forname</find>
+      <find>RateLimiter</find>
     </findStrings>
     <replaceStrings>
       <replace>Integer</replace>
@@ -199,34 +251,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item29/Chapter-5-Item-29-Favor-generic-types.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item30/Chapter-5-Item-30-Favor-generic-methods.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item31/Chapter-5-Item-31-Use-bounded-wildcards-to-increase-API-flexibility.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item32/Chapter-5-Item-32-Combine-generics-and-varargs-judiciously.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter5/item33/Chapter-5-Item-33-Consider-typesafe-heterogeneous-containers.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/Chapter-6-Introduction.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item34/Operation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item34/Operation2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item35/Chapter-6-Item-34-Use-enums-instead-of-int-constants.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item35/Chapter-6-Item-35-Use-instance-fields-instead-of-ordinals.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item36/Chapter-6-Item-36-Use-EnumSet-instead-of-bit-fields.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item37/Chapter-6-Item-37-Use-EnumMap-instead-of-ordinal-indexing.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter6/item38/Chapter-6-Item-38-Emulate-extensible-enums-with-interfaces.md" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/sql/uuid.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/old/ArrayToString.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/SupBook.java" />
-        <option value="$PROJECT_DIR$/src/test/java/chenqx/TestTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/utils/TimeUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/utils/MongoUtil.java" />
-        <option value="$PROJECT_DIR$/src/test/java/chenqx/newTest/BigDecimaltest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/CategoryObject.java" />
-        <option value="$PROJECT_DIR$/src/test/java/chenqx/pojo/CategoryTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/chenqx/pojo/CategoryTest1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/IOService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/IOClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/IOServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/NIOServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/NettyServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/netty/NettyClient.java" />
         <option value="$PROJECT_DIR$/src/test/java/chenqx/pojo/BookCopyTest.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -238,23 +262,58 @@
         <option value="$PROJECT_DIR$/src/test/java/chenqx/menu.java" />
         <option value="$PROJECT_DIR$/src/main/resources/map.csv" />
         <option value="$PROJECT_DIR$/src/test/java/chenqx/csvtest/CsvTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/http/HttpUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test1.java" />
         <option value="$PROJECT_DIR$/src/main/resources/menuItemConfig.json" />
         <option value="$PROJECT_DIR$/src/main/resources/iconPath.json" />
         <option value="$PROJECT_DIR$/src/main/resources/a.json" />
         <option value="$PROJECT_DIR$/src/main/resources/b.json" />
-        <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/Book1.java" />
         <option value="$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/f.json" />
         <option value="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/designpattern/ReadMe.md" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/designpattern/abstractFactory/AbstractFactory.java" />
+        <option value="$PROJECT_DIR$/demo/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/demo/src/main/java/com/example/demo/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/HiController.java" />
+        <option value="$PROJECT_DIR$/spring-demo/src/main/java/service/impl/HiServiceImpl.java" />
+        <option value="$PROJECT_DIR$/spring-demo/src/test/java/service/groovy.java" />
+        <option value="$PROJECT_DIR$/spring-demo/src/main/java/service/HiService.java" />
+        <option value="$PROJECT_DIR$/spring-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-demo/src/test/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/spring-demo/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/spring-demo/src/test/java/service/HiServiceTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/utils/DateTimeTrans.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/utils/FunctionScript.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/utils/FunctionContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/utils/GroovyCompiler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/FizzBuzz.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/train/FizzBuzz.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/tdd/GameNumber.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item10/AtomicIntegerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/tdd/FizzBuzz.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/Obj.java" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/tdd/GameNumberTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/f.json" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test6.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chenqx/pojo/Book1.java" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test4.java" />
+        <option value="$PROJECT_DIR$/src/test/java/chenqx/newTest/Test5.java" />
       </list>
     </option>
   </component>
   <component name="JRebelWorkspace">
     <option name="jrebelEnabledAutocompile" value="true" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -266,19 +325,14 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="myStudy" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-      </expand>
+      <expand />
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="53" />
+    <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="958" />
+    <option name="height" value="919" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -288,7 +342,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,14 +366,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chenqx" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
@@ -357,38 +402,105 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="chenqx" type="462c0819:PsiDirectoryNode" />
+              <item name="csvtest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="chenqx" type="462c0819:PsiDirectoryNode" />
               <item name="newTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="chenqx" type="462c0819:PsiDirectoryNode" />
+              <item name="tdd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-params:5.2.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-params:5.2.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-params-5.2.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-params:5.2.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-params-5.2.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="params" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.junit.jupiter:junit-jupiter-params:5.2.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="junit-jupiter-params-5.2.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="params" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="LombokPluginEnabledInProject" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551406018185" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fs-crm-task" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-demo/src/test/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="service" />
       <recent name="chenqx.pojo" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="chenqx.tdd" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-demo/src/test/resources" />
+      <recent name="$PROJECT_DIR$/spring-demo/src/main/resources" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -410,7 +522,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Test2.s1s">
+  <component name="RunManager" selected="JUnit.Test5.should_double_equals">
     <configuration name="ClassUpdateTest" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chenqx.old.ClassUpdateTest" />
       <module name="myStudy" />
@@ -424,12 +536,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CronScheduler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chenqx.quartz.CronScheduler" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chenqx.designpattern.factorypattern.Test" />
       <module name="myStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chenqx.quartz.*" />
+          <option name="PATTERN" value="chenqx.designpattern.factorypattern.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -450,7 +562,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test1.s" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chenqx.newTest.Test6" />
+      <module name="myStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="chenqx.newTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test5.should_double_equals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myStudy" />
       <extension name="coverage">
         <pattern>
@@ -459,14 +584,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="chenqx.newTest" />
-      <option name="MAIN_CLASS_NAME" value="chenqx.newTest.Test1" />
-      <option name="METHOD_NAME" value="s" />
+      <option name="MAIN_CLASS_NAME" value="chenqx.newTest.Test5" />
+      <option name="METHOD_NAME" value="should_double_equals" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test2.s1s" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test6.should_" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myStudy" />
       <extension name="coverage">
         <pattern>
@@ -475,14 +600,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="chenqx.newTest" />
-      <option name="MAIN_CLASS_NAME" value="chenqx.newTest.Test2" />
-      <option name="METHOD_NAME" value="s1s" />
+      <option name="MAIN_CLASS_NAME" value="chenqx.newTest.Test6" />
+      <option name="METHOD_NAME" value="should_" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test2.ss" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test6.should_hha" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myStudy" />
       <extension name="coverage">
         <pattern>
@@ -491,36 +616,144 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="chenqx.newTest" />
-      <option name="MAIN_CLASS_NAME" value="chenqx.newTest.Test2" />
-      <option name="METHOD_NAME" value="ss" />
+      <option name="MAIN_CLASS_NAME" value="chenqx.newTest.Test6" />
+      <option name="METHOD_NAME" value="should_hha" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="menu.menuu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="chenqx.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="chenqx" />
-      <option name="MAIN_CLASS_NAME" value="chenqx.menu" />
-      <option name="METHOD_NAME" value="menuu" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tomcat 8.5.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.31" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/my_study_web_war_exploded/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="demo:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/demo_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_myStudy" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="61863" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="JRebel Debug">
+        <option name="DEBUG_PORT" value="61868" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JRebel Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JRebel Executor">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="demo:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ClassUpdateTest" />
+      <item itemvalue="Application.Test1" />
+      <item itemvalue="Application.Test6" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="JUnit.Test6.should_hha" />
+      <item itemvalue="JUnit.Test6.should_" />
+      <item itemvalue="Spring Boot.DemoApplication" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.31" />
+      <item itemvalue="JUnit.Test5.should_double_equals" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Test2.s1s" />
-        <item itemvalue="Application.CronScheduler" />
-        <item itemvalue="JUnit.Test2.ss" />
-        <item itemvalue="JUnit.menu.menuu" />
-        <item itemvalue="JUnit.Test1.s" />
+        <item itemvalue="JUnit.Test5.should_double_equals" />
+        <item itemvalue="JUnit.Test6.should_" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Test6" />
+        <item itemvalue="JUnit.Test6.should_hha" />
       </list>
     </recent_temporary>
   </component>
@@ -638,7 +871,37 @@
       <workItem from="1562318002766" duration="563000" />
       <workItem from="1562550914524" duration="5382000" />
       <workItem from="1562585123497" duration="5501000" />
-      <workItem from="1563156859586" duration="598000" />
+      <workItem from="1563156859586" duration="5491000" />
+      <workItem from="1563504897764" duration="597000" />
+      <workItem from="1563547267251" duration="1573000" />
+      <workItem from="1563763964800" duration="5837000" />
+      <workItem from="1563776647528" duration="1391000" />
+      <workItem from="1563932704732" duration="19512000" />
+      <workItem from="1564132095763" duration="1566000" />
+      <workItem from="1564367477969" duration="1072000" />
+      <workItem from="1564392054146" duration="3043000" />
+      <workItem from="1564555850749" duration="5383000" />
+      <workItem from="1564739177433" duration="596000" />
+      <workItem from="1564971152735" duration="595000" />
+      <workItem from="1565155610976" duration="2558000" />
+      <workItem from="1565230905354" duration="2191000" />
+      <workItem from="1565315561427" duration="461000" />
+      <workItem from="1565575017307" duration="3284000" />
+      <workItem from="1565661044316" duration="3684000" />
+      <workItem from="1565691882879" duration="13931000" />
+      <workItem from="1565940120448" duration="3986000" />
+      <workItem from="1566012187189" duration="597000" />
+      <workItem from="1566185502049" duration="832000" />
+      <workItem from="1566218185798" duration="3139000" />
+      <workItem from="1566376369528" duration="5484000" />
+      <workItem from="1566549012934" duration="4410000" />
+      <workItem from="1566875306251" duration="5203000" />
+      <workItem from="1566978209849" duration="3469000" />
+      <workItem from="1567476186361" duration="4269000" />
+      <workItem from="1567615959480" duration="68000" />
+      <workItem from="1567649104866" duration="6289000" />
+      <workItem from="1567734804755" duration="595000" />
+      <workItem from="1567864460251" duration="1472000" />
     </task>
     <task id="LOCAL-00001" summary="format">
       <created>1548644308550</created>
@@ -710,49 +973,65 @@
       <option name="project" value="LOCAL" />
       <updated>1561452447724</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit test">
+      <created>1563158207724</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1563158207724</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test2_s1s - 2019.07.08 at 11h 13m 28s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test6_should_ - 2019.09.05 at 18h 40m 49s.xml">
+      <configuration name="Test6.should_" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test2_s1s - 2019.07.08 at 11h 15m 18s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test6_should_ - 2019.09.05 at 18h 43m 31s.xml">
+      <configuration name="Test6.should_" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test2_s1s - 2019.07.08 at 13h 38m 24s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test6_should_ - 2019.09.05 at 18h 45m 29s.xml">
+      <configuration name="Test6.should_" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test2_s1s - 2019.07.08 at 13h 38m 42s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test6_should_ - 2019.09.05 at 18h 46m 00s.xml">
+      <configuration name="Test6.should_" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test2_s1s - 2019.07.08 at 13h 44m 23s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test6_should_ - 2019.09.05 at 18h 46m 35s.xml">
+      <configuration name="Test6.should_" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test2_s1s - 2019.07.08 at 13h 44m 35s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test5_should_double_equals - 2019.09.08 at 00h 35m 18s.xml">
+      <configuration name="Test5.should_double_equals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test2_s1s - 2019.07.09 at 11h 01m 56s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test5_should_double_equals - 2019.09.08 at 00h 35m 31s.xml">
+      <configuration name="Test5.should_double_equals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test2_s1s - 2019.07.12 at 11h 38m 13s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test5_should_double_equals - 2019.09.08 at 00h 35m 40s.xml">
+      <configuration name="Test5.should_double_equals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test2_s1s - 2019.07.12 at 11h 38m 46s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test5_should_double_equals - 2019.09.08 at 00h 38m 42s.xml">
+      <configuration name="Test5.should_double_equals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Test2_s1s - 2019.07.12 at 11h 38m 59s.xml">
-      <configuration name="Test2.s1s" configurationId="JUnit" />
+    <history-entry file="Test5_should_double_equals - 2019.09.08 at 00h 39m 28s.xml">
+      <configuration name="Test5.should_double_equals" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283971000" />
+    <option name="totallyTimeSpent" value="395951000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="949" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="973" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49284253" visible="true" weight="0.23809524" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49284253" visible="true" weight="0.32967034" />
       <window_info id="Structure" order="1" sideWeight="0.50715744" side_tool="true" weight="0.23565324" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -760,66 +1039,80 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="JRebel" order="7" side_tool="true" />
+      <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.51752335" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4032634" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.3893303" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3507378" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32954547" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.53571427" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.5352273" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.37903225" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3784091" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.34418604" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.31934732" />
-      <window_info anchor="bottom" id="Problems" order="13" weight="0.32906976" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3159091" />
+      <window_info anchor="bottom" id="Problems" order="13" weight="0.3284091" />
       <window_info anchor="bottom" id="JRebel Console" order="14" side_tool="true" />
       <window_info anchor="bottom" id="JRebel Executor" order="15" />
+      <window_info anchor="bottom" id="Application Servers" order="16" weight="0.3284091" />
+      <window_info anchor="bottom" id="Spring" order="17" />
+      <window_info anchor="bottom" id="Java Enterprise" order="18" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969475" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.32960597" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.32905984" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" weight="0.32967034" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32967034" />
       <window_info anchor="right" id="JRebel Setup Guide" order="10" weight="0.32905984" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976744" visible="true" weight="0.3809524" />
-      <window_info id="Structure" order="1" sideWeight="0.5023256" side_tool="true" weight="0.35531136" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49284253" visible="true" weight="0.2869353" />
+      <window_info id="Structure" order="1" sideWeight="0.50715744" side_tool="true" weight="0.23565324" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="JRebel" order="7" side_tool="true" />
+      <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.34186047" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.37689614" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.3675799" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35219398" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.5353881" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5652174" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.37903225" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.34418604" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3243874" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3173516" />
       <window_info anchor="bottom" id="Problems" order="13" weight="0.32906976" />
+      <window_info anchor="bottom" id="JRebel Console" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="JRebel Executor" order="15" />
+      <window_info anchor="bottom" id="Application Servers" order="16" weight="0.32905483" />
+      <window_info anchor="bottom" id="Spring" order="17" />
+      <window_info anchor="bottom" id="Java Enterprise" order="18" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969475" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.32967034" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.32905984" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" weight="0.32967034" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32967034" />
+      <window_info anchor="right" id="JRebel Setup Guide" order="10" weight="0.32905984" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -874,7 +1167,8 @@
     <MESSAGE value="commit 111" />
     <MESSAGE value="commit 1111" />
     <MESSAGE value="csvTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="csvTest" />
+    <MESSAGE value="commit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit test" />
   </component>
   <component name="WindowStateProjectService">
     <state width="408" height="650" key="Git.Branch.Popup" />
@@ -928,7 +1222,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item10/AtomicIntegerTest.java</url>
-          <line>10</line>
+          <line>11</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -1012,9 +1306,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test2.java</url>
-          <line>76</line>
+          <line>79</line>
           <properties />
           <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test2.java</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/HiController.java</url>
+          <line>15</line>
+          <properties />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/chenqx/tdd/GameNumber.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java</url>
+          <line>5</line>
+          <properties />
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1031,190 +1349,141 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>iconList.getJSONArray(&quot;object_icon&quot;).get</expression-string>
+        <expression-string>Class.forName(&quot;chenqx.pojo.Book1&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>iconList.getJSONArray(&quot;object_icon&quot;)</expression-string>
+        <expression-string>clazz.getName()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>this.getClass().getResourceAsStream(&quot;/map.csv&quot;)</expression-string>
+        <expression-string>Class.forName(&quot;&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>nextFireTime.getTime()</expression-string>
+        <expression-string>Class.forName(&quot;Test5.java&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>nextFireTime.getTime()</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.text.SimpleDateFormat</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).format(nextFireTime)</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.text.SimpleDateFormat</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>JSON.parseArray(&quot;[{\&quot;name\&quot;:\&quot;1\&quot;},{\&quot;name\&quot;:\&quot;1\&quot;}{\&quot;name\&quot;:\&quot;1\&quot;}]&quot;, Book.class)</expression-string>
+        <expression-string>Class.forName(&quot;Test5&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>JSON.parseObject(&quot;[{\&quot;1\&quot;:\&quot;1\&quot;},{\&quot;1\&quot;:\&quot;1\&quot;},{\&quot;1\&quot;:\&quot;1\&quot;}]&quot;)</expression-string>
+        <expression-string>Class.forName(&quot;/Users/chenqx/IdeaProjects/myStudy/src/main/java/chenqx/pojo/Book1&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>JSON.parseObject(&quot;[{\&quot;1\&quot;:\&quot;1\&quot;},{\&quot;1\&quot;:\&quot;1\&quot;}{\&quot;1\&quot;:\&quot;1\&quot;}]&quot;)</expression-string>
+        <expression-string>matcher.end(1)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>matcher.find()</expression-string>
+        <expression-string>matcher.end(0)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>matcher.end(2)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/MenuItemConfigObject.java">
+    <entry file="file://$PROJECT_DIR$/spring-demo/src/main/java/spring-config.xml" />
+    <entry file="file://$PROJECT_DIR$/spring-demo/src/main/java/service/impl/HiServiceImpl.java" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/groovy-all-2.4.15.jar!/groovy/util/GroovyTestCase.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        <state relative-caret-position="90">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/stream/Collectors.java">
+    <entry file="file://$PROJECT_DIR$/spring-demo/src/main/java/service/HiService.java" />
+    <entry file="file://$MAVEN_REPOSITORY$/org/spockframework/spock-core/1.3-groovy-2.5/spock-core-1.3-groovy-2.5.pom">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-demo/src/main/resources/applicationContext.xml" />
+    <entry file="file://$PROJECT_DIR$/spring-demo/src/test/resources/applicationContext.xml" />
+    <entry file="file://$PROJECT_DIR$/spring-demo/src/test/java/service/HiServiceTest.groovy" />
+    <entry file="file://$PROJECT_DIR$/spring-demo/pom.xml" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spockframework/spock-core/1.3-groovy-2.5/spock-core-1.3-groovy-2.5.jar!/spock/lang/Specification.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="803" column="4" selection-start-line="803" selection-start-column="4" selection-end-line="803" selection-end-column="4" />
+        <state relative-caret-position="105">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/NewTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <element signature="e#33990#33991#0" expanded="true" />
-            <element signature="e#34045#34046#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/TriggerBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar!/com/google/gson/Gson.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="460" column="17" selection-start-line="460" selection-start-column="17" selection-end-line="460" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.40/fastjson-1.2.40.jar!/com/alibaba/fastjson/JSON.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="64" column="35" lean-forward="true" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="25" selection-end-column="63" />
           <folding>
-            <element signature="e#39232#39233#0" expanded="true" />
-            <element signature="e#39292#39293#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/Job.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/time/ZoneOffset.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+        <state relative-caret-position="690">
+          <caret line="129" column="19" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/quartz/HelloJob.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/time/LocalTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="630">
+          <caret line="131" column="34" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/Trigger.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Set.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+        <state relative-caret-position="4785">
+          <caret line="342" column="12" selection-start-line="342" selection-start-column="12" selection-end-line="342" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/CronTrigger.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="169" column="41" selection-start-line="169" selection-start-column="41" selection-end-line="169" selection-end-column="41" />
+        <state relative-caret-position="4980">
+          <caret line="355" column="12" selection-start-line="355" selection-start-column="12" selection-end-line="355" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Timer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/utils/DateTimeTrans.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/utils/FunctionScript.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/utils/FunctionContext.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/utils/GroovyCompiler.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7335">
-          <caret line="523" column="31" selection-start-line="523" selection-start-column="31" selection-end-line="523" selection-end-column="31" />
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/TimerTask.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/function/Function.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state relative-caret-position="255">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
         </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/core/QuartzSchedulerResources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4545">
-          <caret line="349" column="18" selection-start-line="349" selection-start-column="18" selection-end-line="349" selection-end-column="18" />
-          <folding>
-            <element signature="e#9627#9628#0" expanded="true" />
-            <element signature="e#9658#9659#0" expanded="true" />
-            <element signature="e#15514#15515#0" expanded="true" />
-            <element signature="e#15552#15553#0" expanded="true" />
-            <element signature="e#15702#15703#0" expanded="true" />
-            <element signature="e#15735#15736#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/spi/JobStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8445">
-          <caret line="595" column="26" selection-start-line="595" selection-start-column="26" selection-end-line="595" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/csvtest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/map.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/map.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
@@ -1224,321 +1493,293 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-csv/1.6/commons-csv-1.6-sources.jar!/org/apache/commons/csv/CSVRecord.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/NewTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+        <state relative-caret-position="105">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/csvtest/CsvTest.java">
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="43" />
+        <state relative-caret-position="592">
+          <caret line="364" column="51" selection-start-line="364" selection-start-column="51" selection-end-line="364" selection-end-column="51" />
+          <folding>
+            <element signature="e#12545#12546#0" expanded="true" />
+            <element signature="e#12592#12593#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/org/hamcrest/core/Is.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+          <folding>
+            <element signature="e#963#964#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/org/hamcrest/Matcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.pom">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter3/item10/AtomicIntegerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/sql/uuid.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.2.0/junit-jupiter-params-5.2.0.jar!/org/junit/jupiter/params/provider/Arguments.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/tdd/FizzBuzz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="160" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="240">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/stream/Collectors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12360">
+          <caret line="900" column="23" selection-start-line="900" selection-start-column="23" selection-end-line="900" selection-end-column="23" />
+          <folding>
+            <element signature="e#33990#33991#0" expanded="true" />
+            <element signature="e#34045#34046#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Obj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/tdd/GameNumber.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/28.0-jre/guava-28.0-jre.jar!/com/google/common/base/Strings.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/http/HttpUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="68" column="67" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar!/org/apache/http/Header.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar!/org/apache/http/message/BasicHeader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar!/org/apache/http/message/AbstractHttpMessage.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="71" column="30" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/http/HttpInvoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/TestTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="103" column="17" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jsonschema.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/iconPath.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="80" column="1" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/menuItemConfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19995">
-          <caret line="1333" column="1" selection-start-line="1333" selection-start-column="1" selection-end-line="1333" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/NewTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <element signature="e#713#934#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/a.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!block;n#_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#tenant_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#name#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#attrs#0;n#!!block;n#config#0;n#!!block;n#owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#record_type#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#attrs#0;n#!!block;n#config#0;n#!!block;n#record_type#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#created_by#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#create_time#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#last_modified_by#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#last_modified_time#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#extend_obj_data_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#package#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#object_describe_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#object_describe_api_name#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#version#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#is_deleted#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#out_tenant_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#out_tenant_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#out_owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#out_owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#owner_department#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#owner_department#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#attrs#0;n#!!block;n#config#0;n#!!block;n#owner_department#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!top" />
-            <element signature="n#!!block;n#record_type#0;n#!!block;n#config#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/b.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!block;n#_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#tenant_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#name#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#spu_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#attrs#0;n#!!block;n#config#0;n#!!block;n#owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#record_type#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#record_type#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#attrs#0;n#!!block;n#config#0;n#!!block;n#record_type#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#created_by#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#create_time#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#last_modified_by#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#last_modified_time#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#extend_obj_data_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#package#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#object_describe_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#object_describe_api_name#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#version#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#is_deleted#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#out_tenant_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#out_tenant_id#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#out_owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#out_owner#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#owner_department#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!block;n#owner_department#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#attrs#0;n#!!block;n#config#0;n#!!block;n#owner_department#0;n#!!block;n#fields#0;n#!!top" />
-            <element signature="n#!!block;n#config#0;n#!!top" />
-            <element signature="n#!!block;n#record_type#0;n#!!block;n#config#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/Scheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="816" column="31" lean-forward="true" selection-start-line="816" selection-start-column="31" selection-end-line="816" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/TriggerKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/impl/triggers/CronTriggerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9975">
-          <caret line="713" selection-start-line="713" selection-end-line="713" />
-          <folding>
-            <element signature="e#13964#13965#0" expanded="true" />
-            <element signature="e#14004#14005#0" expanded="true" />
-            <element signature="e#14525#14526#0" expanded="true" />
-            <element signature="e#14573#14574#0" expanded="true" />
-            <element signature="e#26324#26325#0" expanded="true" />
-            <element signature="e#26403#26404#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="2938" column="25" selection-start-line="2938" selection-start-column="25" selection-end-line="2938" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test5.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/old/ArrayToString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/quartz/CronScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/f.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <caret line="651" column="10" selection-start-line="651" selection-start-column="10" selection-end-line="651" selection-end-column="10" />
+          <folding>
+            <element signature="n#!!block;n#is_validorder#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="e#550#987#0" />
+            <element signature="e#564#762#0" />
+            <element signature="e#647#748#0" />
+            <element signature="e#776#975#0" />
+            <element signature="e#860#961#0" />
+            <element signature="n#!!block;n#config#0;n#!!block;n#is_validorder#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#attrs#0;n#!!block;n#config#0;n#!!block;n#is_validorder#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#end_date#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#owner#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#lock_rule#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#lock_status#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="e#4069#4252#0" />
+            <element signature="e#4083#4155#0" />
+            <element signature="e#4169#4240#0" />
+            <element signature="n#!!block;n#account_range#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#life_status#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="e#6880#7360#0" />
+            <element signature="e#6894#6976#0" />
+            <element signature="e#6990#7073#0" />
+            <element signature="e#7087#7163#0" />
+            <element signature="e#7177#7257#0" />
+            <element signature="e#7271#7348#0" />
+            <element signature="n#!!block;n#remark#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#lock_user#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#relevant_team#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#embedded_fields#0;n#!!block;n#relevant_team#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#teamMemberEmployee#0;n#!!block;n#embedded_fields#0;n#!!block;n#relevant_team#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#teamMemberRole#0;n#!!block;n#embedded_fields#0;n#!!block;n#relevant_team#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="e#10359#10580#0" />
+            <element signature="e#10377#10461#0" />
+            <element signature="e#10479#10564#0" />
+            <element signature="n#!!block;n#teamMemberPermissionType#0;n#!!block;n#embedded_fields#0;n#!!block;n#relevant_team#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="e#11038#11256#0" />
+            <element signature="e#11056#11139#0" />
+            <element signature="e#11157#11240#0" />
+            <element signature="n#!!block;n#record_type#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="e#12627#12812#0" />
+            <element signature="e#12641#12800#0" />
+            <element signature="n#!!block;n#extend_obj_data_id#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#active_status#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="e#14514#14766#0" />
+            <element signature="e#14528#14634#0" />
+            <element signature="e#14648#14754#0" />
+            <element signature="n#!!block;n#dept_range#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#life_status_before_invalid#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#name#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#owner_department#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#start_date#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#is_standard#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="e#19624#19807#0" />
+            <element signature="e#19638#19709#0" />
+            <element signature="e#19723#19795#0" />
+            <element signature="n#!!block;n#_id#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#created_by#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#last_modified_by#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#package#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#tenant_id#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#object_describe_api_name#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#version#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#object_describe_id#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#create_time#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#last_modified_time#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#is_deleted#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#out_tenant_id#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#config#0;n#!!block;n#out_tenant_id#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#out_owner#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#config#0;n#!!block;n#out_owner#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+            <element signature="n#!!block;n#data_own_department#0;n#!!block;n#fields#0;n#!!block;n#describe#0;n#!!block;n#result#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/simpl/RAMJobStore.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/csvtest/CsvTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20730">
-          <caret line="1447" selection-start-line="1447" selection-end-line="1447" />
+        <state relative-caret-position="435">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="44" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/core/QuartzScheduler.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/tdd/GameNumberTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11100">
-          <caret line="856" selection-start-line="856" selection-end-line="856" />
+        <state relative-caret-position="180">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/core/QuartzSchedulerThread.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test6.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3240">
-          <caret line="249" selection-start-line="249" selection-end-line="249" />
+        <state relative-caret-position="405">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test3.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="420">
+          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/designpattern/factorypattern/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/pojo/Book1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19170">
+          <caret line="1332" column="19" selection-start-line="1332" selection-start-column="19" selection-end-line="1332" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chenqx/effectivejava/chapter2/item3/MyDataBaseSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/28.0-jre/guava-28.0-jre.jar!/com/google/common/util/concurrent/RateLimiter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/chenqx/newTest/Test5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1553,7 +1794,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1594,10 +1834,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
+          <last-edited>spring-demo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1605,6 +1847,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: com.alibaba:fastjson:1.2.40</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1615,5 +1858,10 @@
         </settings>
       </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$" />
+    <option value="clean:-U" />
+    <option value="clean" />
   </component>
 </project>

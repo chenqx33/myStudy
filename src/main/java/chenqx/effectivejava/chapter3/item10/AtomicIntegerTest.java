@@ -1,5 +1,6 @@
 package chenqx.effectivejava.chapter3.item10;
 
+
 import org.junit.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
