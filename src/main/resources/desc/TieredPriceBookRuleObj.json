@@ -1,0 +1,548 @@
+{
+  "fields": {
+    "name": {
+      "is_index": true,
+      "is_active": true,
+      "prefix": "PBProdCode{yyyy}{mm}{dd}",
+      "is_unique": true,
+      "default_value": "",
+      "serial_number": 6,
+      "start_number": 0,
+      "label": "编号",
+      "type": "auto_number",
+      "is_required": false,
+      "api_name": "name",
+      "define_type": "package",
+      "postfix": "",
+      "help_text": "",
+      "status": "released",
+      "is_extend": false
+    },
+    "tiered_price_book_id": {
+      "is_index": true,
+      "is_active": true,
+      "is_unique": false,
+      "label": "价目表",
+      "target_api_name": "TieredPriceBookObj",
+      "type": "master_detail",
+      "target_related_list_name": "tiered_price_book_rule_master_id",
+      "target_related_list_label": "阶梯价目表规则",
+      "is_required": true,
+      "api_name": "tiered_price_book_id",
+      "define_type": "package",
+      "is_create_when_master_create": true,
+      "is_required_when_master_create": false,
+      "help_text": "",
+      "status": "released",
+      "is_extend": false,
+      "config": {
+        "edit": 1,
+        "attrs": {
+          "label": 1,
+          "help_text": 1
+        }
+      }
+    },
+    "price_type": {
+      "is_index": true,
+      "is_active": true,
+      "description": "",
+      "is_unique": false,
+      "default_value": "1",
+      "label": "定价类型",
+      "type": "select_one",
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "price_type",
+      "options": [
+        {
+          "label": "单价",
+          "value": "1"
+        },
+        {
+          "label": "打包价",
+          "value": "2"
+        }
+      ],
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": false,
+      "config": {
+        "add": 0,
+        "edit": 1,
+        "enable": 0,
+        "display": 1,
+        "remove": 0,
+        "attrs": {
+          "is_required": 0,
+          "options": 0,
+          "default_value": 1,
+          "label": 1,
+          "help_text": 1
+        }
+      },
+      "help_text": "",
+      "status": "new"
+    },
+    "start_count": {
+      "default_is_expression": false,
+      "is_unique": false,
+      "type": "number",
+      "decimal_places": 0,
+      "default_to_zero": true,
+      "is_required": false,
+      "define_type": "package",
+      "is_single": false,
+      "max_length": 15,
+      "is_index": true,
+      "is_active": true,
+      "length": 15,
+      "default_value": "",
+      "label": "起始数量",
+      "is_abstract": null,
+      "api_name": "start_count",
+      "is_index_field": false,
+      "config": {
+        "edit": 1,
+        "enable": 0,
+        "display": 1,
+        "remove": 0,
+        "attrs": {
+          "api_name": 0,
+          "is_unique": 1,
+          "default_value": 1,
+          "label": 1,
+          "help_text": 1,
+          "max_length": 1,
+          "decimal_places": 0
+        }
+      },
+      "round_mode": 4,
+      "help_text": "",
+      "status": "released"
+    },
+    "end_count": {
+      "default_is_expression": false,
+      "is_unique": false,
+      "type": "number",
+      "decimal_places": 0,
+      "default_to_zero": true,
+      "is_required": false,
+      "define_type": "package",
+      "is_single": false,
+      "max_length": 15,
+      "is_index": true,
+      "is_active": true,
+      "length": 15,
+      "default_value": "",
+      "label": "结束数量",
+      "is_abstract": null,
+      "api_name": "end_count",
+      "is_index_field": false,
+      "config": {
+        "edit": 1,
+        "enable": 0,
+        "display": 1,
+        "remove": 0,
+        "attrs": {
+          "api_name": 0,
+          "is_unique": 1,
+          "default_value": 1,
+          "label": 1,
+          "help_text": 1,
+          "max_length": 1,
+          "decimal_places": 0
+        }
+      },
+      "round_mode": 4,
+      "help_text": "",
+      "status": "released"
+    },
+    "price": {
+      "describe_api_name": "ProductObj",
+      "is_index": true,
+      "is_active": true,
+      "length": 13,
+      "description": "价格",
+      "is_unique": false,
+      "label": "价格",
+      "currency_unit": "￥",
+      "type": "currency",
+      "decimal_places": 2,
+      "field_num": null,
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "price",
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": false,
+      "round_mode": 4,
+      "max_length": 15,
+      "config": {
+        "edit": 1,
+        "enable": 0,
+        "attrs": {
+          "default_value": 1,
+          "label": 1,
+          "help_text": 1,
+          "max_length": 1,
+          "decimal_places": 1,
+          "is_required": 0
+        }
+      },
+      "status": "released"
+    },
+    "discount": {
+      "expression_type": "percentile",
+      "default_is_expression": false,
+      "is_index": true,
+      "is_active": true,
+      "is_unique": false,
+      "default_value": "100",
+      "label": "折扣",
+      "type": "percentile",
+      "default_to_zero": true,
+      "is_required": false,
+      "api_name": "discount",
+      "define_type": "package",
+      "help_text": "",
+      "status": "released",
+      "is_extend": false,
+      "config": {
+        "edit": 1,
+        "enable": 0,
+        "attrs": {
+          "default_value": 1,
+          "is_required": 0,
+          "label": 1,
+          "help_text": 1
+        }
+      }
+    },
+
+    "relevant_team": {
+      "embedded_fields": {
+        "teamMemberEmployee": {
+          "is_index": true,
+          "is_need_convert": true,
+          "is_required": false,
+          "api_name": "teamMemberEmployee",
+          "is_unique": false,
+          "define_type": "package",
+          "description": "成员员工",
+          "label": "成员员工",
+          "type": "employee",
+          "is_single": true,
+          "help_text": "成员员工"
+        },
+        "teamMemberRole": {
+          "is_index": true,
+          "is_need_convert": false,
+          "is_required": false,
+          "api_name": "teamMemberRole",
+          "options": [
+            {
+              "label": "负责人",
+              "value": "1"
+            },
+            {
+              "label": "普通成员",
+              "value": "4"
+            }
+          ],
+          "is_unique": false,
+          "define_type": "package",
+          "description": "成员角色",
+          "label": "成员角色",
+          "type": "select_one",
+          "help_text": "成员角色"
+        },
+        "teamMemberPermissionType": {
+          "is_index": true,
+          "is_need_convert": false,
+          "is_required": false,
+          "api_name": "teamMemberPermissionType",
+          "options": [
+            {
+              "label": "只读",
+              "value": "1"
+            },
+            {
+              "label": "读写",
+              "value": "2"
+            }
+          ],
+          "is_unique": false,
+          "define_type": "package",
+          "description": "成员权限类型",
+          "label": "成员权限类型",
+          "type": "select_one",
+          "help_text": "成员权限类型"
+        }
+      },
+      "is_index": false,
+      "is_active": true,
+      "is_unique": false,
+      "label": "相关团队",
+      "type": "embedded_object_list",
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "relevant_team",
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": false,
+      "help_text": "相关团队",
+      "status": "new"
+    },
+    "owner": {
+      "is_index": true,
+      "is_active": true,
+      "is_unique": false,
+      "label": "负责人",
+      "type": "employee",
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "owner",
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": true,
+      "config": {
+        "add": 0,
+        "edit": 0,
+        "enable": 0,
+        "display": 1,
+        "remove": 0,
+        "attrs": {
+          "label": 0
+        }
+      },
+      "help_text": "",
+      "status": "new"
+    },
+    "lock_status": {
+      "is_index": true,
+      "is_active": true,
+      "description": "锁定状态",
+      "is_unique": false,
+      "default_value": "0",
+      "label": "锁定状态",
+      "type": "select_one",
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "lock_status",
+      "options": [
+        {
+          "label": "未锁定",
+          "value": "0"
+        },
+        {
+          "label": "锁定",
+          "value": "1"
+        }
+      ],
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": false,
+      "config": {},
+      "status": "new"
+    },
+    "life_status": {
+      "is_index": true,
+      "is_active": true,
+      "description": "",
+      "is_unique": false,
+      "default_value": "normal",
+      "label": "生命状态",
+      "type": "select_one",
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "life_status",
+      "options": [
+        {
+          "label": "未生效",
+          "value": "ineffective"
+        },
+        {
+          "label": "审核中",
+          "value": "under_review"
+        },
+        {
+          "label": "正常",
+          "value": "normal"
+        },
+        {
+          "label": "变更中",
+          "value": "in_change"
+        },
+        {
+          "label": "作废",
+          "value": "invalid"
+        }
+      ],
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": false,
+      "config": {
+        "add": 0,
+        "edit": 0,
+        "enable": 0,
+        "display": 1,
+        "remove": 0,
+        "attrs": {
+          "is_required": 0,
+          "options": 0,
+          "default_value": 0,
+          "label": 0,
+          "help_text": 0
+        }
+      },
+      "help_text": "",
+      "status": "new"
+    },
+    "record_type": {
+      "is_index": true,
+      "is_active": true,
+      "description": "record_type",
+      "is_unique": false,
+      "label": "业务类型",
+      "type": "record_type",
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "record_type",
+      "options": [
+        {
+          "is_active": true,
+          "api_name": "default__c",
+          "description": "预设业务类型",
+          "label": "预设业务类型"
+        }
+      ],
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": false,
+      "config": {
+        "add": 0,
+        "edit": 0,
+        "enable": 0,
+        "display": 1,
+        "remove": 0,
+        "attrs": {
+          "label": 0
+        }
+      },
+      "help_text": "",
+      "status": "released"
+    },
+    "extend_obj_data_id": {
+      "default_is_expression": false,
+      "is_index": false,
+      "is_active": true,
+      "pattern": "",
+      "description": "extend_obj_data_id",
+      "default_value": "",
+      "type": "text",
+      "label": "extend_obj_data_id",
+      "default_to_zero": false,
+      "is_required": false,
+      "api_name": "extend_obj_data_id",
+      "define_type": "package",
+      "help_text": "",
+      "max_length": 100,
+      "status": "released",
+      "is_extend": false
+    },
+    "lock_user": {
+      "is_index": false,
+      "is_active": true,
+      "description": "加锁人",
+      "is_unique": false,
+      "label": "加锁人",
+      "type": "employee",
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "lock_user",
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": true,
+      "status": "new"
+    },
+    "lock_rule": {
+      "is_index": false,
+      "is_active": true,
+      "description": "锁定规则",
+      "is_unique": false,
+      "default_value": "default_lock_rule",
+      "rules": [],
+      "label": "锁定规则",
+      "type": "lock_rule",
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "lock_rule",
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": false,
+      "status": "new"
+    },
+    "life_status_before_invalid": {
+      "is_index": false,
+      "is_active": true,
+      "pattern": "",
+      "description": "作废前生命状态",
+      "is_unique": false,
+      "label": "作废前生命状态",
+      "type": "text",
+      "is_need_convert": false,
+      "is_required": false,
+      "api_name": "life_status_before_invalid",
+      "define_type": "package",
+      "is_index_field": false,
+      "is_single": false,
+      "max_length": 256,
+      "status": "new"
+    },
+    "owner_department": {
+      "default_is_expression": false,
+      "pattern": "",
+      "is_unique": false,
+      "type": "text",
+      "default_to_zero": false,
+      "is_required": false,
+      "define_type": "package",
+      "is_single": true,
+      "max_length": 100,
+      "is_index": true,
+      "is_active": true,
+      "default_value": "",
+      "label": "负责人主属部门",
+      "is_need_convert": false,
+      "api_name": "owner_department",
+      "is_index_field": false,
+      "config": {
+        "add": 0,
+        "edit": 0,
+        "enable": 0,
+        "display": 1,
+        "remove": 0,
+        "attrs": {
+          "label": 0
+        }
+      },
+      "help_text": "",
+      "status": "new"
+    }
+  },
+  "index_version": 1,
+  "api_name": "TieredPriceBookRuleObj",
+  "display_name": "阶梯价目表规则",
+  "package": "CRM",
+  "define_type": "package",
+  "is_active": true,
+  "store_table_name": "tiered_price_book_rule",
+  "is_deleted": false,
+  "config": {
+    "record_type": {
+      "add": 0,
+      "assign": 0
+    }
+  }
+}

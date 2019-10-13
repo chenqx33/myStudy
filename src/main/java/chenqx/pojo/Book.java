@@ -1,40 +1,50 @@
 package chenqx.pojo;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.net.InetAddress;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class Book {
-    @Builder.Default
-    private String auth="1";
-    private String name="2";
+@Setter
+@Getter
+public class Book implements Serializable {
+    private String auth;
+    private String name;
 
-
-
-
-    public static void main(String[] args) {
-
-        InetAddress ia=null;
-        try {
-            ia=ia.getLocalHost();
-
-            String localname=ia.getHostName();
-            String localip=ia.getHostAddress();
-            String canonicalHostName = ia.getCanonicalHostName();
-            System.out.println("本机名称是："+ localname);
-            System.out.println("本机的ip是 ："+localip);
-            System.out.println("canonicalHostName ："+canonicalHostName);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+    public void service() {
+        System.out.println("作者：" + auth);
+        System.out.println("书名：" + name);
     }
 
+    public Book(String auth, String name) {
+        this.auth = auth;
+        this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        return auth.contains("zuozhe") ? 123 : super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return auth.equals(((Book)obj).getAuth());
+    }
+
+    public static Object ofList(List<Book> bookList){
+        return JSON.toJSON(bookList);
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Book> books = Lists.newArrayList(new Book("1", "1"), new Book("2", "2"));
+        Object o = Book.ofList(books);
+        System.out.println((List<HashMap>)o);
+    }
 }

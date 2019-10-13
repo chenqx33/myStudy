@@ -2,11 +2,9 @@ package chenqx.newTest;
 
 import chenqx.pojo.Obj;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.common.util.concurrent.RateLimiter;
 import org.junit.Test;
 
-import java.math.BigDecimal;
 import java.text.MessageFormat;
 import java.util.List;
 import java.util.Map;
@@ -105,12 +103,17 @@ public class Test5 {
 
     @Test
     public void should(){
-        System.out.println(Sets.newHashSet("".split(",")));
+//        System.out.println(Sets.newHashSet("".split(",")));
         System.out.println(MessageFormat.format("{0},{0},{1}","1","2"));
-        String s = null;
+//        String s = null;
 //        System.out.println(new BigDecimal(s));
 //        System.out.println(new BigDecimal(null));
-        System.out.println(new BigDecimal(""));
+//        System.out.println(new BigDecimal(""));
+
+
+//        Map<String,Boolean> map = Maps.newHashMap();
+//        List<String> list = Lists.newArrayList("1");
+//        list.stream().filter(o->map.get(o)).collect(Collectors.toList());
     }
 
 }
