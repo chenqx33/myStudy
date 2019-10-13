@@ -30,13 +30,13 @@ public class Test {
 String json = "{\"parentList\":[{\"name\":\"1\"}],\"name\":\"22\"}"
 ```
 
-1、com.alibaba.fastjson.JSON.parseObject(json, Test.class)
+#### 1、com.alibaba.fastjson.JSON.parseObject(json, Test.class)
 
 用fastjson序列化可以成功，即使Parent没有实现类，
 
 他会制造一个代理对象h（是一个jsonObject）来代理Parent（就是今天出现的那个h），他会代理Parent的4个方法，他会自动解析set，get方法，比如说调用setName11("12")，name代理h这个jsonObject里面 就会增加一个键值对。
 
-2、new GsonBuilder().create().fromJson(json,Test.class)
+#### 2、new GsonBuilder().create().fromJson(json,Test.class)
 
 会报错，会提示接口没有实现类，序列化解析失败
 
