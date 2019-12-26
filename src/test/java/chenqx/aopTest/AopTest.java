@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Proxy;
 
-//https://blog.csdn.net/csujiangyu/article/details/53455094ClassPool
+//https://blog.csdn.net/ZYC88888/article/details/79985231
 public class AopTest {
     //JDK动态代理
     @Test

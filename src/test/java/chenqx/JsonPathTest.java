@@ -45,9 +45,14 @@ public class JsonPathTest {
     }
     @Test
     public void main() {
-        JSONObject remove = remove(jsonObject, JSONObject.class, "$.components[?(@.api_name=='SpecificationValueObj_md_group_component')]" +
-                ".child_components[?(@.ref_object_api_name=='SpecificationValueObj')].child_components[?(@.api_name=='SpecificationValueObj_table_component')].buttons[*]");
-        System.out.println("ff");
+//        JSONObject remove = remove(jsonObject, JSONObject.class, "$.components[?(@.api_name=='SpecificationValueObj_md_group_component')]" +
+//                ".child_components[?(@.ref_object_api_name=='SpecificationValueObj')].child_components[?(@.api_name=='SpecificationValueObj_table_component')].buttons[*]");
+//        remove(jsonObject, JSONObject.class, "$.components[?(@.api_name=='SpecificationValueObj_md_group_component')]" +
+//                ".child_components[?(@.ref_object_api_name=='SpecificationValueObj')].child_components[?(@.api_name=='SpecificationValueObj_table_component')].buttons[?(@.action=='Add'||@.action=='IntelligentForm')]");
+//        Object o = remove(jsonObject, Object.class, "$.buttons[?(@.api_name=='Edit_button_default'||@.label=='更换负责人')]");
+
+
+//        System.out.println(o);
 //        Map<String, Object> map = Maps.newLinkedHashMap();
 //        map.put("field_name", "name");
 //        map.put("is_readonly", true);

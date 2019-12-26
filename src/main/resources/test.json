@@ -1,75 +1,1915 @@
-[
-  {
-    "CategoryID": "cc09a4e2febd4fcf9f9e5cdbad077157",
-    "CategoryCode": "1",
-    "Name": "办公用品",
-    "CategoryOrder": 1,
-    "ParentID": "",
-    "IsDeleted": false,
-    "Children": []
-  },
-  {
-    "CategoryID": "03760aa1bcc6443c876b6a66831ebe43",
-    "CategoryCode": "3",
-    "Name": "服务",
-    "CategoryOrder": 3,
-    "ParentID": "",
-    "IsDeleted": false,
-    "Children": []
-  },
-  {
-    "CategoryID": "f5f11f87b4ba42539f36869dc49294eb",
-    "CategoryCode": "4",
-    "Name": "家用电器",
-    "CategoryOrder": 4,
-    "ParentID": "",
-    "IsDeleted": false,
-    "Children": [
+{
+  "layout": {
+    "buttons": [
       {
-        "CategoryID": "1462b5a3c912417096293b731b634b94",
-        "CategoryCode": "7",
-        "Name": "电冰箱",
-        "CategoryOrder": 1,
-        "ParentID": "f5f11f87b4ba42539f36869dc49294eb",
-        "IsDeleted": false,
-        "Children": []
+        "action_type": "default",
+        "api_name": "Edit_button_default",
+        "action": "Edit",
+        "label": "编辑"
       },
       {
-        "CategoryID": "fac60df5e0bf4ac6841b4e011b4337db",
-        "CategoryCode": "8",
-        "Name": "电视机啊14",
-        "CategoryOrder": 2,
-        "ParentID": "f5f11f87b4ba42539f36869dc49294eb",
-        "IsDeleted": false,
-        "Children": []
+        "action_type": "default",
+        "api_name": "SaleRecord_button_default",
+        "action": "SaleRecord",
+        "label": "销售记录"
+      },
+      {
+        "action_type": "default",
+        "api_name": "Abolish_button_default",
+        "action": "Abolish",
+        "label": "作废"
+      },
+      {
+        "action_type": "default",
+        "api_name": "Lock_button_default",
+        "action": "Lock",
+        "label": "锁定"
+      },
+      {
+        "action_type": "default",
+        "api_name": "Unlock_button_default",
+        "action": "Unlock",
+        "label": "解锁"
       }
-    ]
+    ],
+    "components": [
+      {
+        "buttons": [],
+        "child_components": [
+          {
+            "type": "simple",
+            "order": 0,
+            "header": "顶部信息",
+            "buttons": [],
+            "api_name": "top_info",
+            "is_hidden": false,
+            "field_section": [
+              {
+                "api_name": "detail",
+                "form_fields": [
+                  {
+                    "field_name": "owner",
+                    "render_type": "employee"
+                  },
+                  {
+                    "field_name": "owner_department",
+                    "render_type": "text"
+                  },
+                  {
+                    "field_name": "last_modified_time",
+                    "render_type": "date_time"
+                  },
+                  {
+                    "field_name": "record_type",
+                    "render_type": "record_type"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "type": "group",
+        "api_name": "top_component",
+        "header": "top_component"
+      },
+      {
+        "buttons": [],
+        "child_components": [
+          {
+            "buttons": [
+              {
+                "action_type": "default",
+                "api_name": "AddEvent_button_default",
+                "action": "AddEvent",
+                "label": "销售记录"
+              }
+            ],
+            "type": "related_record",
+            "api_name": "sale_log",
+            "header": "摘要",
+            "fields": {
+              "operation_time": {
+                "render_type": "date_time",
+                "field_name": "create_time"
+              },
+              "message": {
+                "render_type": "text",
+                "field_name": "content"
+              },
+              "user": {
+                "render_type": "employee",
+                "field_name": "sender_id"
+              }
+            },
+            "order": 1,
+            "is_hidden": false
+          },
+          {
+            "field_section": [
+              {
+                "form_fields": [
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "text",
+                    "field_name": "name"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "select_one",
+                    "field_name": "active_status"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "date",
+                    "field_name": "start_date"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "date",
+                    "field_name": "end_date"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "long_text",
+                    "field_name": "remark"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "owner_department"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "select_one",
+                    "field_name": "lock_status"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "department",
+                    "field_name": "dept_range"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "employee",
+                    "field_name": "owner"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "department",
+                    "field_name": "data_own_department"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "record_type",
+                    "field_name": "record_type"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "image",
+                    "field_name": "logoimage__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "text",
+                    "field_name": "vendor_name__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "file_attachment",
+                    "field_name": "field_g1I2j__c"
+                  },
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "true_or_false",
+                    "field_name": "is_validorder"
+                  }
+                ],
+                "api_name": "base_field_section__c",
+                "tab_index": "ltr",
+                "column": 2,
+                "header": "基本信息",
+                "is_show": true
+              },
+              {
+                "form_fields": [
+                  {
+                    "is_readonly": false,
+                    "is_required": true,
+                    "render_type": "use_scope",
+                    "field_name": "account_range"
+                  }
+                ],
+                "api_name": "account_range_section__c",
+                "tab_index": "ltr",
+                "column": 2,
+                "header": "适用客户",
+                "is_show": true
+              },
+              {
+                "form_fields": [
+                  {
+                    "is_readonly": false,
+                    "is_required": false,
+                    "render_type": "use_scope",
+                    "field_name": "partner_range"
+                  }
+                ],
+                "api_name": "partner_range_section__c",
+                "tab_index": "ltr",
+                "column": 2,
+                "header": "适用合作伙伴",
+                "is_show": true
+              },
+              {
+                "form_fields": [
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "employee",
+                    "field_name": "created_by"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "employee",
+                    "field_name": "last_modified_by"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "create_time"
+                  },
+                  {
+                    "is_readonly": true,
+                    "is_required": false,
+                    "render_type": "date_time",
+                    "field_name": "last_modified_time"
+                  }
+                ],
+                "api_name": "sysinfo_section__c",
+                "tab_index": "ltr",
+                "column": 2,
+                "header": "系统信息",
+                "is_show": true
+              }
+            ],
+            "buttons": [],
+            "api_name": "form_component",
+            "is_hidden": false,
+            "header": "详细信息",
+            "type": "form",
+            "order": 2
+          },
+          {
+            "buttons": [],
+            "child_components": [],
+            "type": "multi_table",
+            "api_name": "PriceBookProductObj_md_group_component",
+            "header": "价目表明细",
+            "ref_object_api_name": "PriceBookProductObj",
+            "related_list_name": "target_related_list_pricebookproduct",
+            "field_api_name": "pricebook_id",
+            "order": 3,
+            "is_hidden": false
+          },
+          {
+            "type": "relatedlist",
+            "buttons": [],
+            "relationType": 2,
+            "api_name": "NewOpportunityObj_price_book_id_related_list",
+            "header": "商机2.0",
+            "ref_object_api_name": "NewOpportunityObj",
+            "related_list_name": "price_book_new_opportunity_list",
+            "field_api_name": "price_book_id",
+            "order": 4,
+            "is_hidden": false
+          },
+          {
+            "type": "relatedlist",
+            "buttons": [],
+            "relationType": 2,
+            "api_name": "QuoteObj_price_book_id_related_list",
+            "header": "报价单",
+            "ref_object_api_name": "QuoteObj",
+            "related_list_name": "price_book_quote_list",
+            "field_api_name": "price_book_id",
+            "order": 5,
+            "is_hidden": false
+          },
+          {
+            "type": "relatedlist",
+            "buttons": [],
+            "relationType": 2,
+            "api_name": "SalesOrderObj_price_book_id_related_list",
+            "header": "销售订单",
+            "ref_object_api_name": "SalesOrderObj",
+            "related_list_name": "price_book_sales_order_list",
+            "field_api_name": "price_book_id",
+            "order": 6,
+            "is_hidden": false
+          },
+          {
+            "type": "relatedlist",
+            "buttons": [],
+            "api_name": "BPM_related_list",
+            "header": "流程列表",
+            "ref_object_api_name": "BPM",
+            "related_list_name": "",
+            "order": 7,
+            "is_hidden": false
+          },
+          {
+            "type": "relatedlist",
+            "buttons": [],
+            "api_name": "Approval_related_list",
+            "header": "审批流程",
+            "ref_object_api_name": "Approval",
+            "related_list_name": "",
+            "order": 8,
+            "is_hidden": false
+          },
+          {
+            "buttons": [],
+            "type": "related_record",
+            "api_name": "operation_log",
+            "header": "修改记录",
+            "order": 9,
+            "is_hidden": false
+          }
+        ],
+        "type": "group",
+        "api_name": "middle_component",
+        "header": "middle_component"
+      }
+    ],
+    "last_modified_time": 1566960422280,
+    "is_deleted": false,
+    "version": 8,
+    "create_time": 1533956289219,
+    "_id": "5b6e50c1319d1986ddec5688",
+    "agent_type": null,
+    "is_show_fieldname": null,
+    "layout_description": "价目表默认布局",
+    "api_name": "PriceBookObj_layout_generate_by_UDObjectServer__c",
+    "what_api_name": null,
+    "default_component": "PriceBookProductObj_md_group_component",
+    "config": {
+      "edit": 1,
+      "remove": 0
+    },
+    "top_info": {
+      "type": "simple",
+      "order": 0,
+      "header": "顶部信息",
+      "buttons": [],
+      "api_name": "top_info",
+      "is_hidden": false,
+      "field_section": [
+        {
+          "api_name": "detail",
+          "form_fields": [
+            {
+              "field_name": "owner",
+              "render_type": "employee"
+            },
+            {
+              "field_name": "owner_department",
+              "render_type": "text"
+            },
+            {
+              "field_name": "last_modified_time",
+              "render_type": "date_time"
+            },
+            {
+              "field_name": "record_type",
+              "render_type": "record_type"
+            }
+          ]
+        }
+      ]
+    },
+    "created_by": null,
+    "display_name": "默认布局",
+    "is_default": true,
+    "last_modified_by": "1000",
+    "layout_type": "detail",
+    "package": "CRM",
+    "ref_object_api_name": "PriceBookObj",
+    "tenant_id": "74203",
+    "ui_event_ids": null,
+    "events": [],
+    "layout_rule": []
   },
-  {
-    "CategoryID": "29782e05a64440cc998a06a6a2424ba0",
-    "CategoryCode": "5",
-    "Name": "家居用品",
-    "CategoryOrder": 5,
-    "ParentID": "",
-    "IsDeleted": false,
-    "Children": []
+  "describe": {
+    "tenant_id": "74203",
+    "store_table_name": "price_book",
+    "package": "CRM",
+    "is_active": true,
+    "last_modified_time": 1566960422250,
+    "create_time": 1555937001363,
+    "description": "",
+    "last_modified_by": "1000",
+    "display_name": "价目表",
+    "created_by": "-1000",
+    "version": 7,
+    "index_version": 1,
+    "icon_index": 12,
+    "is_deleted": false,
+    "api_name": "PriceBookObj",
+    "is_udef": true,
+    "define_type": "package",
+    "display_name_r": "价目表",
+    "_id": "5cbdb6e967a7920001983de0",
+    "fields": {
+      "end_date": {
+        "describe_api_name": "PriceBookObj",
+        "default_is_expression": false,
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1536053792156,
+        "description": "",
+        "is_unique": false,
+        "default_value": "",
+        "label": "有效结束时间",
+        "type": "date",
+        "time_zone": "GMT+8",
+        "default_to_zero": false,
+        "is_required": false,
+        "api_name": "end_date",
+        "define_type": "package",
+        "date_format": "yyyy-MM-dd",
+        "_id": "5cbdb6e967a7920001983de1",
+        "is_single": false,
+        "label_r": "有效结束时间",
+        "is_index_field": false,
+        "index_name": "l_1",
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "is_unique": 0,
+            "default_value": 0,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "help_text": "具体时间从所选日期23：59：59结束。如不填，则默认为对启用结束时间没有约束，任何时间都会落在结束时间之前。",
+        "status": "new"
+      },
+      "field_g1I2j__c": {
+        "describe_api_name": "PriceBookObj",
+        "file_amount_limit": 1,
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1561448688012,
+        "description": "",
+        "is_unique": false,
+        "label": "附件",
+        "type": "file_attachment",
+        "field_num": 3,
+        "file_size_limit": 104857600,
+        "is_required": false,
+        "api_name": "field_g1I2j__c",
+        "define_type": "custom",
+        "_id": "5d11d0f0a5083d1e35cca134",
+        "is_extend": true,
+        "is_index_field": false,
+        "is_single": false,
+        "config": {
+          "add": 1,
+          "edit": 1,
+          "enable": 1,
+          "display": 1,
+          "remove": 1,
+          "attrs": {
+            "file_amount_limit": 1,
+            "api_name": 1,
+            "label": 1,
+            "help_text": 1
+          }
+        },
+        "index_name": "a_2",
+        "support_file_types": [],
+        "help_text": "单个文件不得超过100M",
+        "status": "new"
+      },
+      "tenant_id": {
+        "is_index": false,
+        "create_time": 1555937001363,
+        "pattern": "",
+        "is_unique": false,
+        "description": "tenant_id",
+        "label": "tenant_id",
+        "type": "text",
+        "is_need_convert": false,
+        "is_required": true,
+        "api_name": "tenant_id",
+        "define_type": "system",
+        "index_name": "ei",
+        "max_length": 200,
+        "status": "released",
+        "help_text": ""
+      },
+      "lock_rule": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1566785661015,
+        "description": "锁定规则",
+        "is_unique": false,
+        "default_value": "default_lock_rule",
+        "rules": [],
+        "label": "锁定规则",
+        "type": "lock_rule",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "lock_rule",
+        "define_type": "package",
+        "_id": "5d63407da5083d5ac2b9b500",
+        "is_index_field": false,
+        "is_single": false,
+        "label_r": "锁定规则",
+        "index_name": "s_4",
+        "status": "new"
+      },
+      "remark": {
+        "describe_api_name": "PriceBookObj",
+        "expression_type": "long_text",
+        "default_is_expression": false,
+        "pattern": "",
+        "description": "",
+        "is_unique": false,
+        "type": "long_text",
+        "default_to_zero": false,
+        "is_required": false,
+        "define_type": "package",
+        "is_extend": false,
+        "is_single": false,
+        "label_r": "备注",
+        "index_name": "t_3",
+        "max_length": 2000,
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1536053792184,
+        "default_value": "",
+        "label": "备注",
+        "api_name": "remark",
+        "_id": "5cbdb6e967a7920001983de7",
+        "is_index_field": false,
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "is_unique": 0,
+            "default_value": 0,
+            "label": 0,
+            "help_text": 0,
+            "max_length": 0
+          }
+        },
+        "help_text": "",
+        "status": "released"
+      },
+      "lock_user": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1566785661015,
+        "description": "加锁人",
+        "is_unique": false,
+        "label": "加锁人",
+        "type": "employee",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "lock_user",
+        "define_type": "package",
+        "_id": "5d63407da5083d5ac2b9b501",
+        "is_index_field": false,
+        "is_single": true,
+        "label_r": "加锁人",
+        "index_name": "a_3",
+        "status": "new"
+      },
+      "partner_range": {
+        "describe_api_name": "PriceBookObj",
+        "expression_type": "long_text",
+        "default_is_expression": false,
+        "pattern": "",
+        "description": "",
+        "is_unique": false,
+        "type": "use_scope",
+        "is_required": false,
+        "define_type": "package",
+        "is_extend": false,
+        "is_single": false,
+        "label_r": "适用合作伙伴",
+        "index_name": "s_6",
+        "max_length": 50000,
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1555937001330,
+        "default_value": "{\"type\":\"noCondition\",\"value\":\"NONE\"}",
+        "label": "适用合作伙伴",
+        "target_api_name": "PartnerObj",
+        "is_need_convert": false,
+        "api_name": "partner_range",
+        "_id": "5cbdb6e967a7920001983deb",
+        "is_index_field": false,
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "is_unique": 0,
+            "default_value": 0,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "help_text": "满足条件的合作伙伴才会看到该价目表",
+        "status": "released"
+      },
+      "extend_obj_data_id": {
+        "describe_api_name": "PriceBookObj",
+        "default_is_expression": false,
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1536053792193,
+        "pattern": "",
+        "description": "extend_obj_data_id",
+        "is_unique": false,
+        "default_value": "",
+        "label": "extend_obj_data_id",
+        "type": "text",
+        "default_to_zero": false,
+        "is_required": false,
+        "api_name": "extend_obj_data_id",
+        "define_type": "system",
+        "_id": "5cbdb6e967a7920001983dec",
+        "is_extend": false,
+        "is_single": false,
+        "label_r": "extend_obj_data_id",
+        "is_index_field": false,
+        "index_name": "t_1",
+        "max_length": 100,
+        "status": "released",
+        "help_text": ""
+      },
+      "is_validorder": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1566368698614,
+        "description": "当编辑商机2.0、报价单、订单等模块时，而该价目表过期or禁用时，选择是，则按照该价目表来进行校验；选择否，则会提示该价目表已过期。如该价目表已作废或删除，无论该字段选择为是或否，编辑商机2.0、报价单、订单等模块时均会提示该价目表不存在。",
+        "is_unique": false,
+        "default_value": false,
+        "label": "过期或禁用时是否允许用该价目表校验",
+        "type": "true_or_false",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "is_validorder",
+        "options": [
+          {
+            "label": "是",
+            "value": true,
+            "config": {
+              "edit": 1,
+              "enable": 0,
+              "remove": 0
+            }
+          },
+          {
+            "label": "否",
+            "value": false,
+            "config": {
+              "edit": 1,
+              "enable": 0,
+              "remove": 0
+            }
+          }
+        ],
+        "define_type": "package",
+        "_id": "5d5ce3ba319d194c6661b8ca",
+        "is_index_field": false,
+        "is_single": false,
+        "label_r": "过期或禁用时是否允许用该价目表校验",
+        "config": {
+          "add": 0,
+          "edit": 1,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "is_required": 0,
+            "api_name": 0,
+            "options": 0,
+            "is_unique": 1,
+            "default_value": 1,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "index_name": "b_2",
+        "help_text": "当编辑商机2.0、报价单、订单等模块时，而该价目表过期or禁用时，选择是，则按照该价目表来进行校验；选择否，则会提示该价目表已过期。如该价目表已作废或删除，无论该字段选择为是或否，编辑商机2.0、报价单、订单等模块时均会提示该价目表不存在。",
+        "status": "released"
+      },
+      "is_deleted": {
+        "is_index": false,
+        "create_time": 1555937001363,
+        "is_unique": false,
+        "description": "is_deleted",
+        "default_value": false,
+        "label": "is_deleted",
+        "type": "true_or_false",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "is_deleted",
+        "define_type": "system",
+        "index_name": "is_del",
+        "status": "released",
+        "help_text": ""
+      },
+      "dept_range": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1536053792201,
+        "description": "",
+        "is_unique": false,
+        "default_value": "999999",
+        "label": "适用部门",
+        "type": "department",
+        "is_required": true,
+        "api_name": "dept_range",
+        "define_type": "package",
+        "_id": "5cbdb6e967a7920001983dee",
+        "is_extend": false,
+        "is_index_field": false,
+        "is_single": false,
+        "label_r": "适用部门",
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "is_unique": 0,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "index_name": "a_1",
+        "help_text": "",
+        "status": "released"
+      },
+      "life_status_before_invalid": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1566785661015,
+        "pattern": "",
+        "description": "作废前生命状态",
+        "is_unique": false,
+        "label": "作废前生命状态",
+        "type": "text",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "life_status_before_invalid",
+        "define_type": "package",
+        "_id": "5d63407da5083d5ac2b9b503",
+        "is_index_field": false,
+        "is_single": false,
+        "label_r": "作废前生命状态",
+        "index_name": "t_2",
+        "max_length": 256,
+        "status": "new"
+      },
+      "object_describe_api_name": {
+        "is_index": false,
+        "create_time": 1555937001363,
+        "pattern": "",
+        "is_unique": false,
+        "description": "object_describe_api_name",
+        "label": "object_describe_api_name",
+        "type": "text",
+        "is_need_convert": false,
+        "is_required": true,
+        "api_name": "object_describe_api_name",
+        "define_type": "system",
+        "index_name": "api_name",
+        "max_length": 200,
+        "status": "released",
+        "help_text": ""
+      },
+      "owner_department": {
+        "describe_api_name": "PriceBookObj",
+        "default_is_expression": false,
+        "pattern": "",
+        "description": "",
+        "is_unique": false,
+        "type": "text",
+        "default_to_zero": false,
+        "is_required": false,
+        "define_type": "package",
+        "is_extend": false,
+        "is_single": true,
+        "label_r": "负责人所在部门",
+        "index_name": "owner_dept",
+        "max_length": 100,
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1536053792201,
+        "default_value": "",
+        "label": "负责人所在部门",
+        "is_need_convert": false,
+        "api_name": "owner_department",
+        "_id": "5cbdb6e967a7920001983df1",
+        "is_index_field": false,
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "label": 0
+          }
+        },
+        "help_text": "",
+        "status": "released"
+      },
+      "out_owner": {
+        "is_index": false,
+        "create_time": 1555937001363,
+        "is_unique": false,
+        "label": "外部负责人",
+        "type": "employee",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "out_owner",
+        "define_type": "system",
+        "is_single": true,
+        "index_name": "o_owner",
+        "config": {
+          "display": 1
+        },
+        "status": "released",
+        "help_text": ""
+      },
+      "is_standard": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1536053792209,
+        "description": "是否标准价目表",
+        "is_unique": false,
+        "default_value": false,
+        "label": "是否标准价目表",
+        "type": "true_or_false",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "is_standard",
+        "options": [
+          {
+            "label": "是",
+            "value": true,
+            "config": {
+              "edit": 1,
+              "enable": 0,
+              "remove": 0
+            }
+          },
+          {
+            "label": "否",
+            "value": false,
+            "config": {
+              "edit": 1,
+              "enable": 0,
+              "remove": 0
+            }
+          }
+        ],
+        "define_type": "package",
+        "_id": "5cbdb6e967a7920001983df3",
+        "is_extend": false,
+        "is_single": false,
+        "label_r": "是否标准价目表",
+        "is_index_field": false,
+        "index_name": "b_1",
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "options": 0,
+            "is_unique": 0,
+            "default_value": 0,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "help_text": "",
+        "status": "released"
+      },
+      "start_date": {
+        "describe_api_name": "PriceBookObj",
+        "default_is_expression": false,
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1536053792201,
+        "description": "",
+        "is_unique": false,
+        "default_value": "",
+        "label": "有效开始时间",
+        "type": "date",
+        "time_zone": "GMT+8",
+        "default_to_zero": false,
+        "is_required": false,
+        "api_name": "start_date",
+        "define_type": "package",
+        "date_format": "yyyy-MM-dd",
+        "_id": "5cbdb6e967a7920001983df2",
+        "is_single": false,
+        "label_r": "有效开始时间",
+        "is_index_field": false,
+        "index_name": "l_2",
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "is_unique": 0,
+            "default_value": 0,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "help_text": "具体时间从所选日期00：00：00开始。如不填，则默认为对启用开始时间没有约束，任何时间都会落在开始时间之后。",
+        "status": "new"
+      },
+      "owner": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1536053792156,
+        "description": "",
+        "is_unique": false,
+        "label": "负责人",
+        "type": "employee",
+        "is_need_convert": false,
+        "is_required": true,
+        "api_name": "owner",
+        "define_type": "package",
+        "_id": "5cbdb6e967a7920001983de2",
+        "is_extend": false,
+        "is_index_field": false,
+        "is_single": true,
+        "label_r": "负责人",
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "label": 0
+          }
+        },
+        "index_name": "owner",
+        "help_text": "",
+        "status": "released"
+      },
+      "lock_status": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1536053792173,
+        "description": "锁定状态",
+        "is_unique": false,
+        "default_value": "0",
+        "label": "锁定状态",
+        "type": "select_one",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "lock_status",
+        "options": [
+          {
+            "label": "未锁定",
+            "value": "0",
+            "config": {
+              "edit": 0,
+              "enable": 0,
+              "remove": 0
+            }
+          },
+          {
+            "label": "锁定",
+            "value": "1",
+            "config": {
+              "edit": 0,
+              "enable": 0,
+              "remove": 0
+            }
+          }
+        ],
+        "define_type": "package",
+        "_id": "5cbdb6e967a7920001983de4",
+        "is_extend": false,
+        "is_single": false,
+        "label_r": "锁定状态",
+        "is_index_field": false,
+        "index_name": "s_5",
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "is_readonly": 0,
+            "is_required": 0,
+            "api_name": 0,
+            "options": 0,
+            "is_unique": 0,
+            "default_value": 0,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "help_text": "锁定状态",
+        "status": "released"
+      },
+      "package": {
+        "is_index": false,
+        "create_time": 1555937001363,
+        "pattern": "",
+        "is_unique": false,
+        "description": "package",
+        "label": "package",
+        "type": "text",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "package",
+        "define_type": "system",
+        "index_name": "pkg",
+        "max_length": 200,
+        "status": "released",
+        "help_text": ""
+      },
+      "last_modified_time": {
+        "is_index": true,
+        "create_time": 1555937001363,
+        "is_unique": false,
+        "description": "last_modified_time",
+        "label": "最后修改时间",
+        "type": "date_time",
+        "time_zone": "",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "last_modified_time",
+        "define_type": "system",
+        "date_format": "yyyy-MM-dd HH:mm:ss",
+        "index_name": "md_time",
+        "status": "released",
+        "help_text": ""
+      },
+      "logoimage__c": {
+        "describe_api_name": "PriceBookObj",
+        "file_amount_limit": 1,
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1561444966721,
+        "description": "",
+        "is_unique": false,
+        "label": "企业logo",
+        "type": "image",
+        "is_watermark": false,
+        "field_num": 1,
+        "file_size_limit": 20971520,
+        "is_required": false,
+        "api_name": "logoimage__c",
+        "define_type": "custom",
+        "_id": "5d11c266a5083d18056ce74c",
+        "is_extend": true,
+        "is_single": false,
+        "is_index_field": false,
+        "index_name": "a_4",
+        "support_file_types": [
+          "jpg",
+          "gif",
+          "jpeg",
+          "png"
+        ],
+        "config": {
+          "add": 1,
+          "edit": 1,
+          "enable": 1,
+          "display": 1,
+          "remove": 1,
+          "attrs": {
+            "file_amount_limit": 1,
+            "api_name": 1,
+            "label": 1,
+            "is_watermark": 1,
+            "help_text": 1
+          }
+        },
+        "help_text": "单个图片不得超过20M",
+        "status": "new"
+      },
+      "create_time": {
+        "is_index": true,
+        "create_time": 1555937001363,
+        "is_unique": false,
+        "description": "create_time",
+        "label": "创建时间",
+        "type": "date_time",
+        "time_zone": "",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "create_time",
+        "define_type": "system",
+        "date_format": "yyyy-MM-dd HH:mm:ss",
+        "index_name": "crt_time",
+        "status": "released",
+        "help_text": ""
+      },
+      "account_range": {
+        "describe_api_name": "PriceBookObj",
+        "expression_type": "long_text",
+        "default_is_expression": false,
+        "pattern": "",
+        "description": "",
+        "is_unique": false,
+        "type": "use_scope",
+        "default_to_zero": false,
+        "is_required": false,
+        "define_type": "package",
+        "is_extend": false,
+        "is_single": false,
+        "label_r": "适用客户",
+        "index_name": "s_1",
+        "max_length": 256,
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1536053792173,
+        "default_value": "{\"type\":\"noCondition\",\"value\":\"ALL\"}",
+        "label": "适用客户",
+        "target_api_name": "AccountObj",
+        "api_name": "account_range",
+        "_id": "5cbdb6e967a7920001983de5",
+        "is_index_field": false,
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "is_unique": 0,
+            "default_value": 0,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "help_text": "满足条件的客户才会看到该价目表",
+        "status": "released"
+      },
+      "life_status": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1536053792184,
+        "description": "生命状态",
+        "is_unique": false,
+        "default_value": "normal",
+        "label": "生命状态",
+        "type": "select_one",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "life_status",
+        "options": [
+          {
+            "label": "未生效",
+            "value": "ineffective",
+            "config": {
+              "edit": 0,
+              "enable": 0,
+              "remove": 0
+            }
+          },
+          {
+            "label": "审核中",
+            "value": "under_review",
+            "config": {
+              "edit": 0,
+              "enable": 0,
+              "remove": 0
+            }
+          },
+          {
+            "label": "正常",
+            "value": "normal",
+            "config": {
+              "edit": 0,
+              "enable": 0,
+              "remove": 0
+            }
+          },
+          {
+            "label": "变更中",
+            "value": "in_change",
+            "config": {
+              "edit": 0,
+              "enable": 0,
+              "remove": 0
+            }
+          },
+          {
+            "label": "作废",
+            "value": "invalid",
+            "config": {
+              "edit": 0,
+              "enable": 0,
+              "remove": 0
+            }
+          }
+        ],
+        "define_type": "package",
+        "_id": "5cbdb6e967a7920001983de6",
+        "is_extend": false,
+        "is_single": false,
+        "label_r": "生命状态",
+        "is_index_field": false,
+        "index_name": "s_3",
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "is_readonly": 0,
+            "is_required": 0,
+            "api_name": 0,
+            "options": 0,
+            "is_unique": 0,
+            "default_value": 0,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "help_text": "生命状态",
+        "status": "released"
+      },
+      "last_modified_by": {
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1555937001363,
+        "is_unique": false,
+        "label": "最后修改人",
+        "type": "employee",
+        "is_need_convert": true,
+        "is_required": false,
+        "api_name": "last_modified_by",
+        "define_type": "system",
+        "is_single": true,
+        "index_name": "md_by",
+        "status": "released",
+        "help_text": ""
+      },
+      "out_tenant_id": {
+        "is_index": false,
+        "create_time": 1555937001363,
+        "pattern": "",
+        "is_unique": false,
+        "description": "out_tenant_id",
+        "label": "外部企业",
+        "type": "text",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "out_tenant_id",
+        "define_type": "system",
+        "index_name": "o_ei",
+        "config": {
+          "display": 0
+        },
+        "max_length": 200,
+        "status": "released",
+        "help_text": ""
+      },
+      "created_by": {
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1555937001363,
+        "is_unique": false,
+        "label": "创建人",
+        "type": "employee",
+        "is_need_convert": true,
+        "is_required": false,
+        "api_name": "created_by",
+        "define_type": "system",
+        "is_single": true,
+        "index_name": "crt_by",
+        "status": "released",
+        "help_text": ""
+      },
+      "version": {
+        "is_index": false,
+        "create_time": 1555937001363,
+        "length": 8,
+        "is_unique": false,
+        "description": "version",
+        "label": "version",
+        "type": "number",
+        "decimal_places": 0,
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "version",
+        "define_type": "system",
+        "index_name": "version",
+        "round_mode": 4,
+        "status": "released",
+        "help_text": ""
+      },
+      "record_type": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1536053792193,
+        "description": "record_type",
+        "is_unique": false,
+        "label": "业务类型",
+        "type": "record_type",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "record_type",
+        "options": [
+          {
+            "is_active": true,
+            "api_name": "default__c",
+            "description": "预设业务类型",
+            "label": "预设业务类型",
+            "config": {
+              "edit": 1,
+              "enable": 0,
+              "remove": 0
+            }
+          }
+        ],
+        "define_type": "package",
+        "_id": "5cbdb6e967a7920001983dea",
+        "is_extend": false,
+        "is_index_field": false,
+        "is_single": false,
+        "label_r": "业务类型",
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "label": 0
+          }
+        },
+        "index_name": "r_type",
+        "help_text": "",
+        "status": "released"
+      },
+      "relevant_team": {
+        "describe_api_name": "PriceBookObj",
+        "embedded_fields": {
+          "teamMemberEmployee": {
+            "is_index": true,
+            "is_need_convert": true,
+            "is_required": false,
+            "api_name": "teamMemberEmployee",
+            "is_unique": false,
+            "define_type": "package",
+            "description": "成员角色",
+            "label": "成员角色",
+            "type": "employee",
+            "is_single": true,
+            "help_text": "成员角色"
+          },
+          "teamMemberRole": {
+            "is_index": true,
+            "is_need_convert": false,
+            "is_required": false,
+            "api_name": "teamMemberRole",
+            "options": [
+              {
+                "label": "负责人",
+                "value": "1"
+              },
+              {
+                "label": "普通成员",
+                "value": "4"
+              }
+            ],
+            "is_unique": false,
+            "define_type": "package",
+            "description": "成员员工",
+            "label": "成员员工",
+            "type": "select_one",
+            "help_text": "成员员工"
+          },
+          "teamMemberPermissionType": {
+            "is_index": true,
+            "is_need_convert": false,
+            "is_required": false,
+            "api_name": "teamMemberPermissionType",
+            "options": [
+              {
+                "label": "只读",
+                "value": "1"
+              },
+              {
+                "label": "读写",
+                "value": "2"
+              }
+            ],
+            "is_unique": false,
+            "define_type": "package",
+            "description": "成员权限类型",
+            "label": "成员权限类型",
+            "type": "select_one",
+            "help_text": "成员权限类型"
+          }
+        },
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1566785661387,
+        "is_unique": false,
+        "label": "相关团队",
+        "type": "embedded_object_list",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "relevant_team",
+        "define_type": "package",
+        "_id": "5d63407da5083d5ac2b9b502",
+        "is_index_field": false,
+        "is_single": false,
+        "label_r": "相关团队",
+        "index_name": "s_7",
+        "help_text": "相关团队",
+        "status": "new"
+      },
+      "active_status": {
+        "describe_api_name": "PriceBookObj",
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1536053792201,
+        "description": "",
+        "is_unique": false,
+        "default_value": "1",
+        "label": "启用状态",
+        "type": "select_one",
+        "is_required": true,
+        "api_name": "active_status",
+        "options": [
+          {
+            "not_usable": false,
+            "label": "启用",
+            "value": "1",
+            "config": {
+              "edit": 0,
+              "enable": 0,
+              "remove": 0
+            }
+          },
+          {
+            "not_usable": false,
+            "label": "禁用",
+            "value": "0",
+            "config": {
+              "edit": 0,
+              "enable": 0,
+              "remove": 0
+            }
+          }
+        ],
+        "define_type": "package",
+        "_id": "5cbdb6e967a7920001983ded",
+        "is_extend": false,
+        "is_index_field": false,
+        "is_single": false,
+        "label_r": "启用状态",
+        "config": {
+          "add": 0,
+          "edit": 0,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 0,
+            "options": 0,
+            "is_unique": 0,
+            "default_value": 0,
+            "label": 0,
+            "help_text": 0
+          }
+        },
+        "index_name": "s_2",
+        "help_text": "",
+        "status": "released"
+      },
+      "data_own_department": {
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1555937001363,
+        "is_unique": false,
+        "label": "归属部门",
+        "type": "department",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "data_own_department",
+        "define_type": "package",
+        "is_single": true,
+        "index_name": "data_owner_dept_id",
+        "status": "released"
+      },
+      "name": {
+        "describe_api_name": "PriceBookObj",
+        "default_is_expression": false,
+        "pattern": "",
+        "description": "name",
+        "is_unique": true,
+        "type": "text",
+        "default_to_zero": false,
+        "is_required": true,
+        "define_type": "system",
+        "is_extend": false,
+        "is_single": false,
+        "label_r": "价目表名称",
+        "index_name": "name",
+        "max_length": 100,
+        "is_index": true,
+        "is_active": true,
+        "create_time": 1527155150933,
+        "default_value": "",
+        "label": "价目表名称",
+        "api_name": "name",
+        "_id": "5cbdb6e967a7920001983df0",
+        "is_index_field": false,
+        "config": {
+          "add": 0,
+          "edit": 1,
+          "enable": 0,
+          "display": 1,
+          "remove": 0,
+          "attrs": {
+            "api_name": 1,
+            "is_unique": 1,
+            "label": 1,
+            "type": 1,
+            "help_text": 1
+          }
+        },
+        "help_text": "",
+        "status": "released"
+      },
+      "order_by": {
+        "is_index": false,
+        "create_time": 1555937001363,
+        "length": 8,
+        "is_unique": false,
+        "description": "order_by",
+        "label": "order_by",
+        "type": "number",
+        "decimal_places": 0,
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "order_by",
+        "define_type": "system",
+        "index_name": "o_by",
+        "round_mode": 4,
+        "status": "released",
+        "help_text": ""
+      },
+      "vendor_name__c": {
+        "describe_api_name": "PriceBookObj",
+        "default_is_expression": false,
+        "pattern": "",
+        "description": "",
+        "is_unique": false,
+        "type": "text",
+        "default_to_zero": false,
+        "is_required": false,
+        "define_type": "custom",
+        "is_extend": true,
+        "is_single": false,
+        "index_name": "t_4",
+        "max_length": 100,
+        "is_index": false,
+        "is_active": true,
+        "create_time": 1561445157926,
+        "default_value": "",
+        "label": "企业名称",
+        "field_num": 2,
+        "api_name": "vendor_name__c",
+        "_id": "5d11c325a5083d18056d10c7",
+        "is_index_field": false,
+        "config": {
+          "add": 1,
+          "edit": 1,
+          "enable": 1,
+          "display": 1,
+          "remove": 1,
+          "attrs": {
+            "api_name": 1,
+            "is_unique": 1,
+            "default_value": 1,
+            "label": 1,
+            "help_text": 1
+          }
+        },
+        "help_text": "",
+        "status": "new"
+      },
+      "_id": {
+        "is_index": false,
+        "create_time": 1555937001363,
+        "pattern": "",
+        "is_unique": false,
+        "description": "_id",
+        "label": "_id",
+        "type": "text",
+        "is_need_convert": false,
+        "is_required": false,
+        "api_name": "_id",
+        "define_type": "system",
+        "index_name": "_id",
+        "max_length": 200,
+        "status": "released",
+        "help_text": ""
+      }
+    },
+    "release_version": "6.4",
+    "actions": {},
+    "config": {
+      "button": {
+        "add": 1
+      },
+      "layout": {
+        "add": 1,
+        "assign": 1
+      },
+      "layout_rule": {
+        "add": 1
+      },
+      "edit": 1,
+      "cascade": {
+        "add": 1
+      },
+      "rule": {
+        "add": 1
+      },
+      "fields": {
+        "add": 1
+      },
+      "record_type": {
+        "add": 0,
+        "assign": 0
+      }
+    }
   },
-  {
-    "CategoryID": "271eb0a371864f7bb8dbd5b22c1624f9",
-    "CategoryCode": "6",
-    "Name": "交通工具",
-    "CategoryOrder": 6,
-    "ParentID": "",
-    "IsDeleted": false,
-    "Children": []
+  "data": {
+    "lock_rule": null,
+    "partner_range": "{\"type\":\"noCondition\",\"value\":\"NONE\"}",
+    "out_owner__l": [],
+    "extend_obj_data_id": "5d65ecb3a5083dfc382a113b",
+    "is_validorder": false,
+    "created_by__r": {
+      "picAddr": null,
+      "description": null,
+      "dept": null,
+      "supervisorId": null,
+      "title": null,
+      "modifyTime": null,
+      "post": "",
+      "createTime": null,
+      "phone": null,
+      "name": "重构",
+      "nickname": null,
+      "tenantId": null,
+      "id": "1000",
+      "position": null,
+      "email": "xiongt@fxiaoke.com",
+      "status": null
+    },
+    "life_status_before_invalid": null,
+    "owner_department_id": "1003",
+    "owner_department": "华北1区",
+    "lock_status": "0",
+    "package": "CRM",
+    "create_time": 1566960819605,
+    "account_range": "{\"type\":\"noCondition\",\"value\":\"ALL\"}",
+    "lock_user__l": [],
+    "created_by": [
+      "1000"
+    ],
+    "version": "6",
+    "relevant_team": [
+      {
+        "teamMemberEmployee": [
+          "1000"
+        ],
+        "teamMemberRole": "1",
+        "teamMemberRoleList": [
+          "1"
+        ],
+        "teamMemberPermissionType": "2"
+      }
+    ],
+    "data_own_department": null,
+    "name": "价目表-0828",
+    "vendor_name__c": null,
+    "_id": "5d65ecb3a5083dfc382a112b",
+    "data_own_department__l": [],
+    "end_date": 1571328000000,
+    "tenant_id": "74203",
+    "field_g1I2j__c": [],
+    "remark": null,
+    "lock_user": null,
+    "is_deleted": false,
+    "dept_range": [
+      "999999"
+    ],
+    "object_describe_api_name": "PriceBookObj",
+    "owner__l": [
+      {
+        "picAddr": null,
+        "description": null,
+        "dept": null,
+        "supervisorId": null,
+        "title": null,
+        "modifyTime": null,
+        "post": "",
+        "createTime": null,
+        "phone": null,
+        "name": "重构",
+        "nickname": null,
+        "tenantId": null,
+        "id": "1000",
+        "position": null,
+        "email": "xiongt@fxiaoke.com",
+        "status": null
+      }
+    ],
+    "out_owner": null,
+    "relevant_team__r": "重构",
+    "owner__r": {
+      "picAddr": null,
+      "description": null,
+      "dept": null,
+      "supervisorId": null,
+      "title": null,
+      "modifyTime": null,
+      "post": "",
+      "createTime": null,
+      "phone": null,
+      "name": "重构",
+      "nickname": null,
+      "tenantId": null,
+      "id": "1000",
+      "position": null,
+      "email": "xiongt@fxiaoke.com",
+      "status": null
+    },
+    "is_standard": false,
+    "start_date": 1564588800000,
+    "owner": [
+      "1000"
+    ],
+    "last_modified_time": 1567421275314,
+    "logoimage__c": [],
+    "life_status": "normal",
+    "last_modified_by__l": [
+      {
+        "picAddr": null,
+        "description": null,
+        "dept": null,
+        "supervisorId": null,
+        "title": null,
+        "modifyTime": null,
+        "post": "",
+        "createTime": null,
+        "phone": null,
+        "name": "重构",
+        "nickname": null,
+        "tenantId": null,
+        "id": "1000",
+        "position": null,
+        "email": "xiongt@fxiaoke.com",
+        "status": null
+      }
+    ],
+    "created_by__l": [
+      {
+        "picAddr": null,
+        "description": null,
+        "dept": null,
+        "supervisorId": null,
+        "title": null,
+        "modifyTime": null,
+        "post": "",
+        "createTime": null,
+        "phone": null,
+        "name": "重构",
+        "nickname": null,
+        "tenantId": null,
+        "id": "1000",
+        "position": null,
+        "email": "xiongt@fxiaoke.com",
+        "status": null
+      }
+    ],
+    "last_modified_by": [
+      "1000"
+    ],
+    "out_tenant_id": null,
+    "record_type": "default__c",
+    "last_modified_by__r": {
+      "picAddr": null,
+      "description": null,
+      "dept": null,
+      "supervisorId": null,
+      "title": null,
+      "modifyTime": null,
+      "post": "",
+      "createTime": null,
+      "phone": null,
+      "name": "重构",
+      "nickname": null,
+      "tenantId": null,
+      "id": "1000",
+      "position": null,
+      "email": "xiongt@fxiaoke.com",
+      "status": null
+    },
+    "active_status": "0",
+    "dept_range__l": [
+      {
+        "deptName": "全公司",
+        "leaderName": null,
+        "leaderUserId": null,
+        "deptId": "999999",
+        "parentId": null,
+        "status": 0
+      }
+    ],
+    "order_by": null,
+    "dept_range__r": {
+      "deptName": "全公司",
+      "leaderName": null,
+      "leaderUserId": null,
+      "deptId": "999999",
+      "parentId": null,
+      "status": 0
+    }
   },
-  {
-    "CategoryID": "35d82c228dbb4e49b29e6cc143c99789",
-    "CategoryCode": "9",
-    "Name": "马大哈啊啊",
-    "CategoryOrder": 7,
-    "ParentID": "",
-    "IsDeleted": false,
-    "Children": []
-  }
-]
+  "objectDescribeExt": {},
+  "haveDetailObj": true,
+  "isHaveDetailObj": true
+}

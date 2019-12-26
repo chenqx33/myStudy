@@ -264,15 +264,6 @@ public class TestTest {
     }
 
     @Test
-    public void s() {
-        hha h = new hha();
-        System.out.println(h.getA());
-        hhaa.setH("22");
-        System.out.println(h.getA());
-        System.out.println(hhaa.h);
-    }
-
-    @Test
     public void hssss() {
         Long s = null;
 //        System.out.println(new Date().after(new Date(s)));

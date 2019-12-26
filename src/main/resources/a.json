@@ -28,7 +28,7 @@
       "label": "tenant_id",
       "api_name": "tenant_id",
       "description": "tenant_id",
-      "resource_bundle_key": "UnitObj.tenant_id",
+      "resource_bundle_key": "UnitObj.tenant_id11",
       "status": "released",
       "is_extend": false
     },

@@ -4,9 +4,13 @@ import chenqx.pojo.Book;
 import chenqx.pojo.Book1;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import lombok.NonNull;
 import org.junit.Test;
 
-import java.util.*;
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author chenqx
@@ -104,7 +108,41 @@ public class Test6 {
     public void should_hash() {
 
         Integer a = null;
-        Integer b =  1;
-        System.out.println(Integer.max(a,b));
+        Integer b = 1;
+        System.out.println(Integer.max(a, b));
     }
+
+
+    @Test
+    public void should_nonNull() {
+        ss(null);
+
+    }
+
+    private void ss(@NonNull String s) {
+    }
+
+    @Test
+    public void should_add() {
+        double sum = 33.42;
+//        sum += 199.42;
+        sum = sum + 199.42;
+        System.out.println(sum);
+    }
+
+    @Test
+    public void should_add1() {
+        double sum = 33.42;
+        sum = BigDecimal.valueOf(1.0).multiply(BigDecimal.valueOf(199.42)).add(BigDecimal.valueOf(sum)).doubleValue();
+        System.out.println(sum);
+    }
+
+    @Test
+    public void should_big() {
+        Double d = Double.valueOf("33.35");
+        BigDecimal dd = new BigDecimal(d).multiply(new BigDecimal(0.1));
+
+        System.out.println("test G:" + dd.doubleValue());
+    }
+
 }

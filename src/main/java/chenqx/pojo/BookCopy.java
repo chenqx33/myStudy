@@ -1,12 +1,19 @@
 package chenqx.pojo;
 
-import lombok.Data;
+import lombok.experimental.Delegate;
 
-@Data
 public class BookCopy {
-    private String name;
+    @Delegate
+    private Book book;
 
     public BookCopy(){
-        setName("22");
+        book = new Book("1","2");
+    }
+
+
+    public static void main(String[] args) {
+        BookCopy bookCopy = new BookCopy();
+//        System.out.println(bookCopy.getName());
+        System.out.println(bookCopy.getAuth());
     }
 }

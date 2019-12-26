@@ -39,7 +39,7 @@ public class JsonHelper {
             Parent parent = new Child();
 
             if (jsonObject.has("name")) {
-                parent.setName(jsonObject.get("name").getAsString());
+//                parent.setName(jsonObject.get("name").getAsString());
             }
             return parent;
         }

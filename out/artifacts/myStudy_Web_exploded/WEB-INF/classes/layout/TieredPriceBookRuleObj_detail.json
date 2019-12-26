@@ -1,0 +1,189 @@
+{
+  "buttons": [
+    {
+      "action_type": "default",
+      "api_name": "Edit_button_default",
+      "action": "Edit",
+      "label": "编辑"
+    },
+    {
+      "action_type": "default",
+      "api_name": "ChangeOwner_button_default",
+      "action": "ChangeOwner",
+      "label": "更换负责人"
+    }
+  ],
+  "components": [
+    {
+      "field_section": [
+        {
+          "form_fields": [
+            {
+              "is_readonly": false,
+              "is_required": true,
+              "render_type": "master_detail",
+              "field_name": "tiered_price_book_id"
+            },
+            {
+              "is_readonly": false,
+              "is_required": false,
+              "render_type": "select_one",
+              "field_name": "price_type"
+            },
+            {
+              "is_readonly": false,
+              "is_required": false,
+              "render_type": "currency",
+              "field_name": "price"
+            },
+            {
+              "is_readonly": false,
+              "is_required": false,
+              "render_type": "number",
+              "field_name": "start_count"
+            },
+            {
+              "is_readonly": false,
+              "is_required": false,
+              "render_type": "number",
+              "field_name": "end_count"
+            },
+            {
+              "is_readonly": false,
+              "is_required": false,
+              "render_type": "percentile",
+              "field_name": "discount"
+            }
+          ],
+          "api_name": "base_field_section__c",
+          "tab_index": "ltr",
+          "column": 2,
+          "header": "基本信息",
+          "is_show": true
+        },
+        {
+          "form_fields": [
+            {
+              "is_readonly": true,
+              "is_required": false,
+              "render_type": "employee",
+              "field_name": "created_by"
+            },
+            {
+              "is_readonly": true,
+              "is_required": false,
+              "render_type": "employee",
+              "field_name": "last_modified_by"
+            },
+            {
+              "is_readonly": true,
+              "is_required": false,
+              "render_type": "date_time",
+              "field_name": "create_time"
+            },
+            {
+              "is_readonly": true,
+              "is_required": false,
+              "render_type": "date_time",
+              "field_name": "last_modified_time"
+            }
+          ],
+          "api_name": "sysinfo_section__c",
+          "tab_index": "ltr",
+          "column": 2,
+          "header": "系统信息",
+          "is_show": true
+        }
+      ],
+      "buttons": [],
+      "api_name": "form_component",
+      "is_hidden": false,
+      "header": "详细信息",
+      "type": "form",
+      "order": 2
+    },
+    {
+      "buttons": [],
+      "api_name": "sale_log",
+      "is_hidden": false,
+      "header": "摘要",
+      "type": "related_record",
+      "order": 3
+    },
+    {
+      "buttons": [],
+      "api_name": "relevant_team_component",
+      "is_hidden": false,
+      "header": "相关团队",
+      "is_show_avatar": true,
+      "type": "user_list",
+      "order": 4
+    },
+    {
+      "buttons": [],
+      "api_name": "operation_log",
+      "is_hidden": false,
+      "header": "修改记录",
+      "type": "related_record",
+      "fields": {
+        "operation_time": {
+          "render_type": "date_time",
+          "field_name": "operation_time"
+        },
+        "message": {
+          "render_type": "text",
+          "field_name": "log_msg"
+        },
+        "user": {
+          "render_type": "employee",
+          "field_name": "user_id"
+        }
+      },
+      "order": 5
+    }
+  ],
+  "is_deleted": false,
+  "version": 3,
+  "layout_description": "阶梯价目表规则默认布局",
+  "api_name": "TieredPriceBookRuleObj_layout_generate_by_UDObjectServer__c",
+  "config": {
+    "edit": 1,
+    "remove": 0
+  },
+  "top_info": {
+    "type": "simple",
+    "order": 0,
+    "header": "顶部信息",
+    "buttons": [],
+    "api_name": "top_info",
+    "is_hidden": false,
+    "field_section": [
+      {
+        "api_name": "detail",
+        "form_fields": [
+          {
+            "field_name": "owner",
+            "render_type": "employee"
+          },
+          {
+            "field_name": "owner_department",
+            "render_type": "text"
+          },
+          {
+            "field_name": "last_modified_time",
+            "render_type": "date_time"
+          },
+          {
+            "field_name": "record_type",
+            "render_type": "record_type"
+          }
+        ]
+      }
+    ]
+  },
+  "display_name": "默认布局",
+  "is_default": true,
+  "layout_type": "detail",
+  "package": "CRM",
+  "ref_object_api_name": "TieredPriceBookRuleObj"
+}

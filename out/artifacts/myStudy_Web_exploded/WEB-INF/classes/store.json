@@ -1,0 +1,630 @@
+{
+  "buttons": [
+    {
+      "action_type": "default",
+      "api_name": "Edit_button_default",
+      "action": "Edit",
+      "label": "编辑"
+    },
+    {
+      "action_type": "default",
+      "api_name": "ChangeOwner_button_default",
+      "action": "ChangeOwner",
+      "label": "更换负责人"
+    },
+    {
+      "action_type": "default",
+      "api_name": "SaleRecord_button_default",
+      "action": "SaleRecord",
+      "label": "销售记录"
+    },
+    {
+      "action_type": "default",
+      "api_name": "Dial_button_default",
+      "action": "Dial",
+      "label": "打电话"
+    },
+    {
+      "action_type": "default",
+      "api_name": "SendMail_button_default",
+      "action": "SendMail",
+      "label": "发邮件"
+    },
+    {
+      "action_type": "default",
+      "api_name": "Discuss_button_default",
+      "action": "Discuss",
+      "label": "转发"
+    },
+    {
+      "action_type": "default",
+      "api_name": "Schedule_button_default",
+      "action": "Schedule",
+      "label": "日程"
+    },
+    {
+      "action_type": "default",
+      "api_name": "Remind_button_default",
+      "action": "Remind",
+      "label": "提醒"
+    },
+    {
+      "action_type": "default",
+      "api_name": "Abolish_button_default",
+      "action": "Abolish",
+      "label": "作废"
+    },
+    {
+      "action_type": "default",
+      "api_name": "StartBPM_button_default",
+      "action": "StartBPM",
+      "label": "发起流程"
+    },
+    {
+      "action_type": "default",
+      "api_name": "Print_button_default",
+      "action": "Print",
+      "label": "打印"
+    },
+    {
+      "action_type": "default",
+      "api_name": "Lock_button_default",
+      "action": "Lock",
+      "label": "锁定"
+    },
+    {
+      "action_type": "default",
+      "api_name": "Clone_button_default",
+      "action": "Clone",
+      "label": "复制"
+    }
+  ],
+  "components": [
+    {
+      "buttons": [],
+      "child_components": [
+        {
+          "buttons": [
+            {
+              "action_type": "default",
+              "api_name": "Add_button_default",
+              "action": "Add",
+              "label": "新建"
+            },
+            {
+              "action_type": "default",
+              "api_name": "IntelligentForm_button_default",
+              "action": "IntelligentForm",
+              "label": "智能表单"
+            }
+          ],
+          "child_components": [
+            {
+              "buttons": [
+                {
+                  "action_type": "default",
+                  "api_name": "Add_button_default",
+                  "action": "Add",
+                  "label": "新建"
+                },
+                {
+                  "action_type": "default",
+                  "api_name": "IntelligentForm_button_default",
+                  "action": "IntelligentForm",
+                  "label": "智能表单"
+                }
+              ],
+              "type": "table",
+              "api_name": "SpecificationValueObj_table_component",
+              "related_list_name": "target_related_list_specificationvalue",
+              "header": "预设业务类型",
+              "include_fields": [
+                {
+                  "is_readonly": true,
+                  "is_required": true,
+                  "api_name": "name",
+                  "is_show_field_name": false,
+                  "render_type": "text",
+                  "field_name": "name"
+                },
+                {
+                  "is_readonly": true,
+                  "is_required": true,
+                  "api_name": "specification_id",
+                  "is_show_field_name": false,
+                  "render_type": "master_detail",
+                  "field_name": "specification_id"
+                },
+                {
+                  "is_readonly": true,
+                  "is_required": true,
+                  "api_name": "life_status",
+                  "is_show_field_name": false,
+                  "render_type": "select_one",
+                  "field_name": "life_status"
+                },
+                {
+                  "api_name": "order_field",
+                  "render_type": "text",
+                  "field_name": "order_field"
+                },
+                {
+                  "api_name": "owner",
+                  "render_type": "employee",
+                  "field_name": "owner"
+                },
+                {
+                  "api_name": "create_time",
+                  "render_type": "date_time",
+                  "field_name": "create_time"
+                }
+              ],
+              "ref_object_api_name": "default__c"
+            }
+          ],
+          "type": "multi_table",
+          "header": "规格值",
+          "ref_object_api_name": "SpecificationValueObj",
+          "related_list_name": "target_related_list_specificationvalue",
+          "field_api_name": "specification_id"
+        }
+      ],
+      "type": "group",
+      "api_name": "SpecificationValueObj_md_group_component",
+      "header": "规格值",
+      "order": 2,
+      "is_hidden": false
+    },
+    {
+      "buttons": [],
+      "child_components": [
+        {
+          "field_section": [
+            {
+              "form_fields": [
+                {
+                  "is_readonly": false,
+                  "is_required": true,
+                  "render_type": "text",
+                  "field_name": "name"
+                },
+                {
+                  "is_readonly": false,
+                  "is_required": true,
+                  "render_type": "employee",
+                  "field_name": "owner"
+                },
+                {
+                  "is_readonly": false,
+                  "is_required": false,
+                  "render_type": "select_one",
+                  "field_name": "field_nhNn2__c"
+                },
+                {
+                  "is_readonly": false,
+                  "is_required": false,
+                  "render_type": "select_one",
+                  "field_name": "field_hS75o__c"
+                },
+                {
+                  "is_readonly": false,
+                  "is_required": false,
+                  "render_type": "object_reference",
+                  "field_name": "field_9P72c__c",
+                  "target_display_name": "客户"
+                },
+                {
+                  "is_readonly": false,
+                  "is_required": false,
+                  "render_type": "file_attachment",
+                  "field_name": "field_OXbJX__c"
+                }
+              ],
+              "api_name": "base_field_section__c",
+              "tab_index": "ltr",
+              "column": 2,
+              "header": "基本信息",
+              "is_show": true
+            },
+            {
+              "form_fields": [
+                {
+                  "is_readonly": true,
+                  "is_required": false,
+                  "render_type": "employee",
+                  "field_name": "created_by"
+                },
+                {
+                  "is_readonly": true,
+                  "is_required": false,
+                  "render_type": "employee",
+                  "field_name": "last_modified_by"
+                },
+                {
+                  "is_readonly": true,
+                  "is_required": false,
+                  "render_type": "date_time",
+                  "field_name": "create_time"
+                },
+                {
+                  "is_readonly": true,
+                  "is_required": false,
+                  "render_type": "date_time",
+                  "field_name": "last_modified_time"
+                }
+              ],
+              "api_name": "sysinfo_section__c",
+              "tab_index": "ltr",
+              "column": 2,
+              "header": "系统信息",
+              "is_show": true
+            }
+          ],
+          "buttons": [],
+          "api_name": "form_component",
+          "is_hidden": false,
+          "header": "详细信息",
+          "type": "form",
+          "order": 3
+        }
+      ],
+      "type": "group",
+      "api_name": "detailInfo",
+      "header": "详细信息"
+    },
+    {
+      "buttons": [],
+      "child_components": [
+        {
+          "buttons": [
+            {
+              "action_type": "default",
+              "api_name": "AddEvent_button_default",
+              "action": "AddEvent",
+              "label": "新建销售记录"
+            }
+          ],
+          "type": "related_record",
+          "api_name": "sale_log",
+          "header": "相关",
+          "fields": {
+            "operation_time": {
+              "render_type": "date_time",
+              "field_name": "create_time"
+            },
+            "message": {
+              "render_type": "text",
+              "field_name": "content"
+            },
+            "user": {
+              "render_type": "employee",
+              "field_name": "sender_id"
+            }
+          },
+          "order": 1,
+          "is_hidden": false
+        },
+        {
+          "buttons": [
+            {
+              "action_type": "default",
+              "api_name": "AddTeamMember_button_default",
+              "action": "AddTeamMember",
+              "label": "添加团队成员"
+            },
+            {
+              "action_type": "default",
+              "api_name": "EditTeamMember_button_default",
+              "action": "EditTeamMember",
+              "label": "编辑团队成员"
+            },
+            {
+              "action_type": "default",
+              "api_name": "DeleteTeamMember_button_default",
+              "action": "DeleteTeamMember",
+              "label": "删除团队成员"
+            }
+          ],
+          "type": "user_list",
+          "api_name": "relevant_team_component",
+          "header": "相关团队",
+          "is_show_avatar": true,
+          "include_fields": [
+            {
+              "embedded_fields": [
+                {
+                  "employee_render_type": "text",
+                  "employee_render_fields": "name",
+                  "label": "姓名",
+                  "render_type": "employee_nest",
+                  "field_name": "teamMemberEmployee"
+                },
+                {
+                  "employee_render_type": "text",
+                  "employee_render_fields": "post",
+                  "label": "职位",
+                  "render_type": "employee_nest",
+                  "field_name": "teamMemberEmployee"
+                },
+                {
+                  "label": "成员员工",
+                  "render_type": "select_one",
+                  "field_name": "teamMemberRole"
+                },
+                {
+                  "label": "成员权限类型",
+                  "render_type": "select_one",
+                  "field_name": "teamMemberPermissionType"
+                }
+              ],
+              "render_type": "embedded_object_list",
+              "field_name": "relevant_team"
+            }
+          ],
+          "order": 4,
+          "is_hidden": false
+        },
+        {
+          "type": "relatedlist",
+          "buttons": [
+            {
+              "action_type": "default",
+              "api_name": "AccountObj_Add_button_default",
+              "action": "Add",
+              "label": "新建"
+            },
+            {
+              "action_type": "default",
+              "api_name": "AccountObj_BulkRelate_button_default",
+              "action": "BulkRelate",
+              "label": "关联"
+            },
+            {
+              "action_type": "default",
+              "api_name": "AccountObj_BulkDisRelate_button_default",
+              "action": "BulkDisRelate",
+              "label": "解除关联"
+            },
+            {
+              "action_type": "default",
+              "api_name": "AccountObj_IntelligentForm_button_default",
+              "action": "IntelligentForm",
+              "label": "智能表单"
+            }
+          ],
+          "relationType": 2,
+          "api_name": "AccountObj_UDLookUp1__c_related_list",
+          "header": "查找关联规格",
+          "ref_object_api_name": "AccountObj",
+          "related_list_name": "target_related_list_tP1wc__c",
+          "field_api_name": "UDLookUp1__c",
+          "include_fields": [
+            {
+              "label": "客户名称",
+              "field_name": "name",
+              "render_type": "text"
+            },
+            {
+              "label": "创建时间",
+              "field_name": "create_time",
+              "render_type": "date_time"
+            }
+          ],
+          "order": 6,
+          "is_hidden": false
+        },
+        {
+          "type": "relatedlist",
+          "buttons": [
+            {
+              "action_type": "default",
+              "api_name": "Add_button_default",
+              "action": "Add",
+              "label": "新建"
+            },
+            {
+              "action_type": "default",
+              "api_name": "BulkRelate_button_default",
+              "action": "BulkRelate",
+              "label": "关联"
+            },
+            {
+              "action_type": "default",
+              "api_name": "BulkDisRelate_button_default",
+              "action": "BulkDisRelate",
+              "label": "解除关联"
+            },
+            {
+              "action_type": "default",
+              "api_name": "IntelligentForm_button_default",
+              "action": "IntelligentForm",
+              "label": "智能表单"
+            }
+          ],
+          "relationType": 2,
+          "api_name": "object_ivqaU__c_field_t27nk__c_related_list",
+          "header": "zcy-20181121",
+          "ref_object_api_name": "object_ivqaU__c",
+          "related_list_name": "target_related_list_2SvB4__c",
+          "field_api_name": "field_t27nk__c",
+          "include_fields": [
+            {
+              "label": "主属性",
+              "field_name": "name",
+              "render_type": "text"
+            },
+            {
+              "label": "负责人",
+              "field_name": "owner",
+              "render_type": "employee"
+            },
+            {
+              "label": "创建时间",
+              "field_name": "create_time",
+              "render_type": "date_time"
+            }
+          ],
+          "order": 7,
+          "is_hidden": false
+        },
+        {
+          "type": "relatedlist",
+          "buttons": [],
+          "api_name": "BPM_related_list",
+          "header": "流程列表",
+          "ref_object_api_name": "BPM",
+          "related_list_name": "",
+          "order": 8,
+          "is_hidden": false
+        },
+        {
+          "type": "relatedlist",
+          "buttons": [],
+          "api_name": "Approval_related_list",
+          "header": "审批流程",
+          "ref_object_api_name": "Approval",
+          "related_list_name": "",
+          "order": 9,
+          "is_hidden": false
+        }
+      ],
+      "type": "group",
+      "api_name": "relatedObject",
+      "header": "相关"
+    },
+    {
+      "type": "simple",
+      "order": 0,
+      "header": "顶部信息",
+      "buttons": [],
+      "api_name": "top_info",
+      "is_hidden": false,
+      "field_section": [
+        {
+          "api_name": "detail",
+          "form_fields": [
+            {
+              "field_name": "owner",
+              "render_type": "employee"
+            },
+            {
+              "field_name": "owner_department",
+              "render_type": "text"
+            },
+            {
+              "field_name": "last_modified_time",
+              "render_type": "date_time"
+            },
+            {
+              "field_name": "record_type",
+              "render_type": "record_type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "buttons": [],
+      "child_components": [
+        {
+          "buttons": [],
+          "type": "related_record",
+          "api_name": "operation_log",
+          "header": "修改记录",
+          "fields": {
+            "operation_time": {
+              "render_type": "date_time",
+              "field_name": "operation_time"
+            },
+            "message": {
+              "render_type": "text",
+              "field_name": "log_msg"
+            },
+            "user": {
+              "render_type": "employee",
+              "field_name": "user_id"
+            }
+          },
+          "order": 5,
+          "is_hidden": false
+        },
+        {
+          "buttons": [],
+          "type": "related_record",
+          "api_name": "operation_log_SpecificationValueObj",
+          "header": "规格值",
+          "fields": {
+            "operation_time": {
+              "render_type": "date_time",
+              "field_name": "operation_time"
+            },
+            "message": {
+              "render_type": "text",
+              "field_name": "log_msg"
+            },
+            "user": {
+              "render_type": "employee",
+              "field_name": "user_id"
+            }
+          },
+          "order": 10,
+          "is_hidden": false,
+          "detailApiName": "SpecificationValueObj"
+        }
+      ],
+      "type": "group",
+      "api_name": "otherInfo",
+      "header": "其他信息"
+    }
+  ],
+  "last_modified_time": 1543229988252,
+  "is_deleted": false,
+  "version": 22,
+  "create_time": 1540451381427,
+  "_id": "5bd16c35319d19b484496285",
+  "layout_description": "规格默认布局",
+  "api_name": "SpecificationObj_layout_generate_by_UDObjectServer__c",
+  "default_component": "SpecificationValueObj_md_group_component",
+  "config": {
+    "edit": 1,
+    "remove": 0
+  },
+  "top_info": {
+    "type": "simple",
+    "order": 0,
+    "header": "顶部信息",
+    "buttons": [],
+    "api_name": "top_info",
+    "is_hidden": false,
+    "field_section": [
+      {
+        "api_name": "detail",
+        "form_fields": [
+          {
+            "field_name": "owner",
+            "render_type": "employee"
+          },
+          {
+            "field_name": "owner_department",
+            "render_type": "text"
+          },
+          {
+            "field_name": "last_modified_time",
+            "render_type": "date_time"
+          },
+          {
+            "field_name": "record_type",
+            "render_type": "record_type"
+          }
+        ]
+      }
+    ]
+  },
+  "display_name": "默认布局",
+  "is_default": true,
+  "last_modified_by": "1000",
+  "layout_type": "detail",
+  "package": "CRM",
+  "ref_object_api_name": "SpecificationObj",
+  "tenant_id": "71568"
+}
