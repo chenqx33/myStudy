@@ -18,10 +18,10 @@ import java.util.List;
 @NoArgsConstructor
 public class POJO {
     private List<String> ss = Lists.newArrayList();
+    private boolean boo;
 
     public static void main(String[] args) {
-        POJO build = POJO.builder().ss(Lists.newArrayList()).build();
-        System.out.println(build.getSs());
-        System.out.println(new POJO().getSs());
+        POJO pojo = new POJO();
+        System.out.println(pojo.isBoo());
     }
 }

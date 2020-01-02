@@ -32,7 +32,7 @@ public class Book implements Serializable {
 
     @Override
     public int hashCode() {
-        return auth.contains("zuozhe") ? 123 : super.hashCode();
+        return this.auth.hashCode();
     }
 
     @Override

@@ -475,4 +475,16 @@ public class NewTest {
         System.out.println(jsonObject.size());
         System.out.println(jsonObject);
     }
+
+    private List<String> show(List<String> list ){
+        return Lists.newArrayList(list.get(0));
+    }
+    @Test
+    public void should_show() throws InterruptedException {
+        while (true){
+            Thread.sleep(1000);
+            List<String> show = show(Lists.newArrayList("1", "2", "3"));
+            System.out.println(show);
+        }
+    }
 }
