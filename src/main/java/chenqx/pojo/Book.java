@@ -2,10 +2,7 @@ package chenqx.pojo;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,9 +13,12 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
+@AllArgsConstructor
+@Builder
 public class Book implements Serializable {
     private String auth;
     private String name;
+    private List<String> s = Lists.newArrayList();
 
     public void service() {
         System.out.println("作者：" + auth);

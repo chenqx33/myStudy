@@ -1,7 +1,7 @@
 package chenqx.effectivejava.chapter2.item3;
 
 import java.sql.Connection;
-
+//单例
 public enum MyDataBaseSource {
     DATASOURCE;
 //    private ComboPooledDataSource cpds = null;

@@ -2,11 +2,10 @@ package chenqx.newTest;
 
 
 import chenqx.pojo.Book;
-import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashMap;
 
 /**
  * @author chenqx 2019-11-26
@@ -15,27 +14,12 @@ import java.util.LinkedList;
 public class Test8 {
     @Test
     public void should_(){
-        Book book = new Book();
-        LinkedList<Book> objects = Lists.newLinkedList();
-        for (int i = 0; i < 100000000; i++) {
-            objects.add(book);
-        }
-        objects.get(1).setAuth("1");
-        System.out.println(objects.get(0));
+        HashMap<Book, Object> objectObjectHashMap = Maps.newHashMapWithExpectedSize(2);
+        objectObjectHashMap.put(new Book("2","2"),2);
+        objectObjectHashMap.put(new Book("1","2"),1);
+        objectObjectHashMap.keySet().forEach(o->o.setAuth("1"));
+        Object o = objectObjectHashMap.get(new Book("1", "1"));
+        System.out.println(o);
     }
-    @Test
-    public void should_String(){
-        String s = "1";
-        String ss = "1".intern();
-        System.out.println(s==ss);
 
-    }
-    @Test
-    public void should_for(){
-        ArrayList<Integer> objects = Lists.newArrayList(1,2,3);
-        objects.forEach(o->{
-            if (o==2)return;
-            System.out.println(o);
-        });
-    }
 }

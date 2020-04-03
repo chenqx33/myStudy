@@ -5,18 +5,18 @@ import java.util.Arrays;
 /**
  * 二叉堆本质上是一种完全二叉树，它分为两个类型：最大堆，最小堆
  * 本类采用的是最小堆（都是用数组来存储）
- *
+ * <p>
  * url https://mp.weixin.qq.com/s/cq2EhVtOTzTVpNpLDXfeJg 文中有两个错误
  * 我在下面评论：
  * 仔细的看完了，有收获，代码也跑了。有两个小问题。
-    buildHead方法里面我觉得应该如下：
-    for (int i = (array.length - 2) / 2; i >= 0; i--) {
-        downAdjus(array, i, array.length);
-    }
-    1.因为最后一个非叶子节点的下标不是array.length/2
-
-    2. downAdjus传入的第三个参数应该是总长度，而不是最后一个元素的下标。为什么呢？因为downAdjus中的第一个if中的判断条件 childIndex+1<length
-    而不是小于等于
+ * buildHead方法里面我觉得应该如下：
+ * for (int i = (array.length - 2) / 2; i >= 0; i--) {
+ * downAdjus(array, i, array.length);
+ * }
+ * 1.因为最后一个非叶子节点的下标不是array.length/2
+ * <p>
+ * 2. downAdjus传入的第三个参数应该是总长度，而不是最后一个元素的下标。为什么呢？因为downAdjus中的第一个if中的判断条件 childIndex+1<length
+ * 而不是小于等于
  */
 public class HeapOperator {
 
@@ -53,7 +53,7 @@ public class HeapOperator {
         //默认左儿子<右儿子（不一定存在）
         int minChildIndex = 2 * parentIndex + 1;
         while (minChildIndex < length) {
-            //如果有右孩子，且有孩子小于做孩子的值，则定位到右孩子
+            //如果有右孩子，且又孩子小于左孩子的值，则定位到右孩子
             if (minChildIndex + 1 < length && array[minChildIndex + 1] < array[minChildIndex]) {
                 minChildIndex++;
             }
@@ -70,7 +70,6 @@ public class HeapOperator {
     }
 
     /**
-     *
      * @param array
      */
     public static void buildHeap(int[] array) {
@@ -80,13 +79,29 @@ public class HeapOperator {
         }
     }
 
-    public static void main(String[] args) {
-        int[] array = new int[] {1,3,2,6,5,7,8,9,10,0};
-        upAdjust(array);
-        System.out.println(Arrays.toString(array));
-
-        array = new int[] {7,1,3,10,5,2,8,9,6};
+    public static void heapSort(int[] array) {
+        //1.把无序数组构建成二叉堆
         buildHeap(array);
+        //2.循环删除对顶元素，移动到尾部，调节产生新的对顶
+        for (int i = array.length-1; i > 0; i--) {
+            int temp = array[i];
+            array[i] = array[0];
+            array[0] = temp;
+            downAdjus(array,0,i);
+        }
+    }
+
+
+    public static void main(String[] args) {
+//        int[] array = new int[]{1, 3, 2, 6, 5, 7, 8, 9, 10, 0};
+//        upAdjust(array);
+//        System.out.println(Arrays.toString(array));
+//
+//        array = new int[]{7, 1, 3, 10, 5, 2, 8, 9, 6};
+//        buildHeap(array);
+//        System.out.println(Arrays.toString(array));
+        int[] array = new int[]{1, 3, 2, 6, 5, 7, 8, 9, 10, 0};
+        heapSort(array);
         System.out.println(Arrays.toString(array));
     }
 

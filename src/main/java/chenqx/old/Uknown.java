@@ -5,9 +5,15 @@ package chenqx.old;
  * @date 2018/4/10 16:49
  */
 public class Uknown {
+    static {
+        System.out.println("2");
+    }
+    static {
+        System.out.println("1");
+    }
+
+
     public static void main(String[] args) {
-        String a = "电机风轮";
-        String b = "杨倩产品";
-        System.out.println(a.compareTo(b));
+        System.out.println(3);
     }
 }
