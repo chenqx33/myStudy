@@ -1,6 +1,5 @@
 package chenqx.newTest;
 
-import org.apache.commons.lang.StringEscapeUtils;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -23,6 +22,5 @@ public class Test3 {
 
         StringBuilder stringBuilder = new StringBuilder("123");
         System.out.println(stringBuilder.substring(1));
-        System.out.println(StringEscapeUtils.escapeSql("'B'"));
     }
 }

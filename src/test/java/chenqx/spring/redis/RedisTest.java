@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.redis.core.RedisTemplate;
+import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * @author chenqx 2019-09-29
@@ -20,5 +21,12 @@ public class RedisTest {
         redisTemplate.opsForValue().set("book_1", book);
         Book book1 = (Book) redisTemplate.opsForValue().get("book_1");
         book1.service();
+    }
+    @Test
+    public void ss(){
+
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("spring/applicationContext.xml");
+        JedisPoolConfig redisTemplate = context.getBean(JedisPoolConfig.class);
     }
 }

@@ -1,25 +1,36 @@
+import chenqx.old.SeasonEnum;
+import chenqx.pojo.Book;
+import chenqx.pojo.Child3;
+import chenqx.pojo.Parent3;
+import chenqx.search.impl.Child;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.bytedance.cg.gcrm.common.util.DateUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.junit.Test;
+import org.springframework.data.redis.core.TimeoutUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class NewTest {
@@ -273,14 +284,12 @@ public class NewTest {
     }
 
     @Test
-    public void should_11(){
+    public void should_11() {
         AtomicInteger atomicInteger = new AtomicInteger(0);
         System.out.println(atomicInteger.get());
         System.out.println(atomicInteger.incrementAndGet());
         System.out.println(atomicInteger.get());
     }
-
-
 
 
     @Test
@@ -313,7 +322,7 @@ public class NewTest {
                 JSONObject jsonObject = new JSONObject();
                 Object productId = nameToId.get(productName);
                 JSONObject jsonObject1 = map.get(productId);
-                if (jsonObject1==null) continue;
+                if (jsonObject1 == null) continue;
 //                jsonObject.put("product_id", nameToId.get(productName));
 //                jsonObject.put("pricebook_sellingprice", price);
 //                if (nameToId.get(productName) == null) {
@@ -328,7 +337,7 @@ public class NewTest {
                 jsonObject1.remove("record_type");
                 jsonObject1.remove("field_baseprice__c");
                 jsonObject1.remove("field_finance__c");
-                jsonObject1.put("field_price_list__c",null);
+                jsonObject1.put("field_price_list__c", null);
                 result.add(jsonObject1);
             }
         }
@@ -337,7 +346,7 @@ public class NewTest {
     }
 
     @Test
-    public void should_1(){
+    public void should_1() {
         ArrayList<Object> objects = Lists.newArrayList();
         for (String s : "无铝泡打粉_1*10*2.5kg,干锅酱_1*10*1kg,美味莲藕片_1*4*4kg,卤蛋(新)_1*40*245g,苏伯蛋花汤_1*4*800g,豆浆粉_1*30*300g,速食豆腐花_1*30*260g,北冰洋（橙味）_1*24*330ml,百事可乐_1*24*330ml,冰红茶_1*24*310ml,酸梅汤（桂花山楂乌梅饮料）_1*24*310ml,露露_1*24*240ml,椒叶黄瓜_1*200*30g,面筋_1*100g,椒叶黄瓜_1*10*1kg,凉皮（凉皮+麻酱+秘制料水）_1*10,秘制辣椒油_1*300g,黄豆小咸菜_1*500g,炸豆腐_1*500g,虾仁_1*250g,黑豆五香豆腐丝_1*70*400g,蟹田长粒香_抽真空,美味莲藕段_1*20*500g,嘉多乐扁豆焖面_1*340g,绿茶冰粥底_1*1kg,绿豆沙_1*1kg,酸梅汤_1*1kg,八宝粥_1*840g,红豆薏米美肤粥_1*840g,红枣山药糙米粥_1*840g,南瓜粥_1*840g,皮蛋瘦肉粥_1*840g,小米粥早餐_1*840g,莲子核桃黑米粥_1*840g,凉菜料油_1*1kg,鸡米粥_1*840g,冷冻玉米面浆_1*1.08kg,冻货豆沙包_1*10*80g,冷冻角瓜鸡蛋包_1*10*80g,冷冻香菇油菜包_1*10*80g,冷冻鱼香肉包_1*10*80g,冷冻猪肉大葱包_1*10*80g,冷冻猪肉萝卜包_1*10*80g,冷冻猪肉茄子包_1*10*80g,冷冻猪肉圆白菜粉条包_1*10*80g,冻货-油条面_1*1kg,冷冻马齿苋蒸饺_1*20*32g,冻货三鲜干蒸烧卖_1*24*30g,冷冻酱肉包（新）_1*24*40g,冻货-馒头_1*30*60g,冻货奶黄包_1*15*38g,嘉多乐枣发糕_1*6*50g,冻货豆沙笨笨熊_1*12*38g,冷冻焖面汁_1*1kg,冷冻双椒焖面_1*1kg,袋装扁豆焖面_1*5*300g,嘉多乐扁豆焖面_1*300g,冻货麻辣香锅面_1*360g,嘉多乐（300+60）扁豆焖面_1*360g,嘉多乐扁豆焖面_1*360g,速冻八宝粥_1*840g,速冻荷叶绿豆冰粥_1*840g,速冻红豆薏米美肤粥_1*840g,速冻红枣山药糙米粥_1*840g,速冻蓝莓山药冰粥_1*840g,速冻绿豆粥（热）_1*840g,速冻南瓜粥_1*840g,速冻皮蛋瘦肉粥_1*840g,速冻香甜芒果冰粥_1*840g,速冻小米粥早餐_1*840g,速冻白粥_1*1kg,速冻八宝粥_1*350g,速冻香菇鸡肉粥_1*350g,速冻红豆薏米粥_1*350g,速冻南瓜粥_1*350g,速冻皮蛋瘦肉粥_1*350g,速冻莲子核桃黑米粥_1*840g,冷冻酸菜鱼汤_1*550g,冷冻炒烤松板肉_1*100g,猪肉丸_1*1kg,冷冻小吊梨汤_1*330g,冷冻腊汁酱肉_1*1kg,冻货-豉汁排骨_1*1kg,冻货-紫金凤爪_1*1kg,冻货-香菇卤肉_1*200g,冷冻宫保鸡丁_1*210g,冷冻鱼香肉丝_1*210g,冷冻四喜烤麸_1*250g,冷冻肉丝炒酸菜_1*2*180g,酸菜肉丝汤_1*300g,酸汤鸡丝_1*300g,冷冻蘑菇鸡汤_1*350g,冷冻酸菜肉丝汤_1*350g,冷冻酸汤鸡丝_1*350g,冷冻芽菜肉臊子_1*350g,冷冻金汤_1*400g,冷冻酸汤_1*400g,冷冻丸子汤_1*400g,冷冻鱼香茄子_1*400g,冻货-凉面汁_1*500g,冷冻白灼汁_1*500g,冷冻炖汤（正餐）_1*500g,冷冻酱牛腱_1*500g,冷冻酱肘子_1*500g,冷冻卤汤_1*500g,冷冻卤琵琶腿_1*500g,冻货老北京扣肉（豆皮）_1*180g,冻货鱼香茄子_1*220g,冷冻扬州炒饭_1*450g,冷冻黄焖鸡_1*500g,冷冻五花肉片_1*500g,蘑菇鸡汤_1*300g,冷冻深夜冒菜_1*410g（320g原料+90g酱料）,南瓜发糕_1*8*540g,六和美食玉米蔬菜猪肉蒸饺_1*8*50*20g,六和美食猪肉荠菜蒸饺_1*8*50*20g,六和美食菌菇三鲜蒸饺_1*8*1kg,香糯米藕_1*7kg,素三鲜锅贴_1*6*750g,猪肉圆白菜锅贴_1*6*750g,肉夹馍饼胚_1*6*2kg,30g虾饺_1*6*24,奶香小馒头_1*5*1.5kg,酱香小肉包_1*4*65/23g,小荠菜鸡蛋包_1*4*65/23g,咖喱牛肉包_1*4*65/23g,香菇素菜包_1*4*45/33g,芝麻球（红糖）_1*4*40/56g,菜角（韭菜合子）_1*4*30/85g,火烧饼胚_1*4*30*120g,脆骨肉丸_1*2.5kg,火锅鸭血_1*20*400g,麻酱糖饼_1*300g,手抓饼_1*2*10*300g,上海灌汤包_1*18*360g,三全三鲜馄饨_1*16*500g,奥尔良风味鸡肉蔬菜卷饼_1*15*700g,香菇青菜包_1*12*800g,酱香肉包_1*12*800g,12个荠菜包（38g）_1*12*465g,梅干菜包_1*12*360g,新盐酥鸡_1*12*1kg,葱油饼（新）_1*12*1.2kg,牛肉馅饼_1*12*1.25kg,冻带鱼_1*10kg,三鲜蒸饺_1*10*900g,糯米烧卖_1*10*800g,荠菜鸡蛋包_1*10*800g,翅中_1*10*1kg,小酥肉（美好）_1*10*1kg,雪花鸡柳_1*10*1kg,台湾肉粒肠（德式风味）_1*10*1000g,冷冻口水鸡汁_1*400g,速冻鸡米粥_1*840g,速冻南瓜粥（嘉多乐）_1*450g,速冻八宝粥（嘉多乐）_1*450g,冷冻红烧丸子_1*270g,冷冻麻辣牛肉汤（新）JYB_1*380g,墨鱼风味丸串_1*10*800g".split(",")) {
             objects.add(nameToId.get(s));
@@ -347,7 +356,7 @@ public class NewTest {
     }
 
     @Test
-    public void should_ss(){
+    public void should_ss() {
         //0.2==0.20
         System.out.println(new BigDecimal("0.2")
                 .equals(new BigDecimal("0.20")));
@@ -389,7 +398,7 @@ public class NewTest {
                 }
                 jsonObject1.put("field_price_list__c", salesPriceBookId);
                 if (salesPriceBookId == null) {
-                    System.out.println("!!!!"+productName);
+                    System.out.println("!!!!" + productName);
                 }
                 result.add(jsonObject1);
             }
@@ -399,7 +408,7 @@ public class NewTest {
     }
 
     @Test
-    public void should_1111(){
+    public void should_1111() {
         JSONObject jsonObject = JSON.parseObject("{\n" +
                 "    \"78005\": 1,\n" +
                 "    \"114608\": 1,\n" +
@@ -467,7 +476,7 @@ public class NewTest {
                 "    \"683186\": 3,\n" +
                 "    \"683827\": 3\n" +
                 "}");
-        ArrayList<Object> objects = Lists.newArrayList("662502","662503","662505","662506","662507","662508","662509","662510","662511","662512","662514","662515","662516","662518","662519","662520","662521","662522","662523","662524","662945","662946","662947","662948","662949","662950","662951","662952","662953","662954","662955","662956","662957","662958","662959","662960","662961","662962","662963","662964","662965","662966","662967","662968","662969","662971","662972","662973","662974","662975","662976","662977","662978","662979","662980","662981","662982","662983","662984","662985","662986","662987","662988","662989","662990","662991","662992","662993","662994","662995","662996","662997","662998","662999","663000","663001","663002","663003","663004","663005","663006","663007","663008","663009","663010","663011","663012","663013","663014","663015","663016","663017","663018","663019","663020","663021","663022","663023","663024","663025","663026","663027","663028","663029","663030","663031","663032","663033","663034","663035","663036","663037","663038","663039","663040","663041","663042","663043","663046","663047","663048","663049","663050","663051","663052","663053","663054","663055","663056","663057","663058","663059","663060","663061","663062","663063","663064","663065","663066","663067","663068","663069","663070","663071","663072","663073","663074","663075","663076","663077","663078","663079","663080","663081","663082","663083","663084","663085","663086","663087","663088","663089","663090","663091","663092","663093","663094","663095","663096","663097","663098","663099","663100","663101","663102","663103","663104","663105","663106","663107","663108","663109","663110","663111","663112","663113","663114","663115","663117","663118","663119","663120","663121","663122","663123","663124","663125","663044","663045","663116","679400","679401","679402","679403","679404","679405","679406","679407","679408","679409","679410","679411","679412","679413","679414","679415","679416","679417","679418","679419","679420","679421","679422","679423","679424","679425","679426","679427","679428","679429","679430","679431","679432","679433","679434","679435","679436","679437","679438","679439","679440","679441","679442","679443","679444","679445","679446","679447","679448","679449","679450","679451","679452","679453","679454","679455","679456","679457","679458","679459","679460","679461","679462","679463","679464","679465","679466","679467","679468","679469","679470","679471","679472","679473","679474","679475","679476","679477","679478","679479","679480","679481","679482","679483","679484","679485","679486","679487","679488","679489","679490","679491","679492","679493","679494","679495","679496","679497","679498","679499","679500","679501","679502","679503","679504","679505","683624","683625","683626","683627","683628","683629","683630","683631","683632","683633","683634","683635","683636","683637","683638","683639","683640","683641","683642","683643","683644","683645","683646","683647","683648","683649","683650","683651","683652","683653","683654","683655","683656","683657","683658","683659","683660","683661","683662","683663","683664","683665","683666","683667","683668","683669","683670","683671","683672","683673","683674","683675","683676","683677","683678","683679","683680","683681","683682","683683","683684","683685","683686","683687","683688","683689","683690","683691","683692","683693","683694","683695","683696","683697","683698","683699","683700","683701","683702","683703","683704","683705","683706","683707","683708","683709","683710","683711","683712","683713","683714","683715","683716","683717","683718","683719","683720","683721","683722","683723","683724","683725","683726","683727","683728","683729","683730","683731","683732","683733","683734","683735","683736","683737","683738","683739","683740","683741","683742","683743","683744","683745","683746","683747","683748","683749","683750","683751","683752","683753","683754","683755","683756","683757","683758","683759","683760","683761","683762","683763","683764","670799");
+        ArrayList<Object> objects = Lists.newArrayList("662502", "662503", "662505", "662506", "662507", "662508", "662509", "662510", "662511", "662512", "662514", "662515", "662516", "662518", "662519", "662520", "662521", "662522", "662523", "662524", "662945", "662946", "662947", "662948", "662949", "662950", "662951", "662952", "662953", "662954", "662955", "662956", "662957", "662958", "662959", "662960", "662961", "662962", "662963", "662964", "662965", "662966", "662967", "662968", "662969", "662971", "662972", "662973", "662974", "662975", "662976", "662977", "662978", "662979", "662980", "662981", "662982", "662983", "662984", "662985", "662986", "662987", "662988", "662989", "662990", "662991", "662992", "662993", "662994", "662995", "662996", "662997", "662998", "662999", "663000", "663001", "663002", "663003", "663004", "663005", "663006", "663007", "663008", "663009", "663010", "663011", "663012", "663013", "663014", "663015", "663016", "663017", "663018", "663019", "663020", "663021", "663022", "663023", "663024", "663025", "663026", "663027", "663028", "663029", "663030", "663031", "663032", "663033", "663034", "663035", "663036", "663037", "663038", "663039", "663040", "663041", "663042", "663043", "663046", "663047", "663048", "663049", "663050", "663051", "663052", "663053", "663054", "663055", "663056", "663057", "663058", "663059", "663060", "663061", "663062", "663063", "663064", "663065", "663066", "663067", "663068", "663069", "663070", "663071", "663072", "663073", "663074", "663075", "663076", "663077", "663078", "663079", "663080", "663081", "663082", "663083", "663084", "663085", "663086", "663087", "663088", "663089", "663090", "663091", "663092", "663093", "663094", "663095", "663096", "663097", "663098", "663099", "663100", "663101", "663102", "663103", "663104", "663105", "663106", "663107", "663108", "663109", "663110", "663111", "663112", "663113", "663114", "663115", "663117", "663118", "663119", "663120", "663121", "663122", "663123", "663124", "663125", "663044", "663045", "663116", "679400", "679401", "679402", "679403", "679404", "679405", "679406", "679407", "679408", "679409", "679410", "679411", "679412", "679413", "679414", "679415", "679416", "679417", "679418", "679419", "679420", "679421", "679422", "679423", "679424", "679425", "679426", "679427", "679428", "679429", "679430", "679431", "679432", "679433", "679434", "679435", "679436", "679437", "679438", "679439", "679440", "679441", "679442", "679443", "679444", "679445", "679446", "679447", "679448", "679449", "679450", "679451", "679452", "679453", "679454", "679455", "679456", "679457", "679458", "679459", "679460", "679461", "679462", "679463", "679464", "679465", "679466", "679467", "679468", "679469", "679470", "679471", "679472", "679473", "679474", "679475", "679476", "679477", "679478", "679479", "679480", "679481", "679482", "679483", "679484", "679485", "679486", "679487", "679488", "679489", "679490", "679491", "679492", "679493", "679494", "679495", "679496", "679497", "679498", "679499", "679500", "679501", "679502", "679503", "679504", "679505", "683624", "683625", "683626", "683627", "683628", "683629", "683630", "683631", "683632", "683633", "683634", "683635", "683636", "683637", "683638", "683639", "683640", "683641", "683642", "683643", "683644", "683645", "683646", "683647", "683648", "683649", "683650", "683651", "683652", "683653", "683654", "683655", "683656", "683657", "683658", "683659", "683660", "683661", "683662", "683663", "683664", "683665", "683666", "683667", "683668", "683669", "683670", "683671", "683672", "683673", "683674", "683675", "683676", "683677", "683678", "683679", "683680", "683681", "683682", "683683", "683684", "683685", "683686", "683687", "683688", "683689", "683690", "683691", "683692", "683693", "683694", "683695", "683696", "683697", "683698", "683699", "683700", "683701", "683702", "683703", "683704", "683705", "683706", "683707", "683708", "683709", "683710", "683711", "683712", "683713", "683714", "683715", "683716", "683717", "683718", "683719", "683720", "683721", "683722", "683723", "683724", "683725", "683726", "683727", "683728", "683729", "683730", "683731", "683732", "683733", "683734", "683735", "683736", "683737", "683738", "683739", "683740", "683741", "683742", "683743", "683744", "683745", "683746", "683747", "683748", "683749", "683750", "683751", "683752", "683753", "683754", "683755", "683756", "683757", "683758", "683759", "683760", "683761", "683762", "683763", "683764", "670799");
         System.out.println(jsonObject.size());
         for (Object object : objects) {
             jsonObject.remove(object);
@@ -476,15 +485,169 @@ public class NewTest {
         System.out.println(jsonObject);
     }
 
-    private List<String> show(List<String> list ){
+    private List<String> show(List<String> list) {
         return Lists.newArrayList(list.get(0));
     }
+
     @Test
     public void should_show() throws InterruptedException {
-        while (true){
+        while (true) {
             Thread.sleep(1000);
             List<String> show = show(Lists.newArrayList("1", "2", "3"));
             System.out.println(show);
         }
+    }
+
+    @Test
+    public void ssw() throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+        Date parse = simpleDateFormat.parse("2020-04-03 11-11-11");
+        System.out.println(parse.getTime());
+    }
+
+    @Test
+    public void ssw1() throws ParseException {
+        Book book = new Book("123", "1234");
+        Book book1 = new Book("123", "123411");
+        ArrayList<Book> books = Lists.newArrayList(book, book1);
+        Map<String, String> collect = books.stream().collect(Collectors.toMap(o -> o.getAuth(), o -> o.getName(), (old, new1) -> new1));
+        System.out.println(collect);
+    }
+
+    @Test
+    public void should_1f1() {
+        System.out.println(SeasonEnum.AUTUMN.getSeason());
+    }
+
+    @Test
+    public void should_Time() throws ParseException {
+        String[] parsePatterns = {"yyyy-MM-dd", "yyyy年MM月dd日",
+                "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy/MM/dd",
+                "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyyMMdd"};
+        String string = "2020-10-10";
+        if (string == null) {
+            return;
+        }
+        Date time = DateUtils.parseDate("2020-13-10 ", parsePatterns);
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(time));
+
+    }
+
+    @Test
+    public void should_dist() {
+        List<Book> infoList = new ArrayList<>();
+        infoList.add(new Book("11111", "22"));
+        infoList.add(new Book("22222", "22"));
+        infoList.add(new Book("33333", "23"));
+        infoList.add(new Book("11111", "22"));
+        infoList.stream()
+                .collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(Book::getAuth))), ArrayList::new))
+                .forEach(System.out::println);
+
+    }
+
+    @Test
+    public void should_checkTime() throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        format.setLenient(false);//设为false即可限定时间格式，抛异常
+        Date parse = format.parse("2016-12-30");
+//        DateUtils.parseDate("2020-13-10 00:00:00", parsePatterns)
+        System.out.println(format.format(parse));
+        boolean number = NumberUtils.isNumber("2016-12-30");
+        System.out.println(number);
+    }
+
+    private static Function<Object, Boolean> checkDateType() {
+        return value -> {
+            String[] parsePatterns = {"yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm"};
+            for (String parsePattern : parsePatterns) {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(parsePattern);
+                simpleDateFormat.setLenient(false);
+                try {
+                    simpleDateFormat.parse(value.toString());
+                    return true;
+                } catch (ParseException e) {
+                }
+            }
+            return false;
+        };
+    }
+
+    @Test
+    public void should_num() {
+        System.out.println(checkDateType().apply("2020-02-02"));
+        System.out.println(checkDateType().apply("2020-12-02 22:22"));
+    }
+
+    @Test
+    public void should_int() {
+        int i = 1_23_123;
+        System.out.println(i);
+        System.out.println(NumberUtils.isDigits("123_123"));
+
+    }
+
+    @Test
+    public void should_tomap(){
+        Book book = new Book("1","22");
+        Book book1= new Book("1","2");
+        ArrayList<Book> books = Lists.newArrayList(book, book1);
+        books.stream().collect(Collectors.toMap(o->o.getAuth(),o->o.getName()));
+    }
+
+    @Test
+    public void should_sss(){
+        System.out.println(DateUtil.strToDate(""));
+    }
+
+    @Test
+    public void should_22(){
+        HashMap<String, String> objectObjectHashMap = Maps.newHashMap();
+        objectObjectHashMap.put("1","1");
+        objectObjectHashMap.put("2","1");
+        objectObjectHashMap.put("3","1");
+        objectObjectHashMap.put("4","1");
+        ssssss(objectObjectHashMap);
+        System.out.println(objectObjectHashMap);
+    }
+    public void ssssss(Map<String,String> map){
+        Lists.newArrayList("1","2").forEach(map::remove);
+    }
+
+    @Test
+    public void should_r2(){
+        System.out.println(String.format("page.%s.%s.pageTag", 123, 321));
+    }
+    @Test
+    public void should_8(){
+        Child3 child = new Child3();
+        try {
+            Field field = child.getClass().getDeclaredField("auth");
+            child.getClass().getDeclaredField("auth");
+            field.setAccessible(true);
+            field.set(child, "authvalue");
+            Field field1 = Parent3.class.getDeclaredField("name");
+            field1.setAccessible(true);
+            field1.set(child, "namevalue");
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new RuntimeException("CustomDataPO getField never go here");
+        }
+        System.out.println(child);
+    }
+    @Test
+    public void should_88(){
+        Child3 child = new Child3();
+        try {
+            Method auth=child.getClass().getDeclaredMethod("setAuth",String.class);
+            auth.setAccessible(true);
+            auth.invoke(child,null);
+
+//            Method auth1 = child.getClass().getMethod("setName",String.class);
+//            auth1.setAccessible(true);
+//            auth1.invoke(child,"authvalue");
+        } catch (Exception e) {
+            throw new RuntimeException("CustomDataPO getField never go here");
+        }
+        System.out.println(child);
     }
 }

@@ -13,7 +13,8 @@ import java.io.File;
  */
 public class ExcelUtil {
     public static void main(String[] args) {
-        String resource = ExcelUtil.class.getClassLoader().getResource("excel/物料(规格规格值导入).xls").getPath();
+//        String resource = ExcelUtil.class.getClassLoader().getResource("excel/物料(规格规格值导入).xls").getPath();
+        String resource = ExcelUtil.class.getClassLoader().getResource("excel/test.xlsx").getPath();
         try {
             read(resource);
         } catch (Exception e) {
@@ -39,12 +40,19 @@ public class ExcelUtil {
         int rowNumbers = sheet.getLastRowNum() + 1;
 //      System.out.println(rowNumbers);
         // 读数据，第二行开始读取
-        for (int row = 1; row < rowNumbers; row++) {
+        for (int row = 0; row < rowNumbers; row++) {
             Row r = sheet.getRow(row);
-            //我们只需要前两列
-            if (r.getPhysicalNumberOfCells() >= 2) {
-//                score = new StudentScore(r.getCell(0).toString(), (int) Double.parseDouble(r.getCell(1).toString()));
-                System.out.println("");
+//            //我们只需要前两列
+//            if (r.getPhysicalNumberOfCells() >= 2) {
+////                score = new StudentScore(r.getCell(0).toString(), (int) Double.parseDouble(r.getCell(1).toString()));
+//                System.out.println("");
+//            }
+            for (int i = 0; i < r.getPhysicalNumberOfCells(); i++) {
+                if ("陈岐鑫".equals(r.getCell(i).getStringCellValue())){
+                    r.getCell(i).setCellValue("赵局");
+                }
+                System.out.println(r.getCell(i));
+
             }
         }
     }
