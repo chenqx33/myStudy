@@ -1,8 +1,9 @@
 package chenqx.mapstruct.pojo;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
+
+import java.util.List;
 
 /**
  * @description:
@@ -13,6 +14,7 @@ import org.mapstruct.factory.Mappers;
 @Mapper
 public interface Mapp {
     Mapp INSTANCE = Mappers.getMapper(Mapp.class);
-    @Mappings({})
     Child domain2dto(Parent person);
+
+    List<Child> convert(List<Parent> person);
 }

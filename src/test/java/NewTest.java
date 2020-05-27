@@ -13,6 +13,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.time.DateUtils;
+import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -20,14 +21,19 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.junit.Test;
 import org.springframework.data.redis.core.TimeoutUtils;
+import sun.security.action.GetPropertyAction;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
+import java.security.AccessController;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
@@ -650,4 +656,153 @@ public class NewTest {
         }
         System.out.println(child);
     }
+
+    @Test
+    public void should_11117(){
+        ArrayList<String> pageNameList = Lists.newArrayList("GZYT_time_create_random_yH1589296477784", "GZYT_time_detail_random_yH1589296477784", "HBJJ_time_create_random_fX1589295804515", "HBJJ_time_detail_random_fX1589295804515", "HNJS_time_create_random_qE1589296306124", "HNJS_time_detail_random_qE1589296306124", "HNSK_time_create_random_Uk1589296545572", "HNSK_time_detail_random_Uk1589296545572", "HSQJ_time_create_random_Qt1589297121910", "HSQJ_time_detail_random_Qt1589297121910", "HZJC_time_create_random_xP1589297182439", "HZJC_time_detail_random_xP1589297182439", "JRSJ_time_create_random_Pe1589296366645", "JRSJ_time_detail_random_Pe1589296366645", "JXQD_time_create_random_US1589296594310", "JXQD_time_detail_random_US1589296594310", "LZXT_time_create_random_Lf1589296243314", "LZXT_time_detail_random_Lf1589296243314", "MDCM_time_create_random_dR1589296996515", "MDCM_time_detail_random_dR1589296996515", "MZHT_time_create_random_wp1589296888543", "MZHT_time_detail_random_wp1589296888543", "NMYM_time_create_random_ZH1589295878523", "NMYM_time_detail_random_ZH1589295878523", "NMYZ_time_create_random_Ec1589296109985", "NMYZ_time_detail_random_Ec1589296109985", "NXDG_time_create_random_PO1589295993173", "NXDG_time_detail_random_PO1589295993173", "QHQC_time_create_random_Sb1589296051892", "QHQC_time_detail_random_Sb1589296051892", "SZYWQ_time_create_random_Gi1589297308705", "SZYWQ_time_detail_random_Gi1589297308705", "TJZX_time_create_random_Hl1589296833402", "TJZX_time_detail_random_Hl1589296833402", "TTSD_time_create_random_iJ1589295516661", "TTSD_time_detail_random_iJ1589295516661", "TYHH_time_create_random_jC1589296650239", "TYHH_time_detail_random_jC1589296650239", "XAWJ_time_create_random_JE1589295737022", "XAWJ_time_detail_random_JE1589295737022", "XJGS_time_create_random_Rf1589295935289", "XJGS_time_detail_random_Rf1589295935289", "XMKJ_time_create_random_id1589296718821", "XMKJ_time_detail_random_id1589296718821", "XMWZ_time_create_random_Cg1589297243853", "XMWZ_time_detail_random_Cg1589297243853", "YNZZ_time_create_random_IA1589296420869", "YNZZ_time_detail_random_IA1589296420869");
+        ArrayList<String> sqlList = Lists.newArrayList("INSERT INTO `tenant_event`\n" +
+                "(`sys_name`, `tenant`, `name`, `page_name`, `description`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`, `version`, `state`, `tenant_code`)\n" +
+                "VALUES ('test', 'CFSH_AGENT', 'CFSH_time_create', 'CFSH_time_create_random_dy1589296167866', '点击是--展示隔离期天数并必填', 2097385, '于金丽', 3853233, '樊弋铭', '2020-05-11 12:46:50', '2020-05-14 06:17:17', 270, 'ENABLED', 'bytedance');\n" +
+                "\n" +
+                "INSERT INTO `tenant_event_condition`\n" +
+                "(`sys_name`, `event_name`, `name`, `scope`, `var_names`, `property_name`, `operator`, `arguments`, `description`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`, `version`, `state`, `tenant_code`)\n" +
+                "VALUES\n" +
+                "('test', 'CFSH_time_create', '', 'fe_entity_data', '', 'isolationStatus', 'eq', 'true', NULL, 2097385, '于金丽', 3853233, '樊弋铭', '2020-05-11 12:46:50', '2020-05-14 06:17:17', 270, 'ENABLED', 'bytedance');\n" +
+                "\n" +
+                "INSERT INTO `tenant_event_action`\n" +
+                "(`sys_name`, `name`, `description`, `event_name`, `page_items`, `property_name`, `function`, `arguments`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`, `version`, `state`, `tenant_code`)\n" +
+                "VALUES\n" +
+                "('test', '', '', 'CFSH_time_create', 'time_create_basicrule_customer_protection_time_isolationDays_random_dy1589296167866', 'required', 'set', 'true', 2097385, '于金丽', 3853233, '樊弋铭', '2020-05-11 12:46:50', '2020-05-14 06:17:17', 270, 'ENABLED', 'bytedance'),\n" +
+                "('test', '', '', 'CFSH_time_create', 'time_create_basicrule_customer_protection_time_isolationDays_random_dy1589296167866', 'visible', 'set', 'true', 2097385, '于金丽', 3853233, '樊弋铭', '2020-05-11 12:46:50', '2020-05-14 06:17:17', 270, 'ENABLED', 'bytedance');\n","INSERT INTO `tenant_event`\n" +
+                "(`sys_name`, `tenant`, `name`, `page_name`, `description`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`, `version`, `state`, `tenant_code`)\n" +
+                "VALUES\n" +
+                "('test', 'CFSH_AGENT', 'CFSH_time_detai', 'CFSH_time_detail_random_dy1589296167866', '点击是--展示隔离期天数并必填', 2097385, '于金丽', 2097385, '于金丽', '2020-05-11 12:50:15', '2020-05-11 12:54:01', 270, 'ENABLED', 'bytedance');\n" +
+                "\n" +
+                "INSERT INTO `tenant_event_condition`\n" +
+                "(`sys_name`, `event_name`, `name`, `scope`, `var_names`, `property_name`, `operator`, `arguments`, `description`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`, `version`, `state`, `tenant_code`)\n" +
+                "VALUES\n" +
+                "('test', 'CFSH_time_detai', '', 'fe_entity_data', '', 'isolationStatus', 'eq', 'true', NULL, 2097385, '于金丽', 2097385, '于金丽', '2020-05-11 12:50:15', '2020-05-11 12:54:01', 270, 'ENABLED', 'bytedance');\n" +
+                "\n" +
+                "INSERT INTO `tenant_event_action`\n" +
+                "(`sys_name`, `name`, `description`, `event_name`, `page_items`, `property_name`, `function`, `arguments`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`, `version`, `state`, `tenant_code`)\n" +
+                "VALUES\n" +
+                "('test', '', '', 'CFSH_time_detai', 'time_detail_details_baserule_customer_protection_time_isolationDays_random_dy1589296167866', 'required', 'set', 'true', 2097385, '于金丽', 2097385, '于金丽', '2020-05-11 12:50:15', '2020-05-11 12:54:01', 270, 'ENABLED', 'bytedance'),\n" +
+                "('test', '', '', 'CFSH_time_detai', 'time_detail_details_baserule_customer_protection_time_isolationDays_random_dy1589296167866', 'visible', 'set', 'true', 2097385, '于金丽', 2097385, '于金丽', '2020-05-11 12:50:15', '2020-05-11 12:54:01', 270, 'ENABLED', 'bytedance');\n","INSERT INTO `tenant_event`\n" +
+                "(`sys_name`, `tenant`, `name`, `page_name`, `description`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`, `version`, `state`, `tenant_code`)\n" +
+                "VALUES\n" +
+                "('test', 'ALL', 'CFSH_time_detail_duration', 'CFSH_time_detail_random_dy1589296167866', '点击否-隔离期天数隐藏', 2097385, '于金丽', 2097385, '于金丽', '2020-05-11 12:53:35', '2020-05-11 12:53:35', 270, 'ENABLED', 'bytedance');\n" +
+                "\n" +
+                "INSERT INTO `tenant_event_condition`\n" +
+                "(`sys_name`, `event_name`, `name`, `scope`, `var_names`, `property_name`, `operator`, `arguments`, `description`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`, `version`, `state`, `tenant_code`)\n" +
+                "VALUES\n" +
+                "('test', 'CFSH_time_detail_duration', '', 'fe_entity_data', '', 'isolationStatus', 'eq', 'false', NULL, 2097385, '于金丽', 3853233, '樊弋铭', '2020-05-11 12:46:50', '2020-05-14 06:17:17', 270, 'ENABLED', 'bytedance');\n" +
+                "\n" +
+                "INSERT INTO `tenant_event_action`\n" +
+                "(`sys_name`, `name`, `description`, `event_name`, `page_items`, `property_name`, `function`, `arguments`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`, `version`, `state`, `tenant_code`)\n" +
+                "VALUES ('test', '', '', 'CFSH_time_detail_duration', 'time_detail_details_baserule_customer_protection_time_isolationDays_random_dy1589296167866', 'visible', 'set', 'false', 2097385, '于金丽', 2097385, '于金丽', '2020-05-11 12:53:35', '2020-05-11 12:53:35', 270, 'ENABLED', 'bytedance');\n");
+
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i = 1; i <= pageNameList.size(); i++) {
+            String pageName = pageNameList.get(i - 1);
+            String profile = pageName.substring(0, pageName.indexOf("_"));
+            String random = pageName.substring(pageName.lastIndexOf("_")+1);
+            if (i%2==1){
+                String sql = sqlList.get(0);
+                String sql1 = sql.replace("CFSH_time_create_random_dy1589296167866", pageName);
+                String sql2 = sql1.replace("CFSH", profile);
+                String sql3 = sql2.replace("dy1589296167866", random);
+                stringBuffer.append(sql3);
+            }else {
+                String detailSql = sqlList.get(1);
+                String durationSql = sqlList.get(2);
+
+                String sql1 = detailSql.replace("CFSH_time_detail_random_dy1589296167866", pageName);
+                String sql2 = sql1.replace("CFSH", profile);
+                String sql3 = sql2.replace("dy1589296167866", random);
+
+                stringBuffer.append(sql3);
+
+                String sql11 = durationSql.replace("CFSH_time_detail_random_dy1589296167866", pageName);
+                String sql22 = sql11.replace("CFSH", profile);
+                String sql33 = sql22.replace("dy1589296167866", random);
+
+                stringBuffer.append(sql33);
+
+
+            }
+        }
+        System.out.println(stringBuffer.toString());
+    }
+
+
+
+@Test
+public void should_ssss(){
+//    TimeZone.setDefault(TimeZone.getTimeZone("GMT+0"));
+    // 传入时间
+//    Date date = new Date();
+//    // 获取当前服务器TimeZone
+//    String timeZoneId = TimeZone.getDefault().getID();
+//    // 抓取城市名称
+//    String[] arr = timeZoneId.split("/");
+//    String city = arr.length > 1 ? arr[1] : timeZoneId;
+//    // 格式化时间
+//    String dateStr = FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss").format(date) + " " + city;
+//    System.out.println(dateStr);
+//    String s = AccessController.doPrivileged(
+//            new GetPropertyAction("user.timezone"));
+//    System.out.println(s);
+//    System.out.println(LocalDateTime.now(ZoneId.of(s)));
+//    String format = LocalDateTime.now(ZoneId.of(s)).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+//    System.out.println(format);
+//    System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+    System.out.println(new Date().getTime());
+    TimeZone.setDefault(TimeZone.getTimeZone("GMT+0"));
+    System.out.println(new Date().getTime());
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

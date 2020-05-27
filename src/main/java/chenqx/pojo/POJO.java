@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -13,15 +14,13 @@ import java.util.List;
  * @instruction
  */
 @Data
-@AllArgsConstructor
-@Builder
-@NoArgsConstructor
 public class POJO {
-    private List<String> ss = Lists.newArrayList();
-    private boolean boo;
+    private List<Integer> ss;
 
     public static void main(String[] args) {
         POJO pojo = new POJO();
-        System.out.println(pojo.isBoo());
+        Method[] methods = pojo.getClass().getMethods();
+
+        System.out.println();
     }
 }

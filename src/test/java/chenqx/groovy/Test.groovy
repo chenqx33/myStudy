@@ -2,6 +2,7 @@ package chenqx.groovy
 
 import chenqx.pojo.MyUser
 import chenqx.pojo.User
+import jdk.nashorn.internal.objects.annotations.Where
 import spock.lang.Specification;
 
 /**
@@ -9,35 +10,35 @@ import spock.lang.Specification;
  * @instruction
  */
 class Test extends Specification {
-    User user = Mock(User)
+    private static String name
 
-    def "set_private"() {
-        given:
-        user.getName() >> "xiaolan"
-
-        when:
-        def name = user.getName()
-        then:
-        name == "xiaolan"
+    def "setup"() {
+        name = "start"
     }
 
-    def "user"() {
-        given:
-//        User ss = new User();
-//        ss.setName("12")
-//        MyUser s = new MyUser("2","1")
-        when:
-        User ss = new User()
-        ss.setName("12")
-        MyUser s = new MyUser("2", "1")
-        s.setName("2")
-        then:
-        ss.name == "12"
-        s.name == "2"
-        s.arg != null
+    def "cleanup"() {
+        name = "end"
     }
 
+    def "test"() {
+        when:
+        println name
+        then:
+        1 == 1
+        where:
+        arg   | result
+        "123" | "2"
+    }
 
+    def "test1"() {
+        when:
+        println name
+        then:
+        check()
+        where:
+        arg   | result | check
+        "123" | "2"    | { noExceptionThrown() }
+    }
 
 
 }
