@@ -15,5 +15,5 @@ public class PipelineTDTO {
     public String code; // required
     public String tenantCode; // required
     public String description; // required
-    public String nameI18nCode; // required
+    public String nameI18nCode1; // required
 }

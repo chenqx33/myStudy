@@ -13,7 +13,7 @@ public class test {
     public static void main(String[] args) {
         Convert convert = Convert.INSTANCE;
         PipelineDTO pipelineDTO = new PipelineDTO(1L,2L,"codeValue","nameValue",
-                "namei18n","code","desc");
+                null,"code","desc");
         System.out.println(convert.convert(pipelineDTO));
     }
 }

@@ -21,7 +21,7 @@ public interface Convert {
 
     List<PipelineTDTO> convert(List<PipelineDTO> pipelineDTO);
     @Mappings({
-            @Mapping(source = "idd", target = "id"),
+            @Mapping(source = "nameI18nCode",defaultValue = "idd", target = "nameI18nCode1"),
     })
     PipelineTDTO convert(PipelineDTO pipelineDTO);
 }

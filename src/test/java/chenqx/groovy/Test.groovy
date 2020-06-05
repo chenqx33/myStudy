@@ -1,9 +1,7 @@
 package chenqx.groovy
 
-import chenqx.pojo.MyUser
-import chenqx.pojo.User
-import jdk.nashorn.internal.objects.annotations.Where
-import spock.lang.Specification;
+
+import spock.lang.Specification
 
 /**
  * @author chenqx 2019-10-14
@@ -20,24 +18,14 @@ class Test extends Specification {
         name = "end"
     }
 
-    def "test"() {
-        when:
-        println name
-        then:
-        1 == 1
-        where:
-        arg   | result
-        "123" | "2"
-    }
-
     def "test1"() {
         when:
-        println name
+        println arg
         then:
-        check()
+        1==1
         where:
-        arg   | result | check
-        "123" | "2"    | { noExceptionThrown() }
+        arg   | _
+        "123" | _
     }
 
 

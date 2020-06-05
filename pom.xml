@@ -283,6 +283,11 @@
             <artifactId>java-object-diff</artifactId>
             <version>0.95</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>QLExpress</artifactId>
+            <version>3.2.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
