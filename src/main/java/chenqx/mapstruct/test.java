@@ -5,7 +5,6 @@ import chenqx.mapstruct.pojo.PipelineDTO;
 
 /**
  * @description:
- * @version: 1.0
  * @author: chenqixin
  * @create: 2020-05-22 19:18
  **/
