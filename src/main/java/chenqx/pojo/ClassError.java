@@ -1,8 +1,19 @@
 package chenqx.pojo;
 
+import com.bytedance.cg.gcrm.common.util.DateUtil;
 import com.google.common.collect.Lists;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.util.List;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.*;
 
 /**
  * @description:
@@ -18,8 +29,19 @@ public class ClassError {
         this.name = name;
     }
 
-    public static void main(String[] args) {
-        ClassError name = new ClassError("name");
-        System.out.println(name);
+    public static void main(String[] args) throws IOException {
+        try {
+            throw new RuntimeException("1234");
+        }catch (Exception e){
+            System.out.println(e);
+            System.out.println(e.getMessage());
+            System.out.println(e.getCause());
+            System.out.println(e.getLocalizedMessage());
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getSuppressed());
+        }
+    }
+    public static Object noModelReadByRows() throws IOException {
+        return String.valueOf(new Date());
     }
 }

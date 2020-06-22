@@ -435,4 +435,22 @@ public class TestTest {
         System.out.println("ww");
 
     }
+
+    @Test
+    public void should_222(){
+        String sql = "INSERT INTO tenant_biz_department_rel (tenant_code,department_id,creator_id,creator_name,modify_id,modify_name,create_time,modify_time) VALUES ('agent_ygcm',117759,6111206,'陈岐鑫',6111206,'陈岐鑫','2020-04-27 15:09:33','2020-04-27 15:09:33'); \n" +
+                "INSERT INTO `tenant`.`tenant` (`type`,`code`,`name`,`auth_code`,`status`,`name_i18n_code`,`default_currency`,`creator_id`,`creator_name`,`modifier_id`,`modifier_name`,`create_time`,`modify_time`,`tenant_code`,`real_tenant_code`,`final_tenant_code`) VALUES ('FOREIGN_DIRECT','MZHT_AGENT','MZHT_AGENT','profile.agency_china.mzht',1,'','CNY',0,'',0,'','2020-04-21 06:57:51','2020-05-25 08:38:12','bytedance','Agent_Bytedance','agent_mzht');\n" +
+                "INSERT INTO `tenant`.`tenant_profile`(`type`, `tenant_code`, `name`, `parent_profile_name`, `state`, `show_name`, `description`, `auth_code`, `show_name_i18n_code`, `default_currency`, `creator_id`, `creator_name`, `modify_id`, `modify_name`, `create_time`, `modify_time`) VALUES ('FOREIGN_DIRECT', 'Agent_Bytedance', 'MZHT_AGENT', '', 'ENABLED', 'MZHT_AGENT', '', 'profile.agency_china.mzht', '', 'CNY', 0, '', 0, '', '2020-04-21 15:22:29', '2020-04-21 15:22:29');";
+        ArrayList<ArrayList<Object>> arrayLists = Lists.newArrayList(Lists.newArrayList("agent_ygcm","YGCM_AGENT","YGCM_AGENT","profile.agency_china.ygcm",111283),Lists.newArrayList("agent_bjzm","BJZM_AGENT","BJZM_AGENT","profile.agency_china.bjzm",1255),Lists.newArrayList("agent_ltsh","LTSH_AGENT","LTSH_AGENT","profile.agency_china.ltsh",1256),Lists.newArrayList("agent_shdx","SHDX_AGENT","SHDX_AGENT","profile.agency_china.shdx",1215),Lists.newArrayList("agent_hywl","HYWL_AGENT","HYWL_AGENT","profile.agency_china.hywl",1164),Lists.newArrayList("agent_hzwd","HZWD_AGENT","HZWD_AGENT","profile.agency_china.hzwd",110365),Lists.newArrayList("agent_djxx","DJXX_AGENT","DJXX_AGENT","profile.agency_china.djxx",1260),Lists.newArrayList("agent_hnyk","HNYK_AGENT","HNYK_AGENT","profile.agency_china.hnyk",1200),Lists.newArrayList("agent_acgg","ACGG_AGENT","ACGG_AGENT","profile.agency_china.acgg",1253),Lists.newArrayList("agent_hfjt","HFJT_AGENT","HFJT_AGENT","profile.agency_china.hfjt",110348),Lists.newArrayList("agent_hfym","HFYM_AGENT","HFYM_AGENT","profile.agency_china.hfym",118780),Lists.newArrayList("agent_hbqd","HBQD_AGENT","HBQD_AGENT","profile.agency_china.hbqd",110564),Lists.newArrayList("agent_tjjy","TJJY_AGENT","TJJY_AGENT","profile.agency_china.tjjy",118457),Lists.newArrayList("agent_jxftys","JXFTYS_AGENT","JXFTYS_AGENT","profile.agency_china.jxftys",110639),Lists.newArrayList("agent_hfymh","HFYMH_AGENT","HFYMH_AGENT","profile.agency_china.hfymh",118700));
+        for (ArrayList<Object> arrayList : arrayLists) {
+            String result = sql.replace("agent_ygcm", arrayList.get(1).toString());
+            result = result.replace("MZHT_AGENT", arrayList.get(1).toString());
+            result = result.replace("profile.agency_china.mzht", arrayList.get(3).toString());
+            result = result.replace("agent_mzht", arrayList.get(0).toString());
+            result = result.replace("117759", arrayList.get(4).toString());
+            System.out.println(result);
+            System.out.println();
+            System.out.println();
+        }
+    }
 }
