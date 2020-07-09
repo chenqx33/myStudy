@@ -14,4 +14,5 @@ import lombok.Data;
 public class Obj {
     private String name;
     private Long age;
+    private Long high;
 }

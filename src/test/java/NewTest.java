@@ -784,5 +784,13 @@ public class NewTest {
         m.appendTail(sb);
         return sb.toString();
     }
+    
+    @Test
+    public void should_eq(){
+        Integer integer = 2;
+        Byte b = 2;
+        System.out.println(integer.equals(b.intValue()));
+        System.out.println(b);
+    }
 
 }
