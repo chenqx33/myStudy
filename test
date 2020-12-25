@@ -1,0 +1,440 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.chenqx:myStudy:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.core:jackson-databind:jar -> duplicate declaration of version 2.8.5 @ line 99, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.alibaba:fastjson:jar -> version (?) vs 1.2.40 @ line 104, column 21
+[WARNING] 'dependencies.dependency.version' for com.google.guava:guava:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 117, column 22
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.junit.jupiter:junit-jupiter-engine:jar -> duplicate declaration of version 5.2.0 @ line 154, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: redis.clients:jedis:jar -> duplicate declaration of version 2.9.3 @ line 186, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.commons:commons-collections4:jar -> duplicate declaration of version 4.1 @ line 239, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.alibaba:QLExpress:jar -> version 3.2.0 vs 3.2.3 @ line 275, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.guava:guava:jar -> version RELEASE vs 28.1-jre @ line 280, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------------< com.chenqx:myStudy >-------------------------
+[INFO] Building myStudy 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ myStudy ---
+[INFO] Deleting /Users/bytedance/IdeaProjects/myStudy/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (prepare-agent) @ myStudy ---
+[INFO] argLine set to -javaagent:/Users/bytedance/.m2/repository/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0-runtime.jar=destfile=/Users/bytedance/IdeaProjects/myStudy/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ myStudy ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 35 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ myStudy ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 181 source files to /Users/bytedance/IdeaProjects/myStudy/target/classes
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.6:compile (default) @ myStudy ---
+[INFO] Using Groovy 2.4.7 to perform compile.
+[INFO] No sources specified for compilation.  Skipping.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ myStudy ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ myStudy ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 32 source files to /Users/bytedance/IdeaProjects/myStudy/target/test-classes
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/test/java/chenqx/stacktest/test.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/test/java/chenqx/stacktest/test.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.6:compileTests (default) @ myStudy ---
+[INFO] Using Groovy 2.4.7 to perform compileTests.
+[INFO] Compiled 1 file.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ myStudy ---
+[INFO] Surefire report directory: /Users/bytedance/IdeaProjects/myStudy/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running chenqx.aopTest.AopTest
+执行AOP织入的代码!!!
+执行原有逻辑
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec
+Running chenqx.mapstruct.OrderMapperTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running chenqx.cacheTest.TestCache
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.redis.RedisPoolUtilTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.009 sec
+Running chenqx.TestTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.provider.Test
+2020-11-26 21:22:50.389  INFO   --- [           main] o.s.c.s.ClassPathXmlApplicationContext   : Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@b887730: startup date [Thu Nov 26 21:22:50 CST 2020]; root of context hierarchy
+2020-11-26 21:22:50.509  INFO   --- [           main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [spring/applicationContext.xml]
+1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.661 sec
+Running chenqx.old.DateTestTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running chenqx.search.TestObjTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.csvtest.CsvTest
+thinkInJava
+thinkInJava
+me
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Running chenqx.newTest.Test8
+1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running chenqx.newTest.Test6
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.BookTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.Test2
+w
+{aaa=null, null=bbB}
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 sec
+Running chenqx.newTest.Test5
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.Test7
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.Test3
+1606406399999
+23
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running chenqx.newTest.Test1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.tdd.GameNumberTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.pojo.BookCopyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 sec
+Running chenqx.pojo.CategoryTest
+[22, 11, 111, 1, 2, 21]
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running chenqx.pojo.BookTest
+作者：null
+书名：null
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.476 sec
+Running chenqx.SerializablePojoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.JsonPathTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 sec
+Running chenqx.spring.redis.RedisTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running NewTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 14
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ myStudy ---
+[INFO] Building jar: /Users/bytedance/IdeaProjects/myStudy/target/myStudy-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:report (report) @ myStudy ---
+[INFO] Loading execution data file /Users/bytedance/IdeaProjects/myStudy/target/jacoco.exec
+[INFO] Analyzed bundle 'myStudy' with 198 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.152 s
+[INFO] Finished at: 2020-11-26T21:22:53+08:00
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.chenqx:myStudy:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.core:jackson-databind:jar -> duplicate declaration of version 2.8.5 @ line 99, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.alibaba:fastjson:jar -> version (?) vs 1.2.40 @ line 104, column 21
+[WARNING] 'dependencies.dependency.version' for com.google.guava:guava:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 117, column 22
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.junit.jupiter:junit-jupiter-engine:jar -> duplicate declaration of version 5.2.0 @ line 154, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: redis.clients:jedis:jar -> duplicate declaration of version 2.9.3 @ line 186, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.commons:commons-collections4:jar -> duplicate declaration of version 4.1 @ line 239, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.alibaba:QLExpress:jar -> version 3.2.0 vs 3.2.3 @ line 275, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.guava:guava:jar -> version RELEASE vs 28.1-jre @ line 280, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------------< com.chenqx:myStudy >-------------------------
+[INFO] Building myStudy 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ myStudy ---
+[INFO] Deleting /Users/bytedance/IdeaProjects/myStudy/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (prepare-agent) @ myStudy ---
+[INFO] argLine set to -javaagent:/Users/bytedance/.m2/repository/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0-runtime.jar=destfile=/Users/bytedance/IdeaProjects/myStudy/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ myStudy ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 35 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ myStudy ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 181 source files to /Users/bytedance/IdeaProjects/myStudy/target/classes
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.6:compile (default) @ myStudy ---
+[INFO] Using Groovy 2.4.7 to perform compile.
+[INFO] No sources specified for compilation.  Skipping.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ myStudy ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ myStudy ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 32 source files to /Users/bytedance/IdeaProjects/myStudy/target/test-classes
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/test/java/chenqx/stacktest/test.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/test/java/chenqx/stacktest/test.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.6:compileTests (default) @ myStudy ---
+[INFO] Using Groovy 2.4.7 to perform compileTests.
+[INFO] Compiled 1 file.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ myStudy ---
+[INFO] Surefire report directory: /Users/bytedance/IdeaProjects/myStudy/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running chenqx.aopTest.AopTest
+执行AOP织入的代码!!!
+执行原有逻辑
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 sec
+Running chenqx.mapstruct.OrderMapperTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running chenqx.cacheTest.TestCache
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.redis.RedisPoolUtilTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.TestTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.provider.Test
+2020-11-26 21:23:24.492  INFO   --- [           main] o.s.c.s.ClassPathXmlApplicationContext   : Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@117d32e: startup date [Thu Nov 26 21:23:24 CST 2020]; root of context hierarchy
+2020-11-26 21:23:24.617  INFO   --- [           main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [spring/applicationContext.xml]
+1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.492 sec
+Running chenqx.old.DateTestTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running chenqx.search.TestObjTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.csvtest.CsvTest
+thinkInJava
+thinkInJava
+me
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Running chenqx.newTest.Test8
+1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running chenqx.newTest.Test6
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.BookTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.Test2
+w
+{aaa=null, null=bbB}
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 sec
+Running chenqx.newTest.Test5
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.Test7
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.Test3
+1606406399999
+23
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running chenqx.newTest.Test1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 sec
+Running chenqx.tdd.GameNumberTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.pojo.BookCopyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.pojo.CategoryTest
+[22, 11, 111, 1, 2, 21]
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running chenqx.pojo.BookTest
+作者：null
+书名：null
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.491 sec
+Running chenqx.SerializablePojoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.JsonPathTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.296 sec
+Running chenqx.spring.redis.RedisTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running NewTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 14
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ myStudy ---
+[INFO] Building jar: /Users/bytedance/IdeaProjects/myStudy/target/myStudy-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:report (report) @ myStudy ---
+[INFO] Loading execution data file /Users/bytedance/IdeaProjects/myStudy/target/jacoco.exec
+[INFO] Analyzed bundle 'myStudy' with 198 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.707 s
+[INFO] Finished at: 2020-11-26T21:23:27+08:00
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.chenqx:myStudy:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.core:jackson-databind:jar -> duplicate declaration of version 2.8.5 @ line 99, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.alibaba:fastjson:jar -> version (?) vs 1.2.40 @ line 104, column 21
+[WARNING] 'dependencies.dependency.version' for com.google.guava:guava:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 117, column 22
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.junit.jupiter:junit-jupiter-engine:jar -> duplicate declaration of version 5.2.0 @ line 154, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: redis.clients:jedis:jar -> duplicate declaration of version 2.9.3 @ line 186, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.commons:commons-collections4:jar -> duplicate declaration of version 4.1 @ line 239, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.alibaba:QLExpress:jar -> version 3.2.0 vs 3.2.3 @ line 275, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.google.guava:guava:jar -> version RELEASE vs 28.1-jre @ line 280, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------------< com.chenqx:myStudy >-------------------------
+[INFO] Building myStudy 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ myStudy ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:prepare-agent (prepare-agent) @ myStudy ---
+[INFO] argLine set to -javaagent:/Users/bytedance/.m2/repository/org/jacoco/org.jacoco.agent/0.8.0/org.jacoco.agent-0.8.0-runtime.jar=destfile=/Users/bytedance/IdeaProjects/myStudy/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ myStudy ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 35 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ myStudy ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 181 source files to /Users/bytedance/IdeaProjects/myStudy/target/classes
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/main/java/chenqx/designpattern/factorypattern/ShareFactory.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.6:compile (default) @ myStudy ---
+[INFO] Using Groovy 2.4.7 to perform compile.
+[INFO] No sources specified for compilation.  Skipping.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ myStudy ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ myStudy ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 32 source files to /Users/bytedance/IdeaProjects/myStudy/target/test-classes
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/test/java/chenqx/stacktest/test.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /Users/bytedance/IdeaProjects/myStudy/src/test/java/chenqx/stacktest/test.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- gmavenplus-plugin:1.6:compileTests (default) @ myStudy ---
+[INFO] Using Groovy 2.4.7 to perform compileTests.
+[INFO] Compiled 1 file.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ myStudy ---
+[INFO] Surefire report directory: /Users/bytedance/IdeaProjects/myStudy/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running chenqx.aopTest.AopTest
+执行AOP织入的代码!!!
+执行原有逻辑
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 sec
+Running chenqx.mapstruct.OrderMapperTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running chenqx.cacheTest.TestCache
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.redis.RedisPoolUtilTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.TestTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.provider.Test
+2020-11-26 21:25:08.586  INFO   --- [           main] o.s.c.s.ClassPathXmlApplicationContext   : Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ccf91df: startup date [Thu Nov 26 21:25:08 CST 2020]; root of context hierarchy
+2020-11-26 21:25:08.706  INFO   --- [           main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [spring/applicationContext.xml]
+1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.586 sec
+Running chenqx.old.DateTestTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running chenqx.search.TestObjTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.csvtest.CsvTest
+thinkInJava
+thinkInJava
+me
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+Running chenqx.newTest.Test8
+1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running chenqx.newTest.Test6
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 sec
+Running chenqx.newTest.BookTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.Test2
+w
+{aaa=null, null=bbB}
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 sec
+Running chenqx.newTest.Test5
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.Test7
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.newTest.Test3
+1606406399999
+23
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running chenqx.newTest.Test1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.tdd.GameNumberTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.pojo.BookCopyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.pojo.CategoryTest
+[22, 11, 111, 1, 2, 21]
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running chenqx.pojo.BookTest
+作者：null
+书名：null
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.475 sec
+Running chenqx.SerializablePojoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+Running chenqx.JsonPathTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.223 sec
+Running chenqx.spring.redis.RedisTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 sec
+Running NewTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 14
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ myStudy ---
+[INFO] Building jar: /Users/bytedance/IdeaProjects/myStudy/target/myStudy-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.0:report (report) @ myStudy ---
+[INFO] Loading execution data file /Users/bytedance/IdeaProjects/myStudy/target/jacoco.exec
+[INFO] Analyzed bundle 'myStudy' with 198 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.400 s
+[INFO] Finished at: 2020-11-26T21:25:11+08:00
+[INFO] ------------------------------------------------------------------------

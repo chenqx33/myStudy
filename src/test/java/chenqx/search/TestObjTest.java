@@ -1,5 +1,6 @@
 package chenqx.search;
 
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -8,6 +9,7 @@ import org.junit.rules.ExpectedException;
  * @author chenqx 2019-10-13
  * @instruction
  */
+@Ignore
 public class TestObjTest {
     @Rule
     public ExpectedException thrown= ExpectedException.none();

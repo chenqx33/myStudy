@@ -1,5 +1,6 @@
 package chenqx.redis;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -8,6 +9,7 @@ import org.junit.Test;
  * @author: chenqixin
  * @create: 2020-04-21 11:39
  **/
+@Ignore
 public class RedisPoolUtilTest {
     @Test
     public void should_getSyc() throws InterruptedException {

@@ -2,6 +2,7 @@ package chenqx.tdd;
 
 
 import com.google.common.collect.Maps;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -13,6 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @date 2019-08-13 17:55
  * @instruction
  */
+@Ignore
 public class GameNumberTest {
     @ParameterizedTest(name = "should return {0} given {1}")
     @CsvSource({

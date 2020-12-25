@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.text.ParseException;
@@ -18,6 +19,7 @@ import java.util.List;
  * @author cqx
  * @date 2018/11/29 17:05
  */
+@Ignore
 public class BookTest {
     @Test
     public void memberTest(){

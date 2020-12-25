@@ -1,6 +1,7 @@
 package chenqx;
 
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -13,6 +14,7 @@ import java.io.ObjectOutputStream;
 import chenqx.pojo.serializablePojo.FlyPig;
 
 //https://blog.csdn.net/qq_27093465/article/details/78544505
+@Ignore
 public class SerializablePojoTest {
     @Test
     public void test()throws Exception{

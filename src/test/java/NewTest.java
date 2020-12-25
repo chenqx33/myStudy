@@ -2,39 +2,37 @@ import chenqx.old.SeasonEnum;
 import chenqx.pojo.Book;
 import chenqx.pojo.Child3;
 import chenqx.pojo.Parent3;
-import chenqx.search.impl.Child;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.bytedance.cg.gcrm.common.util.DateUtil;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.ql.util.express.DefaultContext;
+import com.ql.util.express.ExpressRunner;
+import com.ql.util.express.IExpressContext;
+import com.ql.util.express.config.QLExpressRunStrategy;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.time.DateUtils;
-import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.junit.Ignore;
 import org.junit.Test;
-import org.springframework.data.redis.core.TimeoutUtils;
-import sun.security.action.GetPropertyAction;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
-import java.security.AccessController;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
@@ -42,6 +40,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+@Ignore
 public class NewTest {
     private String json = "{\"discount\":\"100\",\"pricebook_sellingprice\":\"3\",\"product_id\":\"5d8c6ffd665f2e000186006e\",\"record_type\":\"default__c\",\"object_describe_api_name\":\"PriceBookProductObj\",\"object_describe_id\":\"5da1425cb2939e000177fdaa\",\"tenant_id\":\"675804\",\"owner\":[\"1000\"],\"field_finance__c\":123}";
     private JSONObject nameToId;
@@ -803,4 +802,31 @@ public class NewTest {
         System.out.println(Joiner.on("").join(Lists.newArrayList()));
     }
 
+    @Test
+    public void should_xxxxx(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        simpleDateFormat.setLenient(false);
+        try {
+            Date parse = simpleDateFormat.parse("2020-22-22");
+        } catch (ParseException e) {
+            System.out.println("xx");
+        }
+    }
+
+    @Test
+    public void should_xcxc() throws IOException {
+        File file = new File("/Users/bytedance/Downloads/wholeVersion.txt");
+        String s = FileUtils.readFileToString(file);
+
+    }
+    private static ExpressRunner runner = new ExpressRunner(true,true);
+    @Test
+    public void should_xxxxxx() throws Exception {
+        IExpressContext<String,Object> iExpressContext = new DefaultContext();
+        iExpressContext.put("a",null);
+        iExpressContext.put("b",2);
+//        QLExpressRunStrategy.setAvoidNullPointer(true);
+        Object execute = runner.execute("a+b", iExpressContext, Lists.newArrayList("abc"), false, false);
+        System.out.println(execute);
+    }
 }

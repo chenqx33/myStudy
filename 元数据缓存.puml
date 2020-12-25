@@ -1,0 +1,34 @@
+@startuml
+title 元数据缓存逻辑
+start
+partition getVersion {
+    :查询元数据;
+    if (线程缓存中是否有人员版本信息) then (yes)
+    else (no)
+    :通过thrift查询版本;
+    :将版本放入线程缓存;
+    note left: 有效时间: 当前会话
+    endif
+    :获取版本;
+}
+partition getMetadata {
+    if (全局版本 ?) then (yes)
+        if(缓存中是否有数据 ?) then(yes)
+        else(no)
+        :通过thrift查询元数据;
+        :将元数据放入缓存;
+        note left: 有效时间: 版本变更或1h
+        endif
+    :获取个人版本数据;
+    else (no)
+        if(线程缓存中是否有数据 ?)then(yes)
+        else(no)
+        :通过thrift查询元数据;
+        :将元数据放入线程缓存;
+        note right: 有效时间: 当前会话
+        endif
+    :获取全局版本数据;
+    endif
+}
+stop
+@enduml

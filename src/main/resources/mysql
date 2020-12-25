@@ -1,0 +1,4093 @@
+create table application
+(
+	id bigint auto_increment comment '租户ID，自增主键'
+		primary key,
+	name varchar(32) default '' not null comment 'name',
+	show_name varchar(32) default '' not null comment '描述文本apiName',
+	show_name_i18n varchar(32) default '' not null comment '租户描述文本apiName',
+	logo_tos_id varchar(64) default '' not null comment 'logotos地址',
+	description varchar(1024) default '' not null comment '描述',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_name
+		unique (name)
+)
+comment '系统表';
+
+create index idx_modify_time
+	on application (modify_time);
+
+create table attributes_item
+(
+	id bigint auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	business_attributes_id bigint default 0 not null comment '字段配置ID',
+	value_desc varchar(64) default '' not null comment '值的表述信息',
+	value_desc_i18ncode varchar(16) default '0' not null comment '国际化code',
+	component varchar(16) default '0' null comment '组件类型：input、select等',
+	array tinyint default 0 not null comment '是否是数据 0:单值、1:数组',
+	placeholder varchar(64) default '' not null comment '值输入描述code',
+	placeholder_i18ncode varchar(100) default '' not null comment '是否支持排序 0:不支持、1:支持',
+	type tinyint default 0 not null comment '值类型定义',
+	field_relation varchar(512) default '' not null comment '映射实体字段顺序',
+	extend_fe varchar(512) default '' not null comment '前端交互附加属性',
+	formula varchar(64) default '' not null comment '值的加工公式',
+	datasource_id bigint default 0 not null comment '数据源ID',
+	status tinyint default 0 not null comment '状态是否生效：0：不生效、1：生效',
+	sequence int(10) default 0 not null comment '排序序号',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间'
+)
+comment '字段值信息';
+
+create table business_attributes
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	attributes_base_id bigint default 0 not null comment '业务类型基础配置ID',
+	title varchar(255) default '' not null comment '字段名称',
+	sequence int(10) default 0 not null comment '排序序号',
+	title_i18ncode varchar(255) default '' not null comment '字段名称国际化翻译',
+	business_attributes_desc varchar(256) default '' null comment '字段描述',
+	business_attributes_desc_i18ncode varchar(100) default '' null comment '字段描述code',
+	segment varchar(64) default '' not null comment '区域',
+	segment_name varchar(32) default '0' not null comment '区域名称',
+	segment_name_i18ncode varchar(128) default '0' not null comment '区域名称国际化解释',
+	purpose tinyint default 0 null comment '用途类别 1:编辑字段、2:过滤项、3:列表展示',
+	purpose_detail_type tinyint default 0 not null comment '用途具体类别 1-直客客户列表；2-代理商客户列表； 3-直客账号列表；  4-代理商账号列表',
+	extend_fe varchar(512) default '' not null comment '字段前端扩展属性，如样式',
+	sort tinyint default 0 not null comment '是否支持排序 0:不支持、1:支持',
+	can_edit tinyint default 0 not null comment '是否支持编辑：0：不支持、1：支持',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间'
+)
+comment '业务类型信息';
+
+create table business_attributes_base
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(32) default '0' not null comment '租户code',
+	entity_type tinyint default 0 not null comment '实体类型',
+	name varchar(64) default '' not null comment '对应业务表中字段名',
+	array tinyint default 0 not null comment '是否是数组 0:单值、1:数组',
+	status tinyint default 0 null comment '状态是否生效：0:不生效、1:生效',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间'
+)
+comment '字段基础信息';
+
+create table business_entity_field_relation
+(
+	id bigint auto_increment comment '表自增ID'
+		primary key,
+	business_entity_type int not null comment '业务实体类型，值描述参照BusinessEntityTypeEnum',
+	business_entity_id bigint not null comment '业务实体id',
+	field_id bigint not null comment '自定义字段ID',
+	sort int default 0 not null comment '字段使用相对顺序，越大越靠后',
+	`desc` varchar(100) default '' not null comment '字段描述，可表明对应的业务实体关联表名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modifier_id bigint default 0 not null comment '修改人ID',
+	modifier_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	constraint uniq_business_entity_field_relation
+		unique (business_entity_type, business_entity_id, field_id)
+)
+comment '业务实体自定义字段关联表';
+
+create table datasource
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) default '' not null comment '数据源名称',
+	name_i18ncode varchar(16) default '' not null comment '数据源国际化code',
+	type tinyint default 0 not null comment '1:list、2: tree',
+	status tinyint default 0 not null comment '状态是否生效：0：不生效、1：生效',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	code varchar(100) not null comment '数据源code，唯一',
+	constraint uniq_datasource_code
+		unique (code),
+	constraint uniq_name
+		unique (name)
+)
+comment '数据源';
+
+create table datasource_value
+(
+	id bigint auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	parent_id bigint not null comment '父节点ID',
+	datasource_id bigint default 0 not null comment '数据源ID',
+	value varchar(64) default '' not null comment '值',
+	value_desc varchar(64) default '' not null comment '值的表述',
+	value_desc_i8ncode varchar(100) default '' not null comment '值的国际化表述',
+	status tinyint default 0 not null comment '状态是否生效：0：不生效、1：生效',
+	selected tinyint default 0 not null comment '状态是否默认：0：不是、1：是',
+	sequence int(10) default 0 not null comment '排序序号',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间'
+)
+comment '数据源';
+
+create table dev_app
+(
+	id bigint auto_increment comment '租户ID，自增主键'
+		primary key,
+	project_name varchar(128) default '' not null comment '项目名',
+	region varchar(32) default '' not null comment '国内：domestic, 海外：oversea, 都有 ALL',
+	name varchar(32) default '' not null comment 'name',
+	label varchar(32) default '' not null comment '展示名称',
+	label_i18n varchar(32) default '' not null comment '名称国际化',
+	description varchar(1024) default '' not null comment '描述',
+	tos_id varchar(128) default '' not null comment 'logo的tosId',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	constraint uniq_name
+		unique (name)
+)
+comment '开发者app表';
+
+create index idx_project
+	on dev_app (project_name);
+
+create table dev_app_version_info
+(
+	id bigint(10) unsigned auto_increment comment '自增主键'
+		primary key,
+	project_name varchar(128) default '' not null comment '项目名',
+	app_name varchar(128) default '' not null comment 'app名称',
+	version int(32) not null comment '版本号',
+	base_version int not null comment '基准版本号',
+	description varchar(511) default '' not null comment '描述信息',
+	status varchar(20) not null comment '版本状态 dev-开发中；prod-当前线上版本；old-历史线上版本',
+	creator_id bigint(11) not null comment '创建人id',
+	creator_name varchar(255) not null comment '创建人name',
+	modifier_id bigint(11) not null comment '修改人id',
+	modifier_name varchar(255) not null comment '修改人name',
+	create_time datetime not null comment '创建时间',
+	modify_time datetime not null comment '修改时间',
+	modify_id bigint(11) default 0 not null comment '修改人id',
+	modify_name varchar(32) default '' not null comment '修改人',
+	constraint uniq_project_app_version
+		unique (project_name, app_name, version)
+)
+comment '开发平台app版本信息';
+
+create index idx_app
+	on dev_app_version_info (app_name, status);
+
+create table dev_component
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) default '' not null comment '项目标识，全局唯一',
+	show_name varchar(128) default '' not null comment '展示名称',
+	show_name_i18n varchar(128) default '' not null comment '展示名称i18n',
+	icon varchar(128) default '' not null comment 'icon的tosId',
+	description varchar(1024) default '' not null comment '描述',
+	project_name varchar(128) default '' not null comment '所属项目',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_name
+		unique (name)
+)
+comment '组件信息表';
+
+create table dev_component_subscribe_detail
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	subscriber_name varchar(128) default '' not null comment '订阅者名称',
+	subscriber_type varchar(32) default '' not null comment '类型： app-应用；project-项目；tenant-租户',
+	type varchar(20) default '' not null comment '关联类型：subscribe-订阅，own-自有，none-无关联',
+	model varchar(32) default '' not null comment '模式：stable-固定版本；latest-最新版；patch_latest-最新补丁包',
+	version varchar(64) default '' not null comment '订阅时的版本号',
+	component_name varchar(128) default '' not null comment '组件名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '组件订阅关系表';
+
+create index idx_component
+	on dev_component_subscribe_detail (component_name);
+
+create index idx_subscriber
+	on dev_component_subscribe_detail (subscriber_type, subscriber_name, component_name);
+
+create table dev_component_version
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	project_name varchar(128) default '' not null comment '所属项目',
+	component_name varchar(128) default '' not null comment '组件名称',
+	manifest text null comment '配置信息',
+	version varchar(64) not null comment '版本号',
+	status varchar(20) default '' not null comment '状态: prod-线上版本；old-历史版本',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_component_version
+		unique (component_name, version)
+)
+comment '组件版本表';
+
+create index idx_status_component
+	on dev_component_version (status, component_name);
+
+create table dev_project
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) default '' not null comment '项目标识，全局唯一',
+	region varchar(32) default '' not null comment '国内：domestic, 海外：oversea, 都有 ALL',
+	label varchar(128) default '' not null comment '展示名称',
+	label_i18n varchar(128) default '' not null comment '名称i18nCode',
+	tos_id varchar(128) default '' not null comment 'logo的tosId',
+	description varchar(1024) default '' not null comment '描述',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_name
+		unique (name)
+)
+comment '项目信息表';
+
+create table dev_project_app_rel
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	project_name varchar(128) default '' not null comment '项目名',
+	app_name varchar(128) default '' not null comment '应用名',
+	type varchar(20) default '' not null comment '关系类型：subscribe-订阅，own-自有',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '项目-app关联表';
+
+create index idx_project
+	on dev_project_app_rel (project_name);
+
+create table dev_project_employee_rel
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	project_name varchar(128) default '' not null comment '项目名',
+	employee_id bigint default 0 not null comment '开发者id',
+	employee_name varchar(64) default '' not null comment '开发者名称',
+	secret varchar(128) default '' not null comment '密钥',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '项目-开发者关联表';
+
+create index idx_employee
+	on dev_project_employee_rel (employee_id);
+
+create index idx_project
+	on dev_project_employee_rel (project_name);
+
+create table dict_owner
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	owner_id bigint default 0 not null comment '负责人id',
+	owner_name varchar(255) default '' not null comment '负责人名称',
+	global_dict_api_name varchar(255) default '' not null comment '全局字典apiName',
+	system_api_name varchar(255) default '' not null comment '系统',
+	creator_id bigint default 0 not null comment '创建人id',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+	modify_id bigint default 0 not null comment '修改人id',
+	modify_name varchar(255) default '' not null comment '修改人名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '修改时间'
+)
+comment '字典负责人' charset=utf8;
+
+create index idx_dict_system
+	on dict_owner (global_dict_api_name, system_api_name);
+
+create table filter
+(
+	id bigint not null comment '过滤器ID 主键'
+		primary key,
+	tenant_code varchar(16) default '' not null comment '租户ID',
+	entity_type tinyint default 0 not null comment '实体类型 1-客户；2-账号；3-线索；4-联系人；5-商机',
+	purpose_detail tinyint default 0 not null comment '具体用途 0-默认值； 1-直客列表；2-代理商列表；3-直客账号列表；4-代理商账号列表',
+	extra_param_map varchar(1021) default '' not null comment '其他业务参数(json)',
+	name varchar(255) default '' not null comment '自定义查询条件名称',
+	name_i18n_code varchar(255) default '' not null,
+	filter_condition text not null comment '过滤器 json',
+	visible tinyint default 0 not null comment '可见性   1-私有；2-租户内共享；3-全局共享',
+	logic_deleted tinyint(1) default 0 not null comment '是否逻辑删除 0-否；1-是',
+	owner_id bigint(255) not null comment '拥有者(附身人id)',
+	creator_id bigint default 0 not null comment '创建人ID(登录人id)',
+	creator_name varchar(64) default '' not null comment '创建者名称(登录人姓名)',
+	owner_name varchar(255) default '' not null comment '拥有者(附身人姓名)',
+	modify_id bigint default 0 not null comment '修改人ID(附身人id)',
+	modify_name varchar(64) default '' not null comment '修改者名称(附身人姓名)',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '过滤器';
+
+create index idx_entitytype_purposedetail
+	on filter (entity_type, purpose_detail);
+
+create index idx_ownerid_entitytype_purposedetail
+	on filter (owner_id, entity_type, purpose_detail);
+
+create table global_dict
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	api_name varchar(255) default '' not null comment '字典唯一标示',
+	label varchar(255) default '' not null comment '字典展示名',
+	label_i18n varchar(255) default '' not null comment '字典展示名i18n',
+	enable tinyint(1) default 0 not null comment '字典是否可用',
+	description varchar(1024) default '' not null comment '字典描述',
+	creator_id bigint default 0 not null comment '创建人id',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+	modify_id bigint default 0 not null comment '修改人id',
+	modify_name varchar(255) default '' not null comment '修改人名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '修改时间',
+	constraint uniq_api_name
+		unique (api_name)
+)
+comment '全局字典' charset=utf8;
+
+create index idx_describe
+	on global_dict (description);
+
+create index idx_label
+	on global_dict (label);
+
+create table global_dict_item
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	item_key varchar(255) default '' not null comment '字典元素key',
+	item_value varchar(255) default '' not null comment '字典元素展示名',
+	global_dict_api_name varchar(255) default '' not null comment '全局字典唯一表示',
+	value_i18n varchar(255) default '' not null comment '字典元素展示名i18n',
+	sequence int default 0 not null comment '排序字典',
+	creator_id bigint default 0 not null comment '创建人id',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+	modify_id bigint default 0 not null comment '修改人id',
+	modify_name varchar(255) default '' not null comment '修改人名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '修改时间',
+	constraint uniq_dictname_itemkey
+		unique (global_dict_api_name, item_key)
+)
+comment '全局字典，字典值' charset=utf8;
+
+create index idx_value
+	on global_dict_item (item_value);
+
+create table global_dict_system
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	system_api_name varchar(255) default '' not null comment '系统apiName',
+	global_dict_api_name varchar(255) default '' not null comment '全局字典apiName',
+	system_dict_api_name varchar(255) default '' not null comment '系统字典apiName',
+	description varchar(1024) default '' not null comment '系统描述',
+	root_system tinyint(1) default 0 not null comment '是否是源系统',
+	creator_id bigint default 0 not null comment '创建人id',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+	modify_id bigint default 0 not null comment '修改人id',
+	modify_name varchar(255) default '' not null comment '修改人名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '修改时间',
+	constraint uniq_system_dict
+		unique (root_system, system_api_name, global_dict_api_name, system_dict_api_name)
+)
+comment '系统字典表' charset=utf8;
+
+create table meta_data_import_record
+(
+	id int auto_increment comment '主键'
+		primary key,
+	employee_id bigint not null comment '员工id',
+	employee_name varchar(64) not null comment '员工姓名',
+	tos_id varchar(64) not null comment '导入文件tos id',
+	file_name varchar(128) default '' not null comment '文件名字',
+	target_tenant varchar(64) not null comment '目标租户',
+	target_sys varchar(64) default '0' not null comment '目标系统',
+	target_version int default 0 not null comment '目标版本',
+	import_detail text null comment '导入结果详情',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '元数据导入记录';
+
+create table meta_data_migrate_record
+(
+	id bigint(11) auto_increment comment '主键'
+		primary key,
+	employee_id bigint not null comment '员工id',
+	employee_name varchar(64) not null comment '员工姓名',
+	tos_id varchar(64) not null comment '导入文件tos id',
+	file_name varchar(128) default '' not null comment '文件名字',
+	target_tenant varchar(64) default '' not null comment '目标租户',
+	target_sys varchar(64) default '0' not null comment '目标系统',
+	target_version int default 0 not null comment '目标版本',
+	target_entity varchar(64) default '' not null comment '目标实体',
+	import_detail mediumtext null comment '导入结果详情',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '元数据迁移记录';
+
+create table meta_object_extended_ref
+(
+	id bigint auto_increment comment '主键'
+		primary key,
+	sys_name varchar(32) not null comment '应用名称',
+	tenant_code varchar(32) default '' not null comment '本租户',
+	type varchar(16) default '' not null comment '类型',
+	father_tenant_code varchar(32) default '' not null comment '父租户',
+	name varchar(128) default '' not null comment '元对象名称',
+	entity_name varchar(128) default '' not null comment '实体name',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(128) default '' not null comment '创建人',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(128) default '' not null comment '修改人',
+	create_time datetime not null comment '创建时间',
+	modify_time datetime not null comment '修改时间',
+	constraint uniq_meta
+		unique (tenant_code, type, father_tenant_code, name, sys_name) comment '继承关系唯一性约束'
+);
+
+create table mtm_ci_result
+(
+	method varchar(255) not null comment 'mtm_thrift方法名',
+	id bigint auto_increment comment 'id，自增主键'
+		primary key,
+	req text not null comment 'mtm_thrift请求',
+	resp mediumtext not null comment 'mtm_thrift结果'
+)
+comment 'mtm_ci_result表';
+
+create table pipeline
+(
+	id bigint unsigned auto_increment comment '销售模式ID，自增主键'
+		primary key,
+	pipeline_id bigint not null comment '业务ID',
+	code varchar(128) not null comment '销售模式code',
+	name varchar(128) default '' not null comment '销售模式名称',
+	tenant_code varchar(128) not null comment '租户code',
+	description varchar(100) default '' not null comment '描述',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modifier_id bigint default 0 not null comment '修改人ID',
+	modifier_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	name_i18n_code varchar(128) default '' not null comment '销售模式名称',
+	sys_name varchar(128) default '' not null comment 'sysName',
+	record_type_name varchar(128) not null comment 'recordType名称',
+	version int default 0 not null comment '多版本控制',
+	entity_name varchar(128) default '' not null comment '实体名称',
+	service_body_name varchar(128) null comment '关联的serviceBody',
+	profile varchar(128) default '' not null comment 'profile',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenant_pipelineid_version
+		unique (tenant_code, version, sys_name, pipeline_id)
+);
+
+create table pipeline_stage
+(
+	id bigint unsigned auto_increment comment '销售模式阶段ID，自增主键'
+		primary key,
+	pipeline_stage_id bigint not null comment '销售模式阶段业务主键',
+	pipeline_id bigint not null comment '销售模式id',
+	name varchar(50) default '' not null comment '销售模式阶段名称',
+	rate tinyint unsigned default 0 not null comment '阶段赢率(使用两位整数表述)',
+	description varchar(100) default '' not null comment '描述',
+	sort tinyint default 0 not null comment '阶段优先级',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modifier_id bigint default 0 not null comment '修改人ID',
+	modifier_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	name_i18n_code varchar(128) default '' not null comment '销售阶段名称',
+	skip tinyint default 0 not null comment '是否可以跳过0不能1能',
+	tenant_code varchar(128) default '' not null,
+	version int default 0 not null,
+	sys_name varchar(128) default '' not null comment 'sysName',
+	ext_info text null comment '扩展信息',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenant_pipelineid_stageid_version
+		unique (tenant_code, version, sys_name, pipeline_id, pipeline_stage_id)
+);
+
+create table pipeline_stage_event_ref
+(
+	id bigint auto_increment
+		primary key,
+	pipeline_id bigint not null,
+	pipeline_stage_id bigint not null,
+	event_name varchar(128) not null,
+	show_name varchar(128) null,
+	tenant_code varchar(128) not null,
+	version int not null,
+	event_type varchar(32) not null,
+	type varchar(32) null,
+	action_name varchar(512) null,
+	rules_name varchar(512) null,
+	same_events_name varchar(128) default '' not null comment '相同任务的名称',
+	sys_name varchar(128) default '' not null,
+	creator_id bigint default 0 not null,
+	creator_name varchar(64) default '' not null,
+	modify_id bigint default 0 not null,
+	modify_name varchar(64) default '' not null,
+	create_time datetime default CURRENT_TIMESTAMP not null,
+	modify_time datetime default CURRENT_TIMESTAMP not null,
+	page_name varchar(128) null,
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_key
+		unique (pipeline_id, pipeline_stage_id, event_name, version, tenant_code, sys_name)
+);
+
+create index idx_sys_copy
+	on pipeline_stage_event_ref (tenant_code, sys_name, version);
+
+create table `system`
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	api_name varchar(255) default '' not null comment '系统唯一标示',
+	label varchar(255) default '' not null comment '系统展示名',
+	label_i18n varchar(255) default '' not null comment '系统展示名i18n',
+	doc_path varchar(255) default '' not null comment '文档链接',
+	url_path varchar(255) default '' not null comment '系统地址',
+	description varchar(1024) default '' not null comment '系统描述',
+	enable tinyint(1) default 1 not null comment '是否启用',
+	creator_id bigint default 0 not null comment '创建人id',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+	modify_id bigint default 0 not null comment '修改人id',
+	modify_name varchar(255) default '' not null comment '修改人名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '修改时间',
+	constraint uniq_api_name
+		unique (api_name)
+)
+comment '系统库' charset=utf8;
+
+create table system_override_dict_item
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	global_dict_key varchar(255) default '' not null comment '需要重写的key',
+	override_key varchar(255) default '' not null comment '重写后的key',
+	override_value varchar(255) default '' not null comment '重写后的value',
+	override_value_i18n varchar(255) default '' not null comment '重写后的valueI18n',
+	global_dict_api_name varchar(255) default '' not null comment '重写的字典',
+	system_dict_api_name varchar(255) default '' not null comment '系统字段的apiName',
+	sequence int default 0 not null comment '排序字段',
+	system_api_name varchar(255) default '' not null comment '重写的系统',
+	description varchar(1024) default '' not null comment '系统描述',
+	creator_id bigint default 0 not null comment '创建人id',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+	modify_id bigint default 0 not null comment '修改人id',
+	modify_name varchar(255) default '' not null comment '修改人名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '修改时间',
+	constraint uniq_dictname_key
+		unique (system_api_name, global_dict_api_name, system_dict_api_name, global_dict_key),
+	constraint uniq_dictname_override_key
+		unique (system_api_name, global_dict_api_name, system_dict_api_name, override_key)
+)
+comment '系统字典重写全局字典' charset=utf8;
+
+create table system_owner
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	owner_id bigint default 0 not null comment '负责人',
+	owner_name varchar(255) not null comment '负责人名称',
+	system_api_name varchar(255) default '' not null comment '系统',
+	creator_id bigint default 0 not null comment '创建人id',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+	modify_id bigint default 0 not null comment '修改人id',
+	modify_name varchar(255) default '' not null comment '修改人名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '修改时间'
+)
+comment '系统负责人' charset=utf8;
+
+create index idx_dict_system
+	on system_owner (system_api_name);
+
+create table tenant
+(
+	id bigint auto_increment comment '租户ID，自增主键'
+		primary key,
+	type varchar(200) default 'FOREIGN_DIRECT' not null comment '租户类型，1：国外直营',
+	code varchar(128) default '' not null comment 'profile code，全局唯一',
+	name varchar(100) default '' not null comment '租户描述文本',
+	auth_code varchar(128) default '' not null comment '租户所对应的BSM权限code',
+	status tinyint default 1 not null comment '租户状态，0启用，1停用',
+	name_i18n_code varchar(100) default '' not null comment '租户名称的国际化表述',
+	default_currency varchar(255) default '' not null comment '默认币种',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modifier_id bigint default 0 not null comment '修改人ID',
+	modifier_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	tenant_code varchar(32) default '' not null comment '所属租户',
+	real_tenant_code varchar(128) default 'bytedance' not null comment '真正的租户过度使用',
+	final_tenant_code varchar(128) default 'bytedance' not null comment '真正的租户，最终台',
+	constraint uniq_auth_code
+		unique (auth_code),
+	constraint uniq_tenant_code
+		unique (code)
+)
+comment '租户信息表';
+
+create index idx_modify_time
+	on tenant (modify_time);
+
+create table tenant_app
+(
+	id bigint auto_increment comment '租户ID，自增主键'
+		primary key,
+	tenant_code varchar(32) default '' not null comment '租户code',
+	region varchar(32) default '' not null comment '国内：domestic, 海外：oversea, 都有 ALL',
+	name varchar(32) default '' not null comment 'name',
+	sys_name varchar(32) default '' not null comment 'sysName',
+	show_name varchar(32) default '' not null comment '租户描述文本apiName',
+	show_name_i18n varchar(32) default '' not null comment '租户描述文本apiName',
+	ext_info varchar(1024) default '' not null comment '扩展信息',
+	description varchar(1024) default '' not null comment '描述',
+	tos_id varchar(128) default '' not null comment 'logo的tosId',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	constraint uniq_tenant_name
+		unique (tenant_code, name)
+)
+comment '租户app表';
+
+create index idx_app
+	on tenant_app (name);
+
+create index idx_modify_time
+	on tenant_app (modify_time);
+
+create table tenant_biz_department_rel
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) not null comment '租户可见部门',
+	department_id bigint not null comment '部门id',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '租户-可见部门关系';
+
+create index idx_modify_time
+	on tenant_biz_department_rel (modify_time);
+
+create index union_tenant_department_id
+	on tenant_biz_department_rel (tenant_code, department_id);
+
+create table tenant_biz_employee_now
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户可见部门',
+	profile varchar(255) default '' not null comment 'profile',
+	employee_id bigint not null comment '员工id',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_employee_id
+		unique (employee_id)
+)
+comment '员工当前使用的租户';
+
+create index idx_modify_time
+	on tenant_biz_employee_now (modify_time);
+
+create table tenant_biz_employee_now_copy1
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) not null comment '租户可见部门',
+	profile varchar(255) default '' not null comment 'profile',
+	employee_id bigint not null comment '员工id',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_employee_id
+		unique (employee_id)
+)
+comment '员工当前使用的租户';
+
+create index idx_modify_time
+	on tenant_biz_employee_now_copy1 (modify_time);
+
+create table tenant_block
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '属于那个系统',
+	name varchar(128) default '' not null comment 'name',
+	show_name varchar(128) default '' not null comment '区块名称',
+	show_name_i18n_code varchar(128) default '' not null comment '区块名称i18nCode',
+	description varchar(1024) default '' not null comment '描述',
+	props mediumtext null comment '区块内容',
+	snapshot varchar(128) default '' not null comment '区块截图 CDN 地址',
+	page_template varchar(16) default '' not null comment '区块所适用的页面模版',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '修改时间',
+	tenant_code varchar(128) default '' not null comment '租户tenantCode',
+	constraint uniq_tenant_name
+		unique (tenant_code, sys_name, name)
+)
+comment '区块元数据';
+
+create index idx_modify_time
+	on tenant_block (modify_time);
+
+create index idx_show_name
+	on tenant_block (show_name);
+
+create table tenant_caller_version_relation
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) not null comment '租户',
+	caller_sys_code varchar(128) default '0' not null comment '外部调用系统标识',
+	caller_version varchar(128) default '0' not null comment '调用版本（外部系统传入）',
+	version int default 0 not null comment 'mtm的版本，一般指global版本',
+	type varchar(64) default '0' not null comment '关联类型：ServiceBody',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_caller_sys_version
+		unique (tenant_code, caller_sys_code, caller_version)
+)
+comment '外部系统调用,外部版本和内部mtm版本关联表';
+
+create table tenant_company
+(
+	id bigint auto_increment comment '租户ID，自增主键'
+		primary key,
+	code varchar(128) default '' not null comment '租户标识，全局唯一',
+	region varchar(32) default '' not null comment '国内：domestic, 海外：oversea, 都有 ALL',
+	show_name varchar(128) default '' not null comment '租户描述文本apiName',
+	show_name_i18n_code varchar(128) default '' not null comment '名称i18nCode',
+	tos_id varchar(128) default '' not null comment 'logo的tosId',
+	description varchar(1024) default '' not null comment '描述',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint code
+		unique (code)
+)
+comment '租户信息表';
+
+create index idx_modify_time
+	on tenant_company (modify_time);
+
+create table tenant_component
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) default '' not null comment 'name',
+	show_name varchar(256) default '' not null comment '组件名称',
+	show_name_i18n_code varchar(255) default '' not null comment '组件名称i18nCode',
+	description varchar(1024) default '' not null comment '描述',
+	props text null comment '扩展信息',
+	customized tinyint(1) default 0 not null comment '是否是自定义组件',
+	group_name varchar(255) default '' not null comment '组件组',
+	group_i18n_code varchar(255) default '' not null comment '组件组名称i18nCode',
+	icon_tos_id varchar(100) default '' not null comment 'icon存储文件id',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_name
+		unique (name)
+)
+comment '组件信息';
+
+create index idx_description
+	on tenant_component (description);
+
+create index idx_modify_time
+	on tenant_component (modify_time);
+
+create index idx_show_name
+	on tenant_component (show_name);
+
+create table tenant_config_relation
+(
+	id bigint unsigned auto_increment comment '租户配置关联关系表自增ID'
+		primary key,
+	tenant_code varchar(20) not null comment '租户code',
+	config_type int not null comment '配置类型,具体信息参照TenantConfigEnum类',
+	config_id bigint not null comment '配置id,对应各个配置表的业务id',
+	default_config tinyint default 0 not null comment '是否是默认配置，0-不是，1-是',
+	sort tinyint default 0 not null comment '配置的展示顺序，数字越大越靠后',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modifier_id bigint default 0 not null comment '修改人ID',
+	modifier_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '租户配置关联关系表';
+
+create index idx_modify_time
+	on tenant_config_relation (modify_time);
+
+create table tenant_contact_tag
+(
+	id bigint unsigned auto_increment comment '表自增ID'
+		primary key,
+	contact_tag_id bigint not null comment '标签id',
+	contact_type_id bigint not null comment '联系方式类型id',
+	name varchar(50) not null comment '标签名称',
+	name_i18ncode varchar(100) default '' not null comment '标签名称的国际化code',
+	description varchar(200) default '' not null comment '标签描述信息',
+	description_i18ncode varchar(100) default '' not null comment '标签描述信息国际化code',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modifier_id bigint default 0 not null comment '修改人ID',
+	modifier_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	constraint uniq_contact_tag_id
+		unique (contact_tag_id)
+)
+comment '联系方式标签';
+
+create index idx_modify_time
+	on tenant_contact_tag (modify_time);
+
+create table tenant_contact_type
+(
+	id bigint unsigned auto_increment comment '联系方式类型表自增ID'
+		primary key,
+	contact_type_id bigint not null comment '联系方式类型id',
+	name varchar(50) not null comment '联系方式名称',
+	name_i18ncode varchar(100) default '' not null comment '联系方式名称的国际化code',
+	placeholder varchar(100) default '' not null comment '输入提示',
+	placeholder_i18ncode varchar(100) default '' not null comment '输入提示国际化code',
+	description varchar(200) default '' not null comment '联系方式描述信息',
+	description_i18ncode varchar(100) default '' not null comment '联系方式描述信息国际化code',
+	discard tinyint default 0 not null comment '是否废弃(废弃的意思是不建议后续使用)，0-正常，1-废弃',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modifier_id bigint default 0 not null comment '修改人ID',
+	modifier_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	constraint uniq_contact_type_id
+		unique (contact_type_id)
+)
+comment '联系方式类型表';
+
+create index idx_modify_time
+	on tenant_contact_type (modify_time);
+
+create table tenant_custom_entity_change_task
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) default '' not null comment '操作记录name，实体名称、字段名称、索引名称',
+	operation varchar(256) default '' not null comment '新增，删除，修改',
+	type varchar(256) default '' not null comment '操作目标,实体、字段、索引',
+	pre_version int default 0 not null comment '创建记录的版本',
+	now_version int default 0 not null comment '创建记录的版本',
+	status varchar(64) default '0' not null comment '记录处理状态，存储变更，索引变更',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间'
+)
+comment '租户自定义实体元数据操作记录';
+
+create index idx_create_time
+	on tenant_custom_entity_change_task (create_time);
+
+create table tenant_custom_entity_data
+(
+	id bigint unsigned auto_increment comment '主键'
+		primary key,
+	entity_name varchar(128) default '' not null comment '实体名称',
+	sys_Name varchar(64) default '' not null comment '系统名称',
+	record_type varchar(128) default '' not null comment 'recordType',
+	tenant varchar(128) default '' not null comment '租户code',
+	primary_key varchar(128) default '' not null comment '实体主键',
+	version int(10) default 0 not null comment '数据版本',
+	deleted int(10) default 0 not null comment '逻辑删除字段0:正常 1:已删除',
+	creator_id bigint default 0 not null comment '创建人ID(登录人id)',
+	creator_name varchar(64) default '' not null comment '创建者名称(登录人姓名)',
+	owner_id bigint default 0 not null comment '拥有者id',
+	modify_id bigint default 0 not null comment '修改人ID(附身人id)',
+	modify_name varchar(64) default '' not null comment '修改者名称(附身人姓名)',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	field0 varchar(128) default '' not null comment '第0个字段',
+	field1 varchar(128) default '' not null comment '第1个字段',
+	field2 varchar(128) default '' not null comment '第2个字段',
+	field3 varchar(128) default '' not null comment '第3个字段',
+	field4 varchar(128) default '' not null comment '第4个字段',
+	field5 varchar(128) default '' not null comment '第5个字段',
+	field6 varchar(128) default '' not null comment '第6个字段',
+	field7 varchar(128) default '' not null comment '第7个字段',
+	field8 varchar(128) default '' not null comment '第8个字段',
+	field9 varchar(128) default '' not null comment '第9个字段',
+	field10 varchar(128) default '' not null comment '第10个字段',
+	field11 varchar(128) default '' not null comment '第11个字段',
+	field12 varchar(128) default '' not null comment '第12个字段',
+	field13 varchar(128) default '' not null comment '第13个字段',
+	field14 varchar(128) default '' not null comment '第14个字段',
+	field15 varchar(128) default '' not null comment '第15个字段',
+	field16 varchar(128) default '' not null comment '第16个字段',
+	field17 varchar(128) default '' not null comment '第17个字段',
+	field18 varchar(128) default '' not null comment '第18个字段',
+	field19 varchar(128) default '' not null comment '第19个字段',
+	field20 varchar(128) default '' not null comment '第20个字段',
+	field21 varchar(128) default '' not null comment '第21个字段',
+	field22 varchar(128) default '' not null comment '第22个字段',
+	field23 varchar(128) default '' not null comment '第23个字段',
+	field24 varchar(128) default '' not null comment '第24个字段',
+	field25 varchar(128) default '' not null comment '第25个字段',
+	field26 varchar(128) default '' not null comment '第26个字段',
+	field27 varchar(128) default '' not null comment '第27个字段',
+	field28 varchar(128) default '' not null comment '第28个字段',
+	field29 varchar(128) default '' not null comment '第29个字段',
+	field30 varchar(128) default '' not null comment '第30个字段',
+	field31 varchar(128) default '' not null comment '第31个字段',
+	field32 varchar(128) default '' not null comment '第32个字段',
+	field33 varchar(128) default '' not null comment '第33个字段',
+	field34 varchar(128) default '' not null comment '第34个字段',
+	field35 varchar(128) default '' not null comment '第35个字段',
+	field36 varchar(128) default '' not null comment '第36个字段',
+	field37 varchar(128) default '' not null comment '第37个字段',
+	field38 varchar(128) default '' not null comment '第38个字段',
+	field39 varchar(128) default '' not null comment '第39个字段',
+	field40 varchar(128) default '' not null comment '第40个字段',
+	field41 varchar(128) default '' not null comment '第41个字段',
+	field42 varchar(128) default '' not null comment '第42个字段',
+	field43 varchar(128) default '' not null comment '第43个字段',
+	field44 varchar(128) default '' not null comment '第44个字段',
+	field45 varchar(128) default '' not null comment '第45个字段',
+	field46 varchar(128) default '' not null comment '第46个字段',
+	field47 varchar(128) default '' not null comment '第47个字段',
+	field48 varchar(128) default '' not null comment '第48个字段',
+	field49 varchar(128) default '' not null comment '第49个字段',
+	field50 varchar(128) default '' not null comment '第50个字段',
+	field51 varchar(128) default '' not null comment '第51个字段',
+	field52 varchar(128) default '' not null comment '第52个字段',
+	field53 varchar(128) default '' not null comment '第53个字段',
+	field54 varchar(128) default '' not null comment '第54个字段',
+	field55 varchar(128) default '' not null comment '第55个字段',
+	field56 varchar(128) default '' not null comment '第56个字段',
+	field57 varchar(128) default '' not null comment '第57个字段',
+	field58 varchar(128) default '' not null comment '第58个字段',
+	field59 varchar(128) default '' not null comment '第59个字段',
+	field60 varchar(128) default '' not null comment '第60个字段',
+	field61 varchar(128) default '' not null comment '第61个字段',
+	field62 varchar(128) default '' not null comment '第62个字段',
+	field63 varchar(128) default '' not null comment '第63个字段',
+	field64 varchar(128) default '' not null comment '第64个字段',
+	field65 varchar(128) default '' not null comment '第65个字段',
+	field66 varchar(128) default '' not null comment '第66个字段',
+	field67 varchar(128) default '' not null comment '第67个字段',
+	field68 varchar(128) default '' not null comment '第68个字段',
+	field69 varchar(128) default '' not null comment '第69个字段',
+	field70 varchar(128) default '' not null comment '第70个字段',
+	field71 varchar(128) default '' not null comment '第71个字段',
+	field72 varchar(128) default '' not null comment '第72个字段',
+	field73 varchar(128) default '' not null comment '第73个字段',
+	field74 varchar(128) default '' not null comment '第74个字段',
+	field75 varchar(128) default '' not null comment '第75个字段',
+	field76 varchar(128) default '' not null comment '第76个字段',
+	field77 varchar(128) default '' not null comment '第77个字段',
+	field78 varchar(128) default '' not null comment '第78个字段',
+	field79 varchar(128) default '' not null comment '第79个字段',
+	field80 varchar(128) default '' not null comment '第80个字段',
+	field81 varchar(128) default '' not null comment '第81个字段',
+	field82 varchar(128) default '' not null comment '第82个字段',
+	field83 varchar(128) default '' not null comment '第83个字段',
+	field84 varchar(128) default '' not null comment '第84个字段',
+	field85 varchar(128) default '' not null comment '第85个字段',
+	field86 varchar(128) default '' not null comment '第86个字段',
+	field87 varchar(128) default '' not null comment '第87个字段',
+	field88 varchar(128) default '' not null comment '第88个字段',
+	field89 varchar(128) default '' not null comment '第89个字段',
+	field90 varchar(128) default '' not null comment '第90个字段',
+	field91 varchar(128) default '' not null comment '第91个字段',
+	field92 varchar(128) default '' not null comment '第92个字段',
+	field93 varchar(128) default '' not null comment '第93个字段',
+	field94 varchar(128) default '' not null comment '第94个字段',
+	field95 varchar(128) default '' not null comment '第95个字段',
+	field96 varchar(128) default '' not null comment '第96个字段',
+	field97 varchar(128) default '' not null comment '第97个字段',
+	field98 varchar(128) default '' not null comment '第98个字段',
+	field99 varchar(128) default '' not null comment '第99个字段',
+	field100 varchar(128) default '' not null comment '第100个字段',
+	field101 text null comment '第101个字段',
+	field102 text null comment '第102个字段',
+	field103 text null comment '第103个字段',
+	field104 text null comment '第104个字段',
+	field105 text null comment '第105个字段',
+	field106 text null comment '第106个字段',
+	field107 text null comment '第107个字段',
+	field108 text null comment '第108个字段',
+	field109 text null comment '第109个字段',
+	field110 text null comment '第110个字段',
+	field111 text null comment '第111个字段',
+	field112 text null comment '第112个字段',
+	field113 text null comment '第113个字段',
+	field114 text null comment '第114个字段',
+	field115 text null comment '第115个字段',
+	field116 text null comment '第116个字段',
+	field117 text null comment '第117个字段',
+	field118 text null comment '第118个字段',
+	field119 text null comment '第119个字段',
+	field120 text null comment '第120个字段',
+	field121 text null comment '第121个字段',
+	field122 text null comment '第122个字段',
+	field123 text null comment '第123个字段',
+	field124 text null comment '第124个字段',
+	field125 text null comment '第125个字段',
+	field126 text null comment '第126个字段',
+	field127 text null comment '第127个字段',
+	field128 text null comment '第128个字段',
+	field129 text null comment '第129个字段',
+	field130 text null comment '第130个字段',
+	field131 text null comment '第131个字段',
+	field132 text null comment '第132个字段',
+	field133 text null comment '第133个字段',
+	field134 text null comment '第134个字段',
+	field135 text null comment '第135个字段',
+	field136 text null comment '第136个字段',
+	field137 text null comment '第137个字段',
+	field138 text null comment '第138个字段',
+	field139 text null comment '第139个字段',
+	field140 text null comment '第140个字段',
+	field141 text null comment '第141个字段',
+	field142 text null comment '第142个字段',
+	field143 text null comment '第143个字段',
+	field144 text null comment '第144个字段',
+	field145 text null comment '第145个字段',
+	field146 text null comment '第146个字段',
+	field147 text null comment '第147个字段',
+	field148 text null comment '第148个字段',
+	field149 text null comment '第149个字段',
+	field150 text null comment '第150个字段',
+	field151 text null comment '第151个字段',
+	field152 text null comment '第152个字段',
+	field153 text null comment '第153个字段',
+	field154 text null comment '第154个字段',
+	field155 text null comment '第155个字段',
+	field156 text null comment '第156个字段',
+	field157 text null comment '第157个字段',
+	field158 text null comment '第158个字段',
+	field159 text null comment '第159个字段',
+	field160 text null comment '第160个字段',
+	field161 text null comment '第161个字段',
+	field162 text null comment '第162个字段',
+	field163 text null comment '第163个字段',
+	field164 text null comment '第164个字段',
+	field165 text null comment '第165个字段',
+	field166 text null comment '第166个字段',
+	field167 text null comment '第167个字段',
+	field168 text null comment '第168个字段',
+	field169 text null comment '第169个字段',
+	field170 text null comment '第170个字段',
+	field171 text null comment '第171个字段',
+	field172 text null comment '第172个字段',
+	field173 text null comment '第173个字段',
+	field174 text null comment '第174个字段',
+	field175 text null comment '第175个字段',
+	field176 text null comment '第176个字段',
+	field177 text null comment '第177个字段',
+	field178 text null comment '第178个字段',
+	field179 text null comment '第179个字段',
+	field180 text null comment '第180个字段',
+	field181 text null comment '第181个字段',
+	field182 text null comment '第182个字段',
+	field183 text null comment '第183个字段',
+	field184 text null comment '第184个字段',
+	field185 text null comment '第185个字段',
+	field186 text null comment '第186个字段',
+	field187 text null comment '第187个字段',
+	field188 text null comment '第188个字段',
+	constraint uniq_entity_name_primary_key_version
+		unique (entity_name, primary_key, version)
+)
+comment '自定义实体数据表';
+
+create index idx_owner_id_entity_name
+	on tenant_custom_entity_data (owner_id, tenant, entity_name);
+
+create index idx_primary_key_version
+	on tenant_custom_entity_data (primary_key, version);
+
+create table tenant_custom_entity_index
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	tenant_code varchar(255) default '' not null comment '租户code',
+	sys_name varchar(128) default '' not null comment '属于那个系统',
+	entity_name varchar(128) not null comment '实体名字',
+	version int default 0 not null comment '多版本控制',
+	related_entity_name varchar(128) default '' not null comment '关联实体名字',
+	index_type varchar(128) default '' not null comment '索引类型',
+	show_type varchar(128) default '' not null comment '展示类型',
+	field_name varchar(255) default '' not null comment '属性名字',
+	related_field_name varchar(255) default '' not null comment '属性名字',
+	status varchar(128) default '' not null comment 'active,de-active',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '自定义实体索引元数据';
+
+create index idx_entity_name
+	on tenant_custom_entity_index (entity_name);
+
+create index idx_version
+	on tenant_custom_entity_index (version);
+
+create table tenant_custom_entity_operation_log
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户',
+	sys_name varchar(128) default '' not null comment '系统',
+	entity_name varchar(64) default '' not null comment '实体名称',
+	record_id bigint default 0 not null comment '记录id',
+	ext_id varchar(255) default '' not null comment '关联记录id',
+	old_value text null comment '变更前记录',
+	new_value text null comment '变更后记录',
+	creator_id bigint default 0 not null comment '创建人id',
+	create_time datetime not null on update CURRENT_TIMESTAMP comment '创建时间',
+	log_id varchar(255) default '' not null comment '日志id',
+	record_type varchar(128) default '' not null comment '业务类型',
+	action varchar(64) default '' not null comment '操作类型'
+)
+collate=utf8mb4_bin;
+
+create index idx_create_id
+	on tenant_custom_entity_operation_log (tenant_code, sys_name, entity_name, creator_id);
+
+create index idx_create_time
+	on tenant_custom_entity_operation_log (tenant_code, sys_name, entity_name, create_time);
+
+create index idx_record_id
+	on tenant_custom_entity_operation_log (tenant_code, sys_name, entity_name, record_id);
+
+create table tenant_custom_entity_record_change_task
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	primary_key varchar(128) default '' not null comment '变更记录ID',
+	version int default 0 not null comment '创建记录的版本',
+	status varchar(64) default '0' not null comment '记录处理状态，存储变更，索引变更',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间'
+)
+comment '租户自定义实体业务数据操作记录';
+
+create index data_id
+	on tenant_custom_entity_record_change_task (primary_key);
+
+create table tenant_custom_entity_transaction_data
+(
+	id bigint unsigned auto_increment comment '主键'
+		primary key,
+	transaction_id bigint default 0 not null comment '事务ID',
+	entity_name varchar(128) default '' not null comment '实体名称',
+	sys_Name varchar(64) default '' not null comment '系统名称',
+	record_type varchar(128) default '' not null comment 'recordType',
+	tenant varchar(128) default '' not null comment '租户code',
+	primary_key varchar(128) default '' not null comment '实体主键',
+	version int(10) default 0 not null comment '数据版本',
+	deleted int(10) default 0 not null comment '逻辑删除字段0:正常 1:已删除',
+	creator_id bigint default 0 not null comment '创建人ID(登录人id)',
+	modify_id bigint default 0 not null comment '修改人ID(附身人id)',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '记录修改时间',
+	field0 varchar(128) default '' not null comment '第0个字段',
+	field1 varchar(128) default '' not null comment '第1个字段',
+	field2 varchar(128) default '' not null comment '第2个字段',
+	field3 varchar(128) default '' not null comment '第3个字段',
+	field4 varchar(128) default '' not null comment '第4个字段',
+	field5 varchar(128) default '' not null comment '第5个字段',
+	field6 varchar(128) default '' not null comment '第6个字段',
+	field7 varchar(128) default '' not null comment '第7个字段',
+	field8 varchar(128) default '' not null comment '第8个字段',
+	field9 varchar(128) default '' not null comment '第9个字段',
+	field10 varchar(128) default '' not null comment '第10个字段',
+	field11 varchar(128) default '' not null comment '第11个字段',
+	field12 varchar(128) default '' not null comment '第12个字段',
+	field13 varchar(128) default '' not null comment '第13个字段',
+	field14 varchar(128) default '' not null comment '第14个字段',
+	field15 varchar(128) default '' not null comment '第15个字段',
+	field16 varchar(128) default '' not null comment '第16个字段',
+	field17 varchar(128) default '' not null comment '第17个字段',
+	field18 varchar(128) default '' not null comment '第18个字段',
+	field19 varchar(128) default '' not null comment '第19个字段',
+	field20 varchar(128) default '' not null comment '第20个字段',
+	field21 varchar(128) default '' not null comment '第21个字段',
+	field22 varchar(128) default '' not null comment '第22个字段',
+	field23 varchar(128) default '' not null comment '第23个字段',
+	field24 varchar(128) default '' not null comment '第24个字段',
+	field25 varchar(128) default '' not null comment '第25个字段',
+	field26 varchar(128) default '' not null comment '第26个字段',
+	field27 varchar(128) default '' not null comment '第27个字段',
+	field28 varchar(128) default '' not null comment '第28个字段',
+	field29 varchar(128) default '' not null comment '第29个字段',
+	field30 varchar(128) default '' not null comment '第30个字段',
+	field31 varchar(128) default '' not null comment '第31个字段',
+	field32 varchar(128) default '' not null comment '第32个字段',
+	field33 varchar(128) default '' not null comment '第33个字段',
+	field34 varchar(128) default '' not null comment '第34个字段',
+	field35 varchar(128) default '' not null comment '第35个字段',
+	field36 varchar(128) default '' not null comment '第36个字段',
+	field37 varchar(128) default '' not null comment '第37个字段',
+	field38 varchar(128) default '' not null comment '第38个字段',
+	field39 varchar(128) default '' not null comment '第39个字段',
+	field40 varchar(128) default '' not null comment '第40个字段',
+	field41 varchar(128) default '' not null comment '第41个字段',
+	field42 varchar(128) default '' not null comment '第42个字段',
+	field43 varchar(128) default '' not null comment '第43个字段',
+	field44 varchar(128) default '' not null comment '第44个字段',
+	field45 varchar(128) default '' not null comment '第45个字段',
+	field46 varchar(128) default '' not null comment '第46个字段',
+	field47 varchar(128) default '' not null comment '第47个字段',
+	field48 varchar(128) default '' not null comment '第48个字段',
+	field49 varchar(128) default '' not null comment '第49个字段',
+	field50 varchar(128) default '' not null comment '第50个字段',
+	field51 varchar(128) default '' not null comment '第51个字段',
+	field52 varchar(128) default '' not null comment '第52个字段',
+	field53 varchar(128) default '' not null comment '第53个字段',
+	field54 varchar(128) default '' not null comment '第54个字段',
+	field55 varchar(128) default '' not null comment '第55个字段',
+	field56 varchar(128) default '' not null comment '第56个字段',
+	field57 varchar(128) default '' not null comment '第57个字段',
+	field58 varchar(128) default '' not null comment '第58个字段',
+	field59 varchar(128) default '' not null comment '第59个字段',
+	field60 varchar(128) default '' not null comment '第60个字段',
+	field61 varchar(128) default '' not null comment '第61个字段',
+	field62 varchar(128) default '' not null comment '第62个字段',
+	field63 varchar(128) default '' not null comment '第63个字段',
+	field64 varchar(128) default '' not null comment '第64个字段',
+	field65 varchar(128) default '' not null comment '第65个字段',
+	field66 varchar(128) default '' not null comment '第66个字段',
+	field67 varchar(128) default '' not null comment '第67个字段',
+	field68 varchar(128) default '' not null comment '第68个字段',
+	field69 varchar(128) default '' not null comment '第69个字段',
+	field70 varchar(128) default '' not null comment '第70个字段',
+	field71 varchar(128) default '' not null comment '第71个字段',
+	field72 varchar(128) default '' not null comment '第72个字段',
+	field73 varchar(128) default '' not null comment '第73个字段',
+	field74 varchar(128) default '' not null comment '第74个字段',
+	field75 varchar(128) default '' not null comment '第75个字段',
+	field76 varchar(128) default '' not null comment '第76个字段',
+	field77 varchar(128) default '' not null comment '第77个字段',
+	field78 varchar(128) default '' not null comment '第78个字段',
+	field79 varchar(128) default '' not null comment '第79个字段',
+	field80 varchar(128) default '' not null comment '第80个字段',
+	field81 varchar(128) default '' not null comment '第81个字段',
+	field82 varchar(128) default '' not null comment '第82个字段',
+	field83 varchar(128) default '' not null comment '第83个字段',
+	field84 varchar(128) default '' not null comment '第84个字段',
+	field85 varchar(128) default '' not null comment '第85个字段',
+	field86 varchar(128) default '' not null comment '第86个字段',
+	field87 varchar(128) default '' not null comment '第87个字段',
+	field88 varchar(128) default '' not null comment '第88个字段',
+	field89 varchar(128) default '' not null comment '第89个字段',
+	field90 varchar(128) default '' not null comment '第90个字段',
+	field91 varchar(128) default '' not null comment '第91个字段',
+	field92 varchar(128) default '' not null comment '第92个字段',
+	field93 varchar(128) default '' not null comment '第93个字段',
+	field94 varchar(128) default '' not null comment '第94个字段',
+	field95 varchar(128) default '' not null comment '第95个字段',
+	field96 varchar(128) default '' not null comment '第96个字段',
+	field97 varchar(128) default '' not null comment '第97个字段',
+	field98 varchar(128) default '' not null comment '第98个字段',
+	field99 varchar(128) default '' not null comment '第99个字段',
+	field100 varchar(128) default '' not null comment '第100个字段',
+	field101 text null comment '第101个字段',
+	field102 text null comment '第102个字段',
+	field103 text null comment '第103个字段',
+	field104 text null comment '第104个字段',
+	field105 text null comment '第105个字段',
+	field106 text null comment '第106个字段',
+	field107 text null comment '第107个字段',
+	field108 text null comment '第108个字段',
+	field109 text null comment '第109个字段',
+	field110 text null comment '第110个字段',
+	field111 text null comment '第111个字段',
+	field112 text null comment '第112个字段',
+	field113 text null comment '第113个字段',
+	field114 text null comment '第114个字段',
+	field115 text null comment '第115个字段',
+	field116 text null comment '第116个字段',
+	field117 text null comment '第117个字段',
+	field118 text null comment '第118个字段',
+	field119 text null comment '第119个字段',
+	field120 text null comment '第120个字段',
+	field121 text null comment '第121个字段',
+	field122 text null comment '第122个字段',
+	field123 text null comment '第123个字段',
+	field124 text null comment '第124个字段',
+	field125 text null comment '第125个字段',
+	field126 text null comment '第126个字段',
+	field127 text null comment '第127个字段',
+	field128 text null comment '第128个字段',
+	field129 text null comment '第129个字段',
+	field130 text null comment '第130个字段',
+	field131 text null comment '第131个字段',
+	field132 text null comment '第132个字段',
+	field133 text null comment '第133个字段',
+	field134 text null comment '第134个字段',
+	field135 text null comment '第135个字段',
+	field136 text null comment '第136个字段',
+	field137 text null comment '第137个字段',
+	field138 text null comment '第138个字段',
+	field139 text null comment '第139个字段',
+	field140 text null comment '第140个字段',
+	field141 text null comment '第141个字段',
+	field142 text null comment '第142个字段',
+	field143 text null comment '第143个字段',
+	field144 text null comment '第144个字段',
+	field145 text null comment '第145个字段',
+	field146 text null comment '第146个字段',
+	field147 text null comment '第147个字段',
+	field148 text null comment '第148个字段',
+	field149 text null comment '第149个字段',
+	field150 text null comment '第150个字段',
+	field151 text null comment '第151个字段',
+	field152 text null comment '第152个字段',
+	field153 text null comment '第153个字段',
+	field154 text null comment '第154个字段',
+	field155 text null comment '第155个字段',
+	field156 text null comment '第156个字段',
+	field157 text null comment '第157个字段',
+	field158 text null comment '第158个字段',
+	field159 text null comment '第159个字段',
+	field160 text null comment '第160个字段',
+	field161 text null comment '第161个字段',
+	field162 text null comment '第162个字段',
+	field163 text null comment '第163个字段',
+	field164 text null comment '第164个字段',
+	field165 text null comment '第165个字段',
+	field166 text null comment '第166个字段',
+	field167 text null comment '第167个字段',
+	field168 text null comment '第168个字段',
+	field169 text null comment '第169个字段',
+	field170 text null comment '第170个字段',
+	field171 text null comment '第171个字段',
+	field172 text null comment '第172个字段',
+	field173 text null comment '第173个字段',
+	field174 text null comment '第174个字段',
+	field175 text null comment '第175个字段',
+	field176 text null comment '第176个字段',
+	field177 text null comment '第177个字段',
+	field178 text null comment '第178个字段',
+	field179 text null comment '第179个字段',
+	field180 text null comment '第180个字段',
+	field181 text null comment '第181个字段',
+	field182 text null comment '第182个字段',
+	field183 text null comment '第183个字段',
+	field184 text null comment '第184个字段',
+	field185 text null comment '第185个字段',
+	field186 text null comment '第186个字段',
+	field187 text null comment '第187个字段',
+	field188 text null comment '第188个字段',
+	constraint uniq_primary_key_version
+		unique (primary_key, version)
+)
+comment '自定义实体数据事务表';
+
+create index idx_primary_key_transaction_id
+	on tenant_custom_entity_transaction_data (primary_key, transaction_id);
+
+create table tenant_custom_entity_transaction_info
+(
+	id bigint unsigned auto_increment comment '主键'
+		primary key,
+	transaction_id bigint default 0 not null comment '事务ID',
+	tenant varchar(128) default '' not null comment '租户code',
+	sys_Name varchar(64) default '' not null comment '系统名称',
+	status int(10) default 0 not null comment '事务状态 1:已开启 2:已提交 3:已回滚',
+	operator_id bigint default 0 not null comment '操作人ID',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '记录修改时间',
+	constraint uniq_transaction_id
+		unique (transaction_id)
+)
+comment '自定义实体数据事务表';
+
+create table tenant_custom_entity_uniq_index
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户code',
+	sys_name varchar(128) default '' not null comment '属于那个系统',
+	name varchar(128) default '' not null comment '索引名称',
+	entity_name varchar(128) default '' not null comment '实体名称',
+	field0 varchar(32) default '' not null comment '第一个字段',
+	field1 varchar(32) default '' not null comment '第二个字段',
+	field2 varchar(32) default '' not null comment '第三个字段',
+	status varchar(64) default '0' not null comment '状态：生效、废弃',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制'
+)
+comment '自定义实体唯一索引';
+
+create index idx_create_time
+	on tenant_custom_entity_uniq_index (create_time);
+
+create table tenant_department_rel
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户code',
+	department_id bigint default 0 not null comment '部门id',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_employee_tenant
+		unique (tenant_code, department_id)
+)
+comment '租户-部门关系表';
+
+create index idx_modify_time
+	on tenant_department_rel (modify_time);
+
+create table tenant_dict
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) default '' not null comment '字典名称',
+	show_name varchar(255) default '' not null comment '字典名称',
+	show_name_i18n_code varchar(255) default '' not null comment '字典名称i18nCode',
+	sys_name varchar(128) default '' not null comment '记录属于哪个系统',
+	source_system varchar(32) default '' not null comment '源系统名称',
+	tenant varchar(128) default '' not null comment '租户，为空代表公共',
+	profile_code varchar(128) default '' not null comment '角色code',
+	record_type varchar(128) default '' not null comment '业务类型',
+	type varchar(128) default '' not null comment '字典类型(1-REGULAR 固定值、2-SERVICE 调用一个服务)',
+	item_render_type tinyint default 1 not null comment '字典值的渲染类型：1-table；2-textarea',
+	data_struct_type varchar(128) default '' not null comment '1-LIST  2-TREE',
+	visible tinyint default 1 not null comment '1-公开，2-私有。默认是公开',
+	status tinyint default 0 not null comment '状态是否生效：0：不生效、1：生效',
+	result_field_mapping varchar(1024) default '' not null comment 'field for id/parentid/name',
+	service_name varchar(255) default '' not null comment '服务名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	description varchar(1024) default '' not null comment '描述',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	group_name varchar(128) default '' not null comment '字典集名称',
+	version int default 0 not null comment '多版本控制',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, name)
+)
+comment '字典基础信息';
+
+create index idx_modify_time
+	on tenant_dict (modify_time);
+
+create index idx_sysname_version
+	on tenant_dict (sys_name, version);
+
+create index tenant_groupName_version
+	on tenant_dict (tenant_code, group_name, version);
+
+create table tenant_dict_item
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	dict_name varchar(128) not null comment '字典名称',
+	sys_name varchar(255) default '' not null,
+	source_system varchar(32) default '' not null comment '源系统名称',
+	name varchar(255) default '' null comment '名称',
+	parent_name varchar(128) default '' not null comment '父节点名称',
+	value varchar(255) default '' not null comment '值',
+	value_i18n_code varchar(255) default '' not null comment '字典枚举值名称i18nCode',
+	value_desc varchar(255) default '' not null comment '值的表述',
+	value_desc_i8ncode varchar(255) default '' not null comment '值的国际化表述',
+	status tinyint default 0 not null comment '状态是否生效：0：不生效、1：生效',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	sequence_id int default 0 not null comment '字典值的序列号，用于排序',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)'
+)
+comment '字典值';
+
+create index idx_dict_name
+	on tenant_dict_item (dict_name);
+
+create index idx_modify_time
+	on tenant_dict_item (modify_time);
+
+create index idx_name_version
+	on tenant_dict_item (name, version);
+
+create index idx_sys_copy
+	on tenant_dict_item (tenant_code, sys_name, version, dict_name, name);
+
+create index idx_sysname_version
+	on tenant_dict_item (sys_name, version);
+
+create table tenant_employee_current_company
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	employee_id bigint not null comment '员工id',
+	code varchar(128) default '' not null comment 'company code',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint idx_employee_id
+		unique (employee_id)
+)
+comment '员工当前company';
+
+create index idx_modify_time
+	on tenant_employee_current_company (modify_time);
+
+create table tenant_employee_current_modify_company
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	employee_id bigint not null comment '员工id',
+	code varchar(128) default '' not null comment 'company code',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint idx_employee_id
+		unique (employee_id)
+)
+comment '员工当前配置的company';
+
+create index idx_modify_time
+	on tenant_employee_current_modify_company (modify_time);
+
+create table tenant_employee_current_profile
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '所属租户',
+	employee_id bigint not null comment '员工id',
+	profile_code varchar(128) not null comment '使用的当前code',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint idx_employee_id
+		unique (tenant_code, employee_id)
+)
+comment '员工当前使用的profile';
+
+create index idx_modify_time
+	on tenant_employee_current_profile (modify_time);
+
+create table tenant_employee_current_tenant
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	employee_id bigint default 0 not null comment '员工id',
+	tenant_code varchar(128) default '' not null comment '租户code',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_employee_tenant
+		unique (employee_id, tenant_code)
+)
+comment '用户当前使用的租户';
+
+create table tenant_employee_profile
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(64) default '' not null comment '租户code',
+	employee_id bigint default 0 not null comment '员工id',
+	employee_name varchar(64) default '0' not null comment '员工姓名',
+	profile_name varchar(64) default '' not null comment '简档name',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_tenant_employee_profile
+		unique (employee_id, tenant_code, profile_name)
+)
+comment '租户-员工-profile关系表';
+
+create index idx_tenant
+	on tenant_employee_profile (tenant_code);
+
+create table tenant_entity
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '属于那个系统',
+	source_system varchar(32) default '' not null comment '源系统名称',
+	tenant varchar(31) default '' not null comment '租户，为空代表公共',
+	entity_type varchar(64) default 'BASIC' not null comment '实体类型',
+	name varchar(64) default '' not null comment 'name',
+	description varchar(1023) default '' not null comment '描述',
+	label varchar(128) default '' not null comment '提示信息',
+	label_i18n varchar(256) default '' not null comment 'label的i18n',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	show_name varchar(64) default '' not null,
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenant_name_version
+		unique (tenant_code, version, sys_name, name)
+)
+comment '页面和区域关系表';
+
+create index idx_modify_time
+	on tenant_entity (modify_time);
+
+create index idx_name
+	on tenant_entity (name);
+
+create index idx_sysname_version
+	on tenant_entity (sys_name, version);
+
+create table tenant_entity_action
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	name varchar(128) not null comment '字段名称',
+	entity_name varchar(64) default '' not null comment '实体名称',
+	standard tinyint(1) default 0 not null comment '标准对象',
+	action varchar(128) default '' not null comment '操作',
+	action_label varchar(128) default '' not null comment '操作名',
+	version int default 0 not null comment '多版本控制',
+	sys_name varchar(64) default '' not null comment '系统名称',
+	tenant_code varchar(128) default 'bytedance' not null comment 'tenantCode',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '实体动作';
+
+create index idx_modify_time
+	on tenant_entity_action (modify_time);
+
+create index idx_name
+	on tenant_entity_action (name);
+
+create index idx_sysname_version
+	on tenant_entity_action (sys_name, version);
+
+create table tenant_entity_action_service
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	action_name varchar(64) default '' not null comment '操作',
+	service_name varchar(64) default '' not null comment '服务名称',
+	version int default 0 not null comment '多版本控制',
+	sys_name varchar(64) default '' not null comment '系统名称',
+	tenant_code varchar(64) default 'bytedance' not null comment 'tenantCode',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '实体动作服务';
+
+create index idx_modify_time
+	on tenant_entity_action_service (modify_time);
+
+create index idx_sysname_version
+	on tenant_entity_action_service (sys_name, version);
+
+create table tenant_entity_data_approve
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	entity_name varchar(128) not null comment '实体name',
+	entity_data_pk varchar(128) not null comment '实体唯一id',
+	process_name varchar(128) default '' not null comment '审批流唯一name',
+	approve_process_instance_id varchar(128) not null comment '审批实例id',
+	tenant_code varchar(128) not null comment '租户code',
+	sys_name varchar(128) not null comment '系统name',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_entityname_entityins_processins_tenant_sys
+		unique (tenant_code, sys_name, entity_name, entity_data_pk, approve_process_instance_id),
+	constraint uniq_processinstanceid
+		unique (approve_process_instance_id)
+)
+comment '实体实例-审批关联关系表' charset=utf8;
+
+create table tenant_entity_record
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(255) default '' not null comment '系统名称',
+	entity_name varchar(128) not null comment '实体name',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '实体数据存储';
+
+create index idx_entity_name
+	on tenant_entity_record (entity_name);
+
+create index idx_modify_time
+	on tenant_entity_record (modify_time);
+
+create table tenant_entity_relation
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(255) not null comment '系统名称',
+	p_entity_name varchar(128) default '0' not null comment '父实体name',
+	c_entity_name varchar(128) default '0' not null comment '子实体name',
+	p_relation_field_name varchar(128) default '0' not null comment '父实体用来做关联的字段名',
+	c_relation_field_name varchar(128) default '0' not null comment '父实体用来做关联的字段名',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	constraint uniq_pentityname_version
+		unique (p_entity_name, version)
+)
+comment '实体包含关系表';
+
+create index idx_modify_time
+	on tenant_entity_relation (modify_time);
+
+create table tenant_entity_relation_ship
+(
+	id bigint(10) auto_increment comment '主键'
+		primary key,
+	name varchar(128) default '' not null comment '关系名称',
+	type varchar(128) default '' not null comment '关系类型，MD、LookUp',
+	segment_title varchar(128) default '' not null comment '关联列表展示Title',
+	host_entity varchar(128) default '' not null comment 'M 实体名称',
+	host_key_field varchar(128) default '' not null comment 'M实体主键',
+	host_label_field varchar(128) default '' not null comment 'M实体的展示字段',
+	guest_entity varchar(128) default '' not null comment 'D 实体名称',
+	guest_key_field varchar(128) default '' not null comment 'D 实体关联字段',
+	query_service varchar(128) default '' not null comment '查询服务',
+	save_relation_service varchar(128) default '' not null comment '保存关系服务',
+	version int(10) default 0 not null comment '版本',
+	tenant_code varchar(128) default '' not null comment '租户code',
+	sys_name varchar(128) default '' not null comment '系统',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) charset utf8mb4 default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) charset utf8mb4 default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)'
+)
+charset=utf8;
+
+create index idx_name
+	on tenant_entity_relation_ship (tenant_code, sys_name, version, name);
+
+create table tenant_entity_validate_relation
+(
+	id bigint(11) unsigned auto_increment
+		primary key,
+	type int default 1 not null comment '1-refToEntityField    2-refToPageField',
+	field_name varchar(128) default '' not null comment 'ref to field_name',
+	validator_name varchar(128) default '' not null comment '过滤器名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	sys_name varchar(128) default '' not null comment '系统名称',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	page_name varchar(128) default '' not null comment '所属页面',
+	entity_name varchar(64) default '' not null comment '所属名称'
+);
+
+create index dix_fielename_type
+	on tenant_entity_validate_relation (field_name, type);
+
+create index idx_modify_time
+	on tenant_entity_validate_relation (modify_time);
+
+create index idx_sysname_version
+	on tenant_entity_validate_relation (sys_name, version);
+
+create index idx_validator_name
+	on tenant_entity_validate_relation (validator_name);
+
+create table tenant_event
+(
+	id bigint auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	tenant varchar(128) default '' not null comment '租户code',
+	profile varchar(255) default '' not null comment 'profile',
+	name varchar(128) default '0' not null comment '事件name',
+	show_name varchar(128) default '' not null comment 'service名称-showname',
+	show_name_i18n_code varchar(128) default '' not null comment 'service名称-i18nCode',
+	page_name varchar(128) null comment '页面名称',
+	description varchar(1024) default '' not null,
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	source int default 0 not null comment '配置来源,0:page,1:pipeline',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, page_name, name)
+)
+comment '事件';
+
+create index idx_modify_time
+	on tenant_event (modify_time);
+
+create index idx_sys_name
+	on tenant_event (sys_name);
+
+create table tenant_event_action
+(
+	id bigint auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(255) default '' not null comment '系统名称',
+	name varchar(255) default '' not null,
+	description varchar(255) default '' not null comment '描述信息',
+	event_name varchar(128) null,
+	page_name varchar(128) default '' not null comment '所属页面的name',
+	page_items varchar(4096) null comment '页面元素列表，逗号分隔',
+	property_name varchar(255) null comment '属性名称',
+	function varchar(128) default '0' not null comment 'insert、assign、replace',
+	arguments varchar(255) default '0' not null comment '参数值',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode'
+)
+comment '触发的事件';
+
+create index idx_event_name
+	on tenant_event_action (event_name);
+
+create index idx_modify_time
+	on tenant_event_action (modify_time);
+
+create index idx_name_version
+	on tenant_event_action (tenant_code, version, page_name, event_name);
+
+create index idx_sys_name
+	on tenant_event_action (sys_name);
+
+create table tenant_event_condition
+(
+	id bigint auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(255) default '' not null comment '系统名称',
+	event_name varchar(128) null,
+	page_name varchar(128) default '' not null comment '所属页面的name',
+	name varchar(255) default '' not null,
+	scope varchar(128) null comment 'scope',
+	var_names varchar(255) null comment '参数字段列表，逗号分隔',
+	property_name varchar(255) null comment '属性',
+	operator varchar(128) default '0' not null comment '操作符',
+	arguments varchar(255) default '0' not null comment '参数值',
+	description varchar(255) null,
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode'
+)
+comment '事件条件';
+
+create index idx_event_name
+	on tenant_event_condition (event_name);
+
+create index idx_modify_time
+	on tenant_event_condition (modify_time);
+
+create index idx_name_version
+	on tenant_event_condition (tenant_code, version, page_name, event_name);
+
+create table tenant_event_sender_service
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	tenant_code varchar(128) default '' not null comment '租户，为空代表公共',
+	name varchar(128) not null comment '服务名称',
+	description varchar(255) default '' not null comment '服务描述',
+	sender_type varchar(20) default '' not null comment 'sender类型，EMAIL,SMS,PIGEON,SMS',
+	msg_subject varchar(100) default '' not null comment '消息主题，如果为mq，则为topic',
+	msg_body varchar(1024) default '' not null comment '消息体或者模板',
+	msg_destination varchar(100) default '' not null comment '消息发送目的地',
+	msg_param_list varchar(200) null comment '参数列表',
+	status varchar(255) default '/data' not null comment '状态',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	tenant varchar(128) default '' not null comment '旧租户code',
+	show_name varchar(128) default '' not null comment '配置后台展示name',
+	project_name varchar(128) default '' not null comment '所属项目（开发平台）',
+	constraint uniq_tenant_sys_name_version
+		unique (tenant_code, sys_name, version, name)
+)
+comment 'event sender 服务定义';
+
+create table tenant_event_sender_service_record
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	tenant_code varchar(128) default 'bytedance' not null comment '租户code',
+	tenant_sender_event_name varchar(128) not null comment '服务名称',
+	event_uid varchar(150) default '' not null comment '调用uid',
+	sender_type varchar(20) default '' not null comment 'sender类型，EMAIL,SMS,PIGEON,SMS',
+	event_subject varchar(100) default '' not null comment '消息主题，如果为mq，则为topic',
+	event_body text null comment '消息体',
+	event_destination varchar(50) default '' not null comment '消息主题目的地',
+	process_result varchar(1024) default '' not null comment '状态，CREATED,SUCCESS, FAILED',
+	failed_time int default 0 not null comment '失败次数',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	tenant varchar(128) default '' not null comment '旧租户code',
+	profile varchar(255) default '' not null comment 'profile',
+	process_type varchar(128) default 'SENDER_SERVICE' not null comment '处理类型',
+	fail_reason varchar(2048) default '' not null comment '失败原因',
+	constraint uniq_event_uid
+		unique (event_uid)
+)
+comment 'event sender 服务记录';
+
+create index idx_create_time
+	on tenant_event_sender_service_record (create_time);
+
+create table tenant_field
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(64) default '' not null comment '系统名称',
+	source_system varchar(32) default '' not null comment '源系统名称',
+	name varchar(128) not null comment '字段名称',
+	real_field_name varchar(128) default '' not null comment '业务字段名称',
+	description varchar(1024) default '' not null comment '字段描述',
+	type varchar(255) default '' not null comment '数据类型，用于将前端传入的数据转变成model层可处理的类型',
+	format varchar(255) default '' not null comment '格式',
+	entity_name varchar(128) default '' not null comment '实体名称',
+	default_value varchar(255) default '' not null comment '默认值',
+	dict_name varchar(128) default '' not null comment '数据dict name',
+	label varchar(128) default '' not null comment 'label',
+	label_i18n varchar(255) default '' not null comment 'label国际化code',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	related tinyint(1) default 0 not null comment '是否是关联字段',
+	show_name varchar(64) default '' not null comment '配置后端显示的名称',
+	extended tinyint(1) unsigned default 0 not null comment '是否是扩展字段',
+	tenant varchar(64) default '' not null comment '所属租户为了apiKey方便',
+	custom tinyint(1) default 0 not null comment '是否是自定义字段',
+	position int(10) default 0 not null comment '存放地址',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	required tinyint(1) default 0 not null comment '是否必须',
+	project_name varchar(128) default '' not null comment '所属项目（开发平台）',
+	quote_field varchar(255) default '' not null comment '引用的字段',
+	quote_field_type varchar(255) default '' not null comment '引用字段的类型',
+	constraint uniq_tenant_name_version
+		unique (tenant_code, name, version, entity_name, sys_name)
+)
+comment '字段表';
+
+create index idx_entity_name
+	on tenant_field (entity_name);
+
+create index idx_modify_time
+	on tenant_field (modify_time);
+
+create index idx_name
+	on tenant_field (name);
+
+create index idx_sysname_version
+	on tenant_field (sys_name, version);
+
+create table tenant_field_assignment_page
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户code',
+	sys_name varchar(64) default '' not null comment '属于那个系统',
+	entity_name varchar(128) default '' not null comment '实体名称',
+	field_name varchar(128) default '' not null comment '字段名称',
+	page_name varchar(128) default '' not null comment '页面名称',
+	required tinyint(1) default 0 not null comment '必填',
+	display tinyint(1) default 0 not null comment '展示',
+	version int default 0 not null comment '多版本控制',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '字段分配给页面';
+
+create table tenant_field_dependency
+(
+	id bigint unsigned auto_increment comment 'id'
+		primary key,
+	name varchar(255) default '' not null comment 'api名称',
+	entity_name varchar(64) default '' not null comment '实体名称',
+	control_field_name varchar(128) default '' not null comment '控制字段名称',
+	dependent_field_name varchar(128) default '' not null comment '依赖字段名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	sys_name varchar(64) default '' not null comment '系统名称',
+	version int default 0 not null comment '多版本控制'
+)
+comment '依赖字段表';
+
+create table tenant_field_dependency_value_mapping
+(
+	id bigint unsigned auto_increment comment 'id'
+		primary key,
+	name varchar(255) null comment '名称',
+	field_dependency_name varchar(255) default '' not null comment '对象依赖关系api名称',
+	entity_name varchar(64) default '' not null comment '实体名称',
+	control_field_name varchar(128) default '' not null comment '控制字段名称',
+	control_field_item_key varchar(255) default '' not null comment '控制字段的key值',
+	dependent_field_name varchar(128) default '' not null comment '依赖字段名称',
+	dependent_field_item_key varchar(255) default '' not null comment '依赖字段名称key值',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	sys_name varchar(64) default '' not null comment '系统名称',
+	version int default 0 not null comment '多版本控制'
+)
+comment '依赖字段映射关系表';
+
+create table tenant_field_info
+(
+	id bigint auto_increment comment '主键'
+		primary key,
+	name varchar(100) default '' not null comment '名称',
+	component_name varchar(255) default '' not null comment '前端组件名称',
+	component_props varchar(255) default '' not null comment '前端组件参数',
+	validator_name varchar(255) default '' not null comment '校验器名称',
+	field_name varchar(128) default '' not null comment '字段名称',
+	entity_name varchar(128) default '' not null comment '实体名称',
+	dict_name varchar(255) default '' not null comment '字典唯一键',
+	dict_group_name varchar(100) default '' not null comment '字典群组',
+	dict_params varchar(255) default '' not null comment '字典参数',
+	label varchar(50) default '' not null comment '字段类型：单选/多行等',
+	label_i18n_code varchar(100) default '' not null comment '名称的i18n code',
+	data_type varchar(255) default '' not null comment '数据类型：字符串/数字/等',
+	max_length varchar(255) default '' not null comment '最大长度限制',
+	format varchar(255) default '' not null comment '格式化信息，如日期等',
+	custom tinyint default 0 not null comment '是否是自定义字段',
+	stable tinyint default 0 not null comment '是否稳定不可更改：0:否，1:是',
+	description varchar(255) default '' not null comment 'field描述',
+	default_value varchar(255) default '' not null comment '默认值',
+	operator_list varchar(255) default '' not null comment '支持的操作符列表',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	repeatable tinyint default 0 not null comment '是否重复',
+	required tinyint default 0 not null comment '是否必填',
+	tips varchar(255) default '' not null comment '提示',
+	tips_i18n_code varchar(100) default '' not null comment '提示的i18n code',
+	place_holder varchar(255) default '' not null comment 'place_holder',
+	placeholder_i18n_code varchar(255) default '' not null comment 'placeholder 国际化翻译',
+	request_formatter varchar(255) default '' null comment '提交请求时的格式',
+	backend_formatter varchar(255) default '' null comment '后端请求时的格式',
+	display_formatter varchar(255) default '' null comment '前端展示的formatter',
+	tenant_code varchar(100) default 'byteDance' not null comment 'tenantCode',
+	sys_name varchar(100) default '' not null comment '系统名称',
+	version int default 0 not null comment '多版本控制',
+	field_template_name varchar(100) default '' not null comment 'template名',
+	project_name varchar(128) default '' not null comment '所属项目（开发平台）'
+);
+
+create index idx_entity_filed
+	on tenant_field_info (tenant_code, sys_name, version, entity_name, field_name);
+
+create table tenant_field_info_detail
+(
+	id bigint(11) auto_increment comment '主键'
+		primary key,
+	field_info_name varchar(255) default 'byteDance' not null comment '属性名称',
+	field_name varchar(128) default 'byteDance' not null comment '属性名称',
+	field_value varchar(128) default 'byteDance' not null comment '字段值',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	sys_name varchar(128) default '' not null comment '系统名称',
+	version int default 0 not null comment '多版本控制',
+	project_name varchar(128) default '' not null comment '所属项目（开发平台）'
+);
+
+create index idx_field
+	on tenant_field_info_detail (tenant_code, sys_name, version, field_name);
+
+create table tenant_field_page_layout
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(50) default '' not null comment '页面名称',
+	show_name varchar(50) default '' not null comment '展示名',
+	description varchar(100) default '' not null comment '描述信息',
+	template_type varchar(50) default '' not null comment '页面类型',
+	page_tag varchar(50) default '' not null comment '页面标签',
+	display_style varchar(50) default '' not null comment '页面样式',
+	label varchar(50) default '' not null comment '页面展示名',
+	label_i18n varchar(50) default '' not null comment '页面展示名-i18n',
+	service_call varchar(100) default '' not null comment '页面调三方服务',
+	page_suite_name varchar(50) default '' not null comment 'suite名称',
+	activated tinyint(16) not null comment '激活状态，1:激活0:不激活',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	sys_name varchar(50) default '' not null comment '系统名称',
+	tenant_code varchar(50) default 'bytedance' not null comment 'tenantCode',
+	version int default 0 not null comment '多版本控制',
+	constraint uni_name
+		unique (sys_name, tenant_code, version, name)
+)
+comment 'field_page_layout';
+
+create index idx_suite_name
+	on tenant_field_page_layout (sys_name, tenant_code, version, page_suite_name);
+
+create table tenant_field_page_layout_detail
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	page_name varchar(50) not null comment '页面名',
+	segment_name varchar(50) not null comment '分区名',
+	entity_name varchar(50) default '' not null comment '实体名称',
+	field_name varchar(50) default '' not null comment '字段名',
+	sys_name varchar(128) default '' not null comment '系统名称',
+	colspan varchar(50) default '' not null comment '宽度',
+	layout varchar(100) default '' not null comment '布局',
+	seq int(32) default 0 not null comment '排序',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	version int default 0 not null comment '多版本控制',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	name varchar(50) not null comment '前后端标识',
+	type varchar(20) default '' not null comment 'type: filter/regular',
+	to_sort tinyint(16) default 0 not null comment '是否支持排序，0：否，1：是',
+	parent_name varchar(50) default '' not null comment '父级的name',
+	constraint uk_name
+		unique (sys_name, tenant_code, version, page_name, name)
+)
+comment 'page_segment_field关联表';
+
+create table tenant_field_page_segment
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(50) default '' not null comment '分区名称',
+	show_name varchar(50) default '' not null comment '展示名',
+	label varchar(100) default '' not null comment 'segment标识',
+	label_i18n varchar(100) default '' not null comment '国际化segment标识',
+	page_name varchar(50) default '' not null comment '页面名称',
+	description varchar(100) default '' not null comment '描述信息',
+	segment_type varchar(50) default '' not null comment '类型',
+	visible tinyint default 0 not null comment '可见性',
+	seq int(32) default 0 not null comment '排序',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	sys_name varchar(128) default '' not null comment '系统名称',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	version int default 0 not null comment '多版本控制',
+	parent_name varchar(50) default '' not null comment '父segment',
+	constraint uni_name
+		unique (sys_name, tenant_code, version, page_name, name)
+)
+comment 'field_page_suite';
+
+create table tenant_field_page_suite
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(50) default '' not null comment '名称',
+	show_name varchar(50) default '' not null comment '名称',
+	description varchar(100) default '' not null comment '描述信息',
+	entity_name varchar(100) not null comment '实体名',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	sys_name varchar(128) default '' not null comment '系统名称',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	version int default 0 not null comment '多版本控制',
+	constraint uni_name
+		unique (sys_name, tenant_code, version, name)
+)
+comment 'field_page_suite';
+
+create table tenant_field_record
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(255) default '' not null comment '系统名称',
+	entity_name varchar(128) not null comment '实体name',
+	entity_record_id bigint not null comment '记录ID',
+	field_name varchar(128) not null comment '字段名称',
+	data_type varchar(128) not null comment '数据类型，只支持基本类型',
+	value varchar(128) not null comment '字段的值',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '实体字段数据存储';
+
+create index idx_entity_record_id
+	on tenant_field_record (entity_record_id);
+
+create index idx_field_name
+	on tenant_field_record (field_name);
+
+create index idx_field_name_value
+	on tenant_field_record (field_name, value);
+
+create index idx_modify_time
+	on tenant_field_record (modify_time);
+
+create table tenant_field_relation
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(64) default '' not null comment '属于那个系统',
+	host_entity_name varchar(63) default '' not null comment '主动关联的实体名称',
+	host_field_name varchar(63) default '' not null comment '主动关联的实体字段名称',
+	guest_entity_name varchar(63) default '' not null comment '被关联的实体名称',
+	guest_field_name varchar(63) default '' not null comment '被关联的实体字段名称',
+	has_multiple tinyint(1) default 0 not null comment '是否是有多个关联',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	guest_field_show_name varchar(128) default '' not null comment '展示字段'
+)
+comment '实体关联关系表';
+
+create index idx_host_entity_name_host_field_name
+	on tenant_field_relation (host_entity_name, host_field_name);
+
+create index idx_host_field_name
+	on tenant_field_relation (host_field_name);
+
+create index idx_tenant_sys_version
+	on tenant_field_relation (tenant_code, sys_name, version);
+
+create table tenant_field_template
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(100) not null comment '名称',
+	component_name varchar(255) default '' not null comment '前端组件名称',
+	validator_name varchar(255) default '' not null comment '校验器名称',
+	dict_group_name varchar(100) default '' not null comment '字典群组',
+	dict_name varchar(255) default '' not null comment '字典apiname',
+	label varchar(50) not null comment '字段类型：单选/多行等',
+	label_i18n_code varchar(100) default '' not null comment '名称的i18n code',
+	data_type varchar(255) not null comment '数据类型：字符串/数字/等',
+	format varchar(255) default '' not null comment '格式化信息，如日期等',
+	stable tinyint default 0 not null comment '是否稳定不可更改：0:否，1:是',
+	description varchar(255) default '' not null comment 'field描述',
+	operator_list varchar(255) default '' not null comment '支持的操作符列表',
+	template_config varchar(3000) default '' not null comment '配置面板',
+	seq int(32) default 0 not null comment '排序',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	tenant_code varchar(50) default 'byteDance' not null comment 'tenant_code',
+	sys_name varchar(50) default '' not null comment '系统名称',
+	version int default 0 null comment '多版本控制',
+	constraint uniq_name
+		unique (name)
+)
+comment 'field模版';
+
+create table tenant_filter_employee_default
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	filter_id bigint default 0 not null comment '租户可见部门',
+	employee_id bigint not null comment '员工id',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '员工当前使用的租户';
+
+create index idx_modify_time
+	on tenant_filter_employee_default (modify_time);
+
+create table tenant_group
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(64) not null comment '系统名称',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	name varchar(128) default '' not null comment '组名称',
+	type varchar(64) default '' not null comment '组类型, pageItem ,segment, service',
+	description varchar(100) default '' not null comment '描述',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modifier_id bigint default 0 not null comment '修改人ID',
+	modifier_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	label varchar(128) default '' not null comment '组名称',
+	label_i18n_code varchar(128) default '' not null comment '组名称的国际化标识',
+	page_name varchar(128) default '' not null comment 'page name',
+	tenant varchar(32) default '' not null comment 'tenant',
+	modify_id bigint(11) default 0 not null comment '修改人id',
+	modify_name varchar(32) default '' not null comment '修改人',
+	constraint uniq_name
+		unique (tenant_code, sys_name, name)
+)
+comment '组名';
+
+create table tenant_http_service
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	source_system varchar(32) default '' not null comment '源系统名称',
+	tenant varchar(255) default '' not null comment '租户，为空代表公共',
+	profile varchar(255) default '' not null comment 'profile',
+	name varchar(128) not null comment '服务名称',
+	show_name varchar(128) default '' not null comment 'service名称-showname',
+	show_name_i18n_code varchar(128) default '' not null comment 'service名称-i18nCode',
+	description varchar(1024) default '' not null comment '服务描述',
+	url varchar(255) default '' not null comment '服务地址',
+	param_list varchar(1023) default '' not null comment '参数列表',
+	response_type varchar(128) default '' not null comment '返回值类型',
+	response_fields varchar(1024) default '' not null comment '返回值的field',
+	method_type varchar(16) null comment '方法类型',
+	result_path varchar(255) default 'data' not null comment '结果中真实数据的json路径',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	tenant_code varchar(128) default 'bytedance' not null comment '所属租户',
+	project_name varchar(128) default '' not null comment '所属项目（开发平台）',
+	constraint uniq_tenant_name_version
+		unique (tenant_code, version, sys_name, name)
+)
+comment '服务描述';
+
+create index idx_modify_time
+	on tenant_http_service (modify_time);
+
+create index idx_sys_name
+	on tenant_http_service (sys_name);
+
+create table tenant_import_template
+(
+	id bigint auto_increment comment '租户ID，自增主键'
+		primary key,
+	name varchar(32) default '' not null comment 'name',
+	entity_name varchar(64) default '' not null comment '实体name',
+	record_type varchar(128) default '' not null comment 'RT',
+	page_tag varchar(32) default '' not null comment '页面标签',
+	mapping text null comment '表头字段关联关系',
+	description varchar(1024) default '' not null comment '描述',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	tenant_code varchar(128) default '' not null comment '租户',
+	sys_name varchar(128) default '' not null comment '系统名称',
+	constraint idx_tenant_sys_entity_rt_pt
+		unique (tenant_code, sys_name, entity_name, record_type, page_tag),
+	constraint idx_tenant_sys_name
+		unique (tenant_code, sys_name, name)
+)
+comment '导入模版表';
+
+create index idx_modify_time
+	on tenant_import_template (modify_time);
+
+create table tenant_index_change_event
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(255) default '' not null comment '租户code',
+	entity_name varchar(128) default '' not null comment '实体名字',
+	change_type varchar(128) default '' not null comment '改变类型：DataDelete: 业务数据删除；DataCreate：业务数据新增；DataUpdate：业务数据修改;EntityColumnAdd: 实体新增列；EntityColumnDelete:实体删除列；EntityColumnTypeChange: 实体列类型改变；EntityRelatedAdd: 实体关联关系新增;EntityRelatedDelete: 实体关联关系删除；EntityRelatedDataUpdate：关联实体值修改；',
+	change_info text null comment '修改内容',
+	status varchar(128) default '' not null comment '处理状态
+',
+	process_time datetime default CURRENT_TIMESTAMP not null comment '处理时间',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	data_id bigint default 0 not null comment '业务主键id',
+	record_type varchar(100) default '' not null comment 'recordType'
+)
+comment '索引变更事件表，用于记录待同步到es的变更';
+
+create index idx_create_time
+	on tenant_index_change_event (create_time);
+
+create index idx_entity_name
+	on tenant_index_change_event (entity_name);
+
+create table tenant_mq_event
+(
+	id bigint unsigned auto_increment comment '主键'
+		primary key,
+	name varchar(128) default '' not null comment '唯一name',
+	group_name varchar(100) default '' not null comment '组名称',
+	description varchar(255) default '' not null comment '描述信息',
+	tenant_code varchar(128) default '' not null comment '租户code',
+	tenant varchar(128) default '' not null comment '旧租户-profile',
+	sys_name varchar(128) default '' not null comment '系统名称',
+	version int not null comment '版本',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	show_name varchar(128) default '' not null comment '展示name',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenant_sys_version_namae
+		unique (tenant_code, sys_name, version, name)
+);
+
+create table tenant_operator
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) default '' not null comment 'name',
+	description varchar(256) default '' not null comment '描述',
+	symbol varchar(255) default '' not null comment '符号',
+	customized bit default b'0' not null comment '是否是自定义的操作符',
+	label varchar(255) default '' not null,
+	label_i18n varchar(255) default '' not null,
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	is_function tinyint(1) default 0 not null comment '是否是函数',
+	group_name varchar(128) default '' not null comment '操作符分组名称',
+	function_param_names varchar(1024) default '' not null comment '函数参数列表, 是一个数组[]',
+	function_param_data_types varchar(1024) default '' not null comment '函数参数类型列表, 是一个数组[]',
+	function_param_is_multiples varchar(1024) default '' not null comment '函数参数是否是多值，是一个数组[]',
+	function_param_descriptions varchar(1024) not null comment '函数参数描述信息列表, 是一个数组[]',
+	function_param_examples varchar(1024) default '' not null comment '函数参数示例，是一个数组[]',
+	operator_apply_scenes varchar(1024) default '' not null comment '应用场景，是一个数组[]',
+	example varchar(1024) default '' not null comment '函数使用示例',
+	return_description varchar(1024) default '' not null comment '返回值描述信息',
+	constraint uniq_name
+		unique (name)
+)
+comment '操作符';
+
+create index idx_modify_time
+	on tenant_operator (modify_time);
+
+create index uniq_symbol
+	on tenant_operator (symbol);
+
+create table tenant_page
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) not null comment '系统名称',
+	tenant varchar(255) default '' not null comment '租户，为空代表公共',
+	profile varchar(255) default '' not null comment 'profile',
+	name varchar(128) default '' not null comment '页面名称',
+	tenant_page_name varchar(128) not null comment '页面组名称',
+	suite_name varchar(127) default '' not null comment '一组页面',
+	page_tag varchar(32) default '' not null comment '页面标签',
+	entity_name varchar(128) default '' not null comment '实体名称',
+	show_name varchar(255) default '' not null comment '用于配置后台的label展示',
+	template_type varchar(32) default '' not null comment '页面类型',
+	label varchar(255) default '' not null comment '页面标签',
+	label_i18n varchar(255) default '' not null comment '页面标签i18nCode',
+	display_style varchar(255) default '0' not null comment 'PAGE:页面，MODAL:模态框，DRAWER:抽屉',
+	action_type varchar(255) default '0' not null comment 'SERVICE:触发后端服务，MODAL:触发另一个模块',
+	service_url varchar(255) not null comment '服务地址',
+	service_method tinyint(4) unsigned default 0 not null comment '服务方法',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(128) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	description varchar(1000) default '' not null comment '描述信息',
+	status tinyint not null comment '读还是写页面',
+	version int default 0 not null comment '多版本控制',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, name)
+)
+comment '页面表';
+
+create index idx_modify_time
+	on tenant_page (modify_time);
+
+create index idx_name
+	on tenant_page (name);
+
+create index idx_sys_name_version
+	on tenant_page (sys_name, version);
+
+create index name
+	on tenant_page (name);
+
+create table tenant_page_field
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null,
+	name varchar(128) not null comment '页面字段名称',
+	description varchar(255) default '' not null comment '页面字段描述',
+	label varchar(255) default '' not null comment '输入内容的title',
+	label_i18n_code varchar(255) default '' not null,
+	format varchar(255) default '' not null comment '格式',
+	default_value varchar(255) default '' not null comment '默认值',
+	value varchar(255) default '' not null comment '数据值',
+	extended tinyint(1) default 0 not null comment '是否是扩展字段',
+	page_name varchar(128) default '' not null comment '所属页面的name',
+	page_item_name varchar(128) default '' not null comment '所属页面控件的name',
+	entity_name varchar(128) default '' not null comment '实体名称',
+	widget_attr_name varchar(255) default 'value' not null comment '对应页面控件的属性',
+	field_name varchar(128) default '' not null comment '字段表名称',
+	dict_name varchar(255) default '' not null comment '字典名称',
+	dictParams varchar(1024) default '' null comment '当使用service作为dict时传入的参数',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	dict_group_name varchar(255) default '' not null comment '字典组名称',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, page_name, name)
+)
+comment '前端页面控件中的字段';
+
+create index idx_entity_name
+	on tenant_page_field (entity_name);
+
+create index idx_field_name
+	on tenant_page_field (field_name);
+
+create index idx_modify_time
+	on tenant_page_field (modify_time);
+
+create index idx_name
+	on tenant_page_field (name);
+
+create index idx_page_name
+	on tenant_page_field (page_name);
+
+create index idx_sysname_version
+	on tenant_page_field (sys_name, version);
+
+create index idx_version
+	on tenant_page_field (version);
+
+create table tenant_page_item
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	seq int(10) default 0 not null comment '展示排序',
+	type varchar(255) default '' not null comment 'itemType',
+	name varchar(128) not null comment '页面字段名称',
+	parent_item_name varchar(128) default '' not null comment '父级别name, 指向name',
+	description varchar(255) default '' not null comment '页面字段描述',
+	label varchar(255) default '' not null comment '输入内容的title',
+	label_i18n_code varchar(255) default '' not null,
+	help varchar(800) default '' not null comment '表单控件的帮助文本',
+	help_i18n_code varchar(255) default '' not null,
+	read_component varchar(255) default '' not null comment '组件类型',
+	write_component varchar(255) default '' not null comment '组件类型',
+	status tinyint(255) default 0 not null comment '读写的初始态 1-写 0-读',
+	required tinyint(1) default 0 not null comment '是否必须',
+	editable tinyint(1) default 0 not null comment '是否可编辑',
+	visible tinyint(1) default 1 not null comment '是否可见',
+	colSpan varchar(32) default '' not null comment '列跨度',
+	layout varchar(255) default '' not null comment '布局',
+	has_multiple tinyint(1) default 0 not null comment '是否是多值',
+	placeholder varchar(255) default '' not null comment '值输入描述code',
+	placeholder_i18n_code varchar(255) default '' not null,
+	operator varchar(255) default '' not null comment '操作符',
+	service_name varchar(255) default '' not null comment '服务name',
+	props varchar(1024) default '' not null comment '前端扩展字段',
+	to_sort tinyint(1) default 0 not null comment '是否能够排序，用于TableItem',
+	default_to_segment varchar(255) default '' not null,
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	segment_name varchar(255) default '' not null comment '所属segment',
+	request_formatter varchar(255) default '' not null comment '在提交前对用户输入的数据进行处理',
+	display_formatter varchar(1024) default '' not null comment '在展示前对后端返回的数据进行处理',
+	backend_format varchar(1024) default '' not null,
+	group_name varchar(128) default '' not null comment '组名称',
+	version int default 0 not null comment '多版本控制',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	page_name varchar(128) default '' not null comment '所属页面',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, page_name, name)
+)
+comment '前端页面的控件';
+
+create index idx_modify_time
+	on tenant_page_item (modify_time);
+
+create index idx_name
+	on tenant_page_item (name);
+
+create index idx_parent_item_name
+	on tenant_page_item (parent_item_name);
+
+create index idx_read_component
+	on tenant_page_item (read_component);
+
+create index idx_write_component
+	on tenant_page_item (write_component);
+
+create index index_version
+	on tenant_page_item (version);
+
+create table tenant_page_item_display_info
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	page_item_name varchar(128) default '' not null comment '父级别name, 指向name',
+	label varchar(255) default '' not null comment '输入内容的title',
+	label_i18n_code varchar(255) default '' not null,
+	help varchar(800) default '' not null comment '表单控件的帮助文本',
+	help_i18n_code varchar(255) default '' not null,
+	colSpan varchar(32) default '' not null comment '列跨度',
+	layout varchar(255) default '' not null comment '布局',
+	placeholder varchar(255) default '' not null comment '值输入描述code',
+	placeholder_i18n_code varchar(255) default '' not null,
+	props varchar(1024) default '' not null comment '前端扩展字段',
+	version int default 0 not null comment '多版本控制',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	page_name varchar(128) default '' not null comment '所属页面',
+	constraint uniq_tenantcode_pagename_name_version
+		unique (tenant_code, version, sys_name, page_name, page_item_name)
+)
+comment '前端页面的控件展示的相关信息';
+
+create index idx_page_item_name
+	on tenant_page_item_display_info (page_item_name);
+
+create index idx_sysname_version
+	on tenant_page_item_display_info (sys_name, version);
+
+create index idx_version
+	on tenant_page_item_display_info (version);
+
+create table tenant_page_item_formatter
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	page_item_name varchar(128) default '' not null comment 'page item name',
+	request_formatter varchar(255) default '' not null comment '在提交前对用户输入的数据进行处理',
+	display_formatter varchar(1024) default '' not null comment '在展示前对后端返回的数据进行处理',
+	backend_formatter varchar(1024) default '后端formatter' not null,
+	version int default 0 not null comment '多版本控制',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	page_name varchar(128) default '' not null comment '所属页面',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, page_name, page_item_name)
+)
+comment '前端页面的控件formatter信息';
+
+create index idx_page_item_name
+	on tenant_page_item_formatter (page_item_name);
+
+create index idx_sysname_version
+	on tenant_page_item_formatter (sys_name, version);
+
+create index idx_version
+	on tenant_page_item_formatter (version);
+
+create table tenant_page_item_operator
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	name varchar(128) default '' not null comment 'api name',
+	code varchar(128) default '' not null comment '业务方使用的标示',
+	show_name varchar(128) default '' not null comment '操作符名称',
+	show_name_i18n_code varchar(128) default '' not null comment '操作符名称i18nCode',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_name
+		unique (name)
+)
+comment '前端页面的控件操作符信息';
+
+create table tenant_page_item_value_info
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	page_item_name varchar(128) default '' not null comment 'page item name',
+	required tinyint(1) default 0 not null comment '是否必须',
+	editable tinyint(1) default 0 not null comment '是否可编辑',
+	visible tinyint(1) default 1 not null comment '是否可见',
+	has_multiple tinyint(1) default 0 not null comment '是否是多值',
+	to_sort tinyint(1) default 0 not null comment '是否能够排序，用于TableItem',
+	version int default 0 not null comment '多版本控制',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	page_name varchar(128) default '' not null comment '所属页面',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, page_name, page_item_name)
+)
+comment '前端页面的值的限定信息';
+
+create index idx_page_item_name
+	on tenant_page_item_value_info (page_item_name);
+
+create index idx_sysname_version
+	on tenant_page_item_value_info (sys_name, version);
+
+create index idx_version
+	on tenant_page_item_value_info (version);
+
+create table tenant_page_route
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) not null comment '名字',
+	sys_name varchar(128) not null comment '系统名称',
+	type varchar(128) default '' not null comment '类型',
+	group_page_name varchar(128) default '' not null comment '页面组名称',
+	target_page_name varchar(128) default '' not null comment '页面名称',
+	description varchar(255) not null comment '描述信息',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(128) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	constraint uniq_name
+		unique (tenant_code, name)
+)
+comment '页面路由表';
+
+create index idx_modify_time
+	on tenant_page_route (modify_time);
+
+create index idx_sys_name
+	on tenant_page_route (sys_name);
+
+create index idx_sysname_groupname_type
+	on tenant_page_route (sys_name, group_page_name, type);
+
+create table tenant_page_route_condition
+(
+	id bigint auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(255) default '' not null comment '系统名称',
+	route_name varchar(128) null,
+	scope varchar(128) null comment 'scope',
+	var_names varchar(255) default '' null comment '参数字段列表，逗号分隔',
+	property_name varchar(255) null comment '属性',
+	operator varchar(128) default '0' not null comment '操作符',
+	arguments varchar(255) default '0' not null comment '参数值',
+	description varchar(255) null comment '描述',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode'
+)
+comment '页面路由条件';
+
+create index idx_modify_time
+	on tenant_page_route_condition (modify_time);
+
+create index idx_route_name
+	on tenant_page_route_condition (route_name);
+
+create table tenant_page_suite
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) not null comment '唯一name',
+	show_name varchar(255) not null comment '展示名称',
+	description varchar(1000) default '' not null comment '描述信息',
+	sys_name varchar(128) default '' not null comment '系统',
+	version int not null comment '版本',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	entity_name varchar(64) default '' not null comment 'entityName',
+	tenant varchar(32) default '' not null comment '所属租户',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	current_editor varchar(64) default '' not null comment '当前编辑人员姓名',
+	current_editor_id bigint default 0 not null comment '当前编辑人员ID',
+	lock_time datetime default CURRENT_TIMESTAMP not null comment '加锁时间',
+	edit_time datetime default CURRENT_TIMESTAMP not null comment '实际编辑时间',
+	root_page_suite tinyint(1) default 0 not null comment '是否是总览RT',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, name)
+)
+comment 'page组合';
+
+create index idx_current_editor_id
+	on tenant_page_suite (current_editor_id);
+
+create index idx_modify_time
+	on tenant_page_suite (modify_time);
+
+create index idx_name
+	on tenant_page_suite (name);
+
+create table tenant_permission_app_function
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户code',
+	sys_name varchar(128) default '' not null comment '系统name',
+	permission_set_name varchar(64) default '' not null comment '权限集name',
+	function_name varchar(128) default '' not null comment '功能name',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment 'app-功能权限';
+
+create index idx_permissionset
+	on tenant_permission_app_function (permission_set_name);
+
+create table tenant_permission_entity
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户code',
+	sys_name varchar(128) default '' not null comment '系统name',
+	permission_set_name varchar(64) default '' not null comment '权限集name',
+	entity_name varchar(128) default '' not null comment '实体name',
+	permissions_create tinyint default 0 not null comment '1-可新建；0-不可新建',
+	permissions_delete tinyint default 0 not null comment '1-可删除；0-不可删除',
+	permissions_edit tinyint default 0 not null comment '1-可编辑；0-不可编辑',
+	permissions_read tinyint default 0 not null comment '1-可读；0-不可读',
+	permissions_modify_all_records tinyint default 0 not null comment '1-有修改全部权限；0-无修改全部权限',
+	permissions_view_all_records tinyint default 0 not null comment '1-有可见全部权限；0-无可见全部权限',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '对象权限';
+
+create index idx_permissionset
+	on tenant_permission_entity (permission_set_name);
+
+create table tenant_permission_entity_default
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户code',
+	sys_name varchar(128) default '' not null comment '系统name',
+	entity_name varchar(128) default '' not null comment '实体name',
+	permission_type varchar(64) default '' not null comment '共享类型',
+	use_department_hierarchy tinyint default 0 not null comment '是否启用组织层级权限，1-启用；0-不启用',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_tenant_sys_entity
+		unique (tenant_code, sys_name, entity_name)
+)
+comment '组织默认对象权限';
+
+create table tenant_permission_field
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户code',
+	sys_name varchar(128) default '' not null comment '系统name',
+	permission_set_name varchar(64) default '' not null comment '权限集name',
+	entity_name varchar(128) default '' not null comment '实体name',
+	field_name varchar(128) default '' not null comment '实体name',
+	permissions_edit tinyint default 0 not null comment '1-可编辑；0-不可编辑',
+	permissions_read tinyint default 0 not null comment '1-可读；0-不可读',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间'
+)
+comment '字段权限';
+
+create index idx_permissionset
+	on tenant_permission_field (permission_set_name);
+
+create table tenant_permission_set
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(64) default '' not null comment '权限集唯一name',
+	description varchar(1024) default '' not null comment '描述',
+	tenant_code varchar(128) default '' not null comment '租户code',
+	profileName varchar(128) default '' not null comment '简档name, 为空代表没有分配给简档',
+	is_owned_by_profile tinyint default 0 not null comment '是否被profile所有 1-是；0-否',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_tenant_name
+		unique (tenant_code, name)
+)
+comment '权限集';
+
+create table tenant_profile
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	type varchar(64) default '' not null comment '租户类型，1：国外直营',
+	tenant_code varchar(64) default '' not null comment '属于那个租户',
+	name varchar(64) default '' not null comment '后端生成保证唯一',
+	parent_profile_name varchar(64) default '' not null comment '父profile的name',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	show_name varchar(32) default '' not null comment '展示的名称',
+	description varchar(1023) default '' not null comment '描述',
+	auth_code varchar(63) default '' not null comment '对应的bsm Code',
+	show_name_i18n_code varchar(100) default '' not null comment '租户名称的国际化表述',
+	default_currency varchar(255) default '' not null comment '默认币种',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_auth_code
+		unique (auth_code),
+	constraint uniq_name
+		unique (name)
+)
+comment '记录类型';
+
+create index idx_modify_time
+	on tenant_profile (modify_time);
+
+create table tenant_profile_record_type_ref
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	profile_name varchar(63) default '' not null comment 'profileCode',
+	record_type_name varchar(128) default '' not null comment 'record_type_name',
+	entity_name varchar(64) default '' not null comment '属于那个实体',
+	sys_name varchar(64) default '' not null comment '属于那个系统',
+	tenant_code varchar(64) default '' not null comment '属于那个租户',
+	page_suit_name varchar(64) default '' not null comment 'page的suitName',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int unsigned default 0 not null comment '多版本控制'
+)
+comment 'profile_code与record_type的关联关系';
+
+create index idx_profile_code
+	on tenant_profile_record_type_ref (profile_name);
+
+create index idx_record_type_code
+	on tenant_profile_record_type_ref (record_type_name);
+
+create index idx_ref
+	on tenant_profile_record_type_ref (tenant_code, profile_name, record_type_name, version, page_suit_name);
+
+create table tenant_record_type
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '属于那个系统',
+	name varchar(128) default '' not null comment 'name',
+	entity_name varchar(64) default '' not null comment '实体 name',
+	show_name varchar(64) default '' not null,
+	show_name_i18n_code varchar(128) default '' not null comment 'recordType 国际化名称i18nCode',
+	sequence bigint default 100 not null comment '序号',
+	description varchar(1023) default '' not null comment '描述',
+	label varchar(128) default '' not null comment '提示信息',
+	label_i18n varchar(256) default '' not null comment 'label的i18n',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	status varchar(64) default 'ENALBE' not null comment '状态',
+	pipeline_id bigint unsigned default 0 null comment 'pipelineId',
+	tenant varchar(32) default '' not null comment '租户',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	ext_info text null comment '业务扩展字段',
+	root_record_type tinyint(1) default 0 not null comment '是否是总览RT',
+	constraint uniq_name_version
+		unique (tenant_code, name, sys_name)
+)
+comment '记录类型';
+
+create index idx_modify_time
+	on tenant_record_type (modify_time);
+
+create index inx_sequence
+	on tenant_record_type (sequence);
+
+create table tenant_relation_ship_index
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	host_entity varchar(64) default '' not null comment '主实体',
+	host_value bigint default 0 not null comment '主实体的key',
+	guest_entity varchar(64) default '' not null comment '被查找实体',
+	guest_value bigint default 0 not null comment '被查找实体关联的key',
+	record_type varchar(128) default '' not null comment '业务类型',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	sys_name varchar(64) default '' not null comment '记录属于哪个系统',
+	tenant_code varchar(64) default 'byteDance' not null comment 'tenantCode'
+)
+comment '实体关系索引存储';
+
+create table tenant_scene_filter
+(
+	id bigint unsigned not null comment '主键'
+		primary key,
+	name varchar(100) default '' not null comment '名称',
+	page_name varchar(100) default '' not null comment '页面名',
+	label varchar(100) default '' not null comment '展示名',
+	label_i18n varchar(100) default '' not null comment '展示名i18n',
+	description varchar(128) default '' not null comment '描述',
+	visible_field_names varchar(1024) default '' not null comment '可见的列头列表',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	sys_name varchar(100) default '' not null comment '系统',
+	version int default 0 not null comment '多版本控制',
+	tenant_code varchar(100) default '' not null comment 'tenantCode',
+	type varchar(20) not null comment '类型',
+	employee_id bigint not null comment '员工id',
+	seq int(32) default 0 not null comment '排序',
+	constraint uniq_sys_page_emp
+		unique (sys_name, tenant_code, version, page_name, name, employee_id)
+)
+comment '场景管理-筛选器';
+
+create index idx_page_emp
+	on tenant_scene_filter (page_name, employee_id);
+
+create table tenant_scene_filter_field_condition
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	field_name varchar(100) default '' not null comment '列名',
+	scene_filter_name varchar(100) default '' not null comment '筛选器名',
+	init_value varchar(1024) default '' not null comment '初始筛选值',
+	operator varchar(50) default '' not null comment '操作符',
+	sort_type varchar(20) default '0' not null comment '排序类型, asc: 升序，desc: 降序',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	sys_name varchar(255) default '' not null comment '系统',
+	version int default 0 not null comment '多版本控制',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	employee_id bigint not null comment '员工id',
+	page_name varchar(100) default '' not null comment '页面名'
+)
+comment '场景管理-筛选器-字段查询和排序';
+
+create index idx_personal_filter
+	on tenant_scene_filter_field_condition (employee_id, page_name, scene_filter_name);
+
+create index idx_tenant_filter
+	on tenant_scene_filter_field_condition (sys_name, tenant_code, version, page_name, scene_filter_name);
+
+create table tenant_segment
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null,
+	name varchar(128) default '' not null comment 'name',
+	description varchar(255) default '' not null comment 'segment描述',
+	label varchar(255) default '0' not null comment '展示名称',
+	label_i18n varchar(255) default '' not null,
+	segment_type varchar(255) default '0' not null comment '区域类型',
+	parent_name varchar(128) default '' not null comment '父segment名称',
+	service_url varchar(255) default '' not null comment '提交服务地址',
+	service_method tinyint(4) unsigned default 0 not null comment '服务方法',
+	visible tinyint(1) default 1 not null comment '是否可见',
+	seq int default 0 not null comment '顺序',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	page_name varchar(128) default '' not null comment '所属页面',
+	version int default 0 not null comment '多版本控制',
+	state varchar(32) default 'ENABLED' not null comment '状态',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	data_group_real_name varchar(128) default '' not null comment '提交数据组name',
+	props varchar(2000) default '' not null comment '前端扩展字段',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, page_name, name)
+)
+comment '视图区域表';
+
+create index idx_modify_time
+	on tenant_segment (modify_time);
+
+create index idx_name
+	on tenant_segment (name);
+
+create index idx_pagename_version
+	on tenant_segment (page_name, version);
+
+create index idx_sysname_version
+	on tenant_segment (sys_name, version);
+
+create table tenant_semi_finished_page_cache
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户code',
+	pageName varchar(128) not null comment 'page表中的name',
+	version int not null comment '版本',
+	page_json longtext not null comment 'page的json串',
+	app_name varchar(128) default '' not null comment 'appName',
+	create_time datetime not null comment '创建时间',
+	constraint uniq_tenantCode_pageName_version
+		unique (tenant_code, pageName, version)
+)
+comment '全局版本page半成品缓存';
+
+create table tenant_service
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	source_system varchar(32) default '' not null comment '源系统名称',
+	tenant varchar(255) default '' not null comment '租户，为空代表公共',
+	profile varchar(255) default '' not null comment 'profile',
+	name varchar(128) not null comment '服务名称',
+	description varchar(255) default '' not null comment '服务描述',
+	url varchar(255) default '' not null comment '服务地址',
+	param_list varchar(1024) default '' not null comment '参数列表',
+	response_type varchar(128) default '' not null comment '返回值类型',
+	response_fields varchar(1024) default '' not null comment '返回值的field',
+	method_type varchar(16) null comment '方法类型',
+	result_path varchar(255) default '/data' not null comment '结果中真实数据的json路径',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	type varchar(128) default 'HTTP_SERVICE' not null comment '服务类型',
+	show_name varchar(128) default '' not null comment 'service名称-showname',
+	project_name varchar(128) default '' not null comment '所属项目（开发平台）',
+	constraint uniq_tenant_name_version
+		unique (tenant_code, version, sys_name, name)
+)
+comment '服务描述';
+
+create index idx_modify_time
+	on tenant_service (modify_time);
+
+create index idx_sys_name
+	on tenant_service (sys_name);
+
+create table tenant_service_action
+(
+	id bigint unsigned auto_increment comment '业务无关主键'
+		primary key,
+	sys_name varchar(127) default '' not null comment '系统名称',
+	name varchar(128) default '' not null comment '唯一标识',
+	description varchar(255) default '' not null comment '描述信息',
+	type varchar(255) default '' not null comment '动作类型',
+	weather_function bit default b'0' not null comment '是否是动作',
+	param_key varchar(255) default '' not null comment '参数key',
+	param_value varchar(1023) default '' not null comment '参数值, 当weatherFunction为true时该值为functionName',
+	service_body_name varchar(128) default '' not null comment 'serviceBodyName',
+	service_step_name varchar(128) default '' not null comment 'serviceStepName',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '版本号',
+	tenant_code varchar(128) default 'bytedance' not null comment '租户code',
+	seq int default 0 not null comment 'action执行顺序',
+	show_name varchar(128) default '' not null comment '配置后台展示name',
+	param_value_type varchar(100) default 'CONST' not null comment '参数值类型',
+	param_value_expression varchar(1024) default '' not null comment '参数值表达式',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenantcode_sbname_name_version
+		unique (tenant_code, service_body_name, name, version, sys_name)
+);
+
+create index idx_bodyname_stepname
+	on tenant_service_action (sys_name);
+
+create index idx_servicestepname
+	on tenant_service_action (service_body_name, service_step_name);
+
+create table tenant_service_atom_rule
+(
+	id bigint unsigned auto_increment comment '业务无关主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	name varchar(128) default '' not null comment '唯一标识',
+	description varchar(255) default '' not null comment '描述信息',
+	service_body_name varchar(128) default '' not null comment 'serviceBodyName',
+	service_step_name varchar(128) default '' not null comment 'tenant_service_step表关联关系_2',
+	expression varchar(1023) default '' not null comment '规则表达式',
+	factor_real_name varchar(255) not null comment '规则因子,对应factor表中的real_name',
+	operator varchar(255) default '' not null comment '操作符',
+	threshold varchar(2047) not null comment '阈值',
+	rule_group_id int default 0 not null comment '规则组id',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '版本号',
+	entity_name varchar(50) default '' not null comment '实体名字',
+	tenant_code varchar(128) default 'bytedance' not null comment '租户code',
+	edit_model varchar(128) default 'SIMPLE' not null comment '编辑模式 SIMPLE-简单模式; CUSTOM-自定义模式',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenantcode_sbname_name_version
+		unique (tenant_code, service_body_name, name, version, sys_name)
+)
+comment '规则';
+
+create index idx_bodyname_stepname
+	on tenant_service_atom_rule (service_body_name, service_step_name);
+
+create index idx_sysname
+	on tenant_service_atom_rule (sys_name);
+
+create table tenant_service_atom_rule_detail
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	rule_name varchar(128) default '' not null comment 'atomRuleName',
+	service_body_name varchar(128) default '' not null comment 'serviceBodyName',
+	tenant_code varchar(128) default '' not null comment '租户code',
+	sys_name varchar(128) default '' not null comment '系统名称',
+	version int default 0 not null comment '版本',
+	entity_name varchar(128) default '' not null comment '实体名字, 用于factor是实体field的情况',
+	factor_real_name varchar(255) default '' not null comment 'factorRealName',
+	operator varchar(255) default '' not null comment '操作符',
+	threshold varchar(2047) default '' not null comment '阈值',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	project_name varchar(100) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_bodyname_rulename_tenantcode_sysname_version
+		unique (tenant_code, sys_name, version, service_body_name, rule_name)
+)
+comment 'atom_rule详细信息';
+
+create table tenant_service_body
+(
+	id bigint unsigned auto_increment comment '业务无关主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	name varchar(128) default '' not null comment '名称',
+	service_name varchar(255) default '' not null comment 'tenant_service表关联',
+	group_name varchar(128) default '' not null comment '路由组名称',
+	description varchar(1000) default '' not null comment '描述信息',
+	tenant_code varchar(128) default 'bytedance' not null comment '租户code',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '版本号',
+	extend_tenant varchar(255) default '' not null comment '继承租户',
+	tenant varchar(128) default '' not null,
+	profile varchar(255) default '' not null comment 'profile',
+	entity_name varchar(128) default '' not null comment '关联的主实体name',
+	show_name varchar(128) default '' not null comment '展示名称',
+	apply_scene varchar(128) default 'PROCESS' not null comment '应用场景',
+	state varchar(10) default 'ENABLED' not null comment '状态 ENABLED DISABLED',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenantcode_name_version
+		unique (tenant_code, name, version, sys_name)
+)
+comment '服务体定义';
+
+create index idx_groupname
+	on tenant_service_body (group_name);
+
+create index idx_servicename
+	on tenant_service_body (service_name);
+
+create index idx_sys_copy
+	on tenant_service_body (tenant_code, version, sys_name, service_name);
+
+create index idx_sysname
+	on tenant_service_body (sys_name);
+
+create table tenant_service_call
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null,
+	name varchar(128) default '' not null,
+	target_page_name varchar(128) default '' not null,
+	host_type varchar(255) default 'page' not null comment 'page,segment,page item',
+	host_name varchar(255) default '' not null,
+	event_type varchar(255) not null comment '调用的时机',
+	service_name varchar(255) default '' not null,
+	para_value_map varchar(1024) not null comment 'json',
+	result_formatter varchar(1024) not null comment 'regular expression,从结果中提取信息',
+	description varchar(255) default '' not null,
+	seq int(255) default 100 not null,
+	status tinyint(255) default 1 not null comment '是否active',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	state varchar(32) default 'ENABLED' not null comment '启用状态',
+	tenant_code varchar(128) default 'bytedance' not null comment 'tenantCode',
+	project_name varchar(100) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, target_page_name, name)
+);
+
+create index idx_modify_time
+	on tenant_service_call (modify_time);
+
+create index idx_sys_name
+	on tenant_service_call (sys_name, target_page_name, name);
+
+create table tenant_service_execute_log
+(
+	id bigint unsigned auto_increment comment '业务无关主键'
+		primary key,
+	log_id varchar(255) default '0' not null comment 'logId',
+	service_body_name varchar(255) default '' not null comment 'serviceBody名称',
+	execute_time datetime not null comment '执行时间',
+	param_map longtext not null comment '参数',
+	service_body_result varchar(255) default '' not null comment '服务执行的最终结果',
+	failed bit default b'0' not null comment '是否执行失败',
+	error_msg text null comment '错误信息',
+	step_execute_map text null comment '步骤执行结果',
+	rule_execute_map text null comment '规则执行结果'
+);
+
+create index idx_log_id
+	on tenant_service_execute_log (log_id);
+
+create index idx_service_body_name
+	on tenant_service_execute_log (service_body_name);
+
+create table tenant_service_factor
+(
+	id bigint unsigned auto_increment comment '业务无关主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	name varchar(128) default '' not null comment '唯一标识',
+	real_name varchar(128) not null comment '业务方的参数名称',
+	description varchar(255) default '' not null comment '描述信息',
+	data_type varchar(128) default '' not null comment '数据类型',
+	multiple bit default b'0' not null comment '是否是多值',
+	in_out_type varchar(255) not null comment '因子是输入还是输出',
+	service_body_name varchar(128) default '' not null comment 'service_body表的关联关系',
+	label varchar(128) default '' not null comment 'label',
+	label_i18n_code varchar(255) default '' not null,
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '版本号',
+	availableOperators varchar(255) default '' null comment '逗号分隔',
+	tenant_code varchar(128) default 'bytedance' not null comment '租户code',
+	show_name varchar(128) default '' not null comment '配置后台展示名称',
+	project_name varchar(100) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenantcode_body_name_version
+		unique (tenant_code, service_body_name, name, version, sys_name)
+)
+comment 'serviceBody因子';
+
+create index uniq_servicebodyname_realname
+	on tenant_service_factor (service_body_name, real_name);
+
+create table tenant_service_factor_rel
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	factor_real_name varchar(128) default '' not null comment 'factor_name',
+	related_obj_name varchar(128) default '' not null comment '关联对象名称',
+	related_obj_type varchar(50) default '' not null comment '关联对象类型',
+	service_body_name varchar(128) default '' not null comment 'serviceBodyName',
+	tenant_code varchar(100) default '' not null comment '租户code',
+	sys_name varchar(100) default '' not null comment '系统名称',
+	version int default 0 not null comment '版本',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	project_name varchar(100) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenantcode_sysname_version_factorname_obj_type_objname
+		unique (tenant_code, sys_name, version, service_body_name, factor_real_name, related_obj_name, related_obj_type, project_name)
+)
+comment 'factor与其他action,rule的关联关系表';
+
+create table tenant_service_next_step_rel
+(
+	id bigint unsigned auto_increment comment '业务无关主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	service_body_name varchar(128) default '' not null comment '当前执行服务体名称',
+	now_step_name varchar(128) not null comment '当前步骤',
+	now_step_result varchar(64) not null comment '当前步骤执行结果',
+	next_step_name varchar(128) default '' not null comment '下一个步骤名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '版本号',
+	tenant_code varchar(128) default 'bytedance' not null comment '租户code',
+	project_name varchar(100) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenantcode_nowbodyname_nowstepname
+		unique (tenant_code, service_body_name, now_step_name, now_step_result, version, sys_name)
+)
+comment 'step步骤关系表';
+
+create index idx_sysname
+	on tenant_service_next_step_rel (sys_name);
+
+create table tenant_service_step
+(
+	id bigint unsigned auto_increment comment '业务无关主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	service_body_name varchar(128) default '' not null comment 'tenant_service_body表关联',
+	name varchar(128) not null comment 'name',
+	description varchar(255) default '' not null comment '描述信息',
+	root tinyint(1) default 0 not null comment '是否是根step',
+	root_order int default 0 not null comment '根步骤优先级',
+	continue_next bit default b'0' not null comment '是否继续下一个根步骤，只有根步骤有这个属性',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '版本号',
+	tenant_code varchar(128) default 'bytedance' not null comment '租户code',
+	show_name varchar(255) default '' not null comment '配置后台展示name',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_tenantcode_sbname_name_version
+		unique (tenant_code, service_body_name, name, version, sys_name)
+)
+comment '服务步骤';
+
+create index idx_sysname
+	on tenant_service_step (sys_name);
+
+create table tenant_source
+(
+	id bigint unsigned auto_increment comment '自增主键id'
+		primary key,
+	name varchar(32) default '' not null comment 'source apiName，必须src_',
+	show_name varchar(128) default '' not null comment 'source名称',
+	show_name_i18n_code varchar(128) default '' not null comment '名称i18nCode',
+	description varchar(1024) default '' not null comment '描述',
+	tos_id varchar(128) default '' not null comment 'logo的tosId',
+	ext varchar(1024) default '' not null comment '预留扩展信息',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	tenant_code varchar(128) default '' not null comment 'tenantCode',
+	constraint uniq_name_version
+		unique (tenant_code, name)
+)
+comment '源系统信息表';
+
+create index idx_create_time
+	on tenant_source (create_time);
+
+create index idx_name
+	on tenant_source (name);
+
+create table tenant_source_app_ref
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	source_name varchar(32) default '' not null comment '系统apiName',
+	app_name varchar(32) default '' not null comment '系统名称',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP null comment '记录修改时间',
+	version int default 0 not null comment '版本号',
+	tenant_code varchar(32) default '' not null comment '租户code',
+	constraint uniq_name_version
+		unique (tenant_code, version, source_name, app_name)
+)
+comment 'source和app关联信息表';
+
+create index idx_app_name
+	on tenant_source_app_ref (app_name);
+
+create index idx_source_name
+	on tenant_source_app_ref (source_name);
+
+create table tenant_uniq_index_data
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(128) default '' not null comment '租户code',
+	entity_name varchar(128) default '' not null comment '实体名称',
+	sys_name varchar(32) default '' not null comment '系统',
+	entity_primary_key varchar(64) default '' not null comment '实体主键',
+	entity_data_id bigint default 0 not null comment '对应tenant_custom_entity_data的id',
+	uniq_index_name varchar(64) default '' not null comment '对应的唯一索引名称',
+	field0 varchar(64) default '' not null comment '第一个字段',
+	field1 varchar(64) default '' not null comment '第二个字段',
+	field2 varchar(64) default '' not null comment '第三个字段',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint tunique
+		unique (uniq_index_name, field0, field1, field2)
+)
+comment '自定义实体唯一索引数据';
+
+create index idx_fields
+	on tenant_uniq_index_data (field0, field1, field2);
+
+create index idx_modify_time
+	on tenant_uniq_index_data (modify_time);
+
+create index idx_tenant_pk
+	on tenant_uniq_index_data (tenant_code, entity_primary_key);
+
+create table tenant_user_operation
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	name varchar(128) default '' not null comment '操作记录 name',
+	operation_type varchar(256) default '' not null comment '操作类型',
+	remark longtext not null comment '日志信息',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间'
+)
+comment '租户配置操作记录';
+
+create index idx_create_time
+	on tenant_user_operation (create_time);
+
+create table tenant_user_operation_log
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	tenant_code varchar(64) default '' not null comment '租户code',
+	sys_name varchar(128) default '' not null comment '系统code',
+	version int default 0 not null comment '版本',
+	version_text varchar(100) default '' not null comment '版本号文本',
+	metadata_name varchar(255) default '' not null comment '元数据的apiname',
+	metadata_label varchar(255) default '' null comment '元数据展示名',
+	operation_type varchar(64) default '' not null comment '操作类型：新增、更新、删除',
+	root_metadata_type varchar(64) default '' not null comment '根元数据类型',
+	old_metadata longtext null comment '更新之前的元数据',
+	new_metadata longtext null comment '更新之后的元数据',
+	creator_id bigint default 0 not null comment '创建人id',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+	modify_id bigint default 0 not null comment '修改人id',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '修改时间',
+	commits varchar(255) default '' not null comment '附言'
+)
+comment '元数据历史记录';
+
+create index idx_tenant_creator
+	on tenant_user_operation_log (tenant_code, creator_id);
+
+create index idx_tenant_metadata_type
+	on tenant_user_operation_log (tenant_code, root_metadata_type, metadata_name);
+
+create index idx_tenant_operation_type
+	on tenant_user_operation_log (tenant_code, operation_type, metadata_name);
+
+create index idx_tenant_sys_version
+	on tenant_user_operation_log (tenant_code, sys_name, version);
+
+create table tenant_validate_rule
+(
+	id bigint unsigned auto_increment comment '自增主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	source_system varchar(32) default '' not null comment '源系统名称',
+	tenant varchar(255) default '' not null comment '租户，为空代表公共',
+	profile varchar(255) default '' not null comment 'profile',
+	name varchar(128) not null comment 'name',
+	description varchar(255) default '' not null comment '描述信息',
+	pattern text null comment '校验规则',
+	validatei8ncode varchar(1024) default '' not null comment '错误信息国际化code',
+	err_msg varchar(255) default '' not null comment '错误信息',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	rule_type tinyint(255) default 0 not null comment '规则类型',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	type varchar(128) default '' not null comment '校验器类型',
+	edit_model varchar(128) default '' not null comment '编辑模式',
+	service_body_name varchar(128) default '' not null comment 'serviceName',
+	preset_label varchar(128) default '' not null comment '预设标签',
+	example varchar(500) default '' not null comment '正确输入示例',
+	level varchar(128) default '' not null comment '错误提示级别',
+	group_data_types varchar(255) default '' not null comment '自定义规则各组类型信息，是一个json',
+	show_name varchar(128) default '' not null comment '管理端展示name',
+	project_name varchar(128) default '' not null comment '所属项目(开发平台)',
+	constraint uniq_name_version
+		unique (tenant_code, version, sys_name, name)
+)
+comment '校验规则';
+
+create index idx_modify_time
+	on tenant_validate_rule (modify_time);
+
+create index idx_sys_name
+	on tenant_validate_rule (sys_name);
+
+create table tenant_version_sys
+(
+	id bigint(10) unsigned auto_increment comment '业务无关主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	version int not null comment '版本号',
+	base_version int null comment '基准版本号',
+	description varchar(511) default '' not null comment '描述信息',
+	status tinyint(255) null comment '版本状态 1-配置中；2-当前全局版本；3-历史全局版本',
+	creator_id bigint(11) not null comment '创建人id',
+	creator_name varchar(255) not null comment '创建人name',
+	modifier_id bigint(11) not null comment '修改人id',
+	modifier_name varchar(255) not null comment '修改人name',
+	create_time datetime not null comment '创建时间',
+	modify_time datetime not null comment '修改时间',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	modify_id bigint(11) default 0 not null comment '修改人id',
+	modify_name varchar(32) default '' not null comment '修改人',
+	dev_app_prod_version int(32) default 0 not null comment '当前dev app的生产版本号',
+	constraint uniq_name_version
+		unique (tenant_code, sys_name, version)
+)
+comment '版本化的系统';
+
+create table tenant_version_sys_employee_now_config
+(
+	id bigint(10) unsigned auto_increment comment '业务无关主键'
+		primary key,
+	employee_id bigint(11) not null comment '员工id',
+	sys_name varchar(128) default '' not null comment '系统名称',
+	creator_id bigint(11) not null comment '创建人id',
+	creator_name varchar(255) not null comment '创建人name',
+	modifier_id bigint(11) not null comment '修改人id',
+	modifier_name varchar(255) not null comment '修改人name',
+	create_time datetime not null comment '创建时间',
+	modify_time datetime not null comment '修改时间',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	modify_id bigint(11) default 0 not null comment '修改人id',
+	modify_name varchar(32) default '' not null comment '修改人',
+	constraint uniq_employeeid_sysname
+		unique (tenant_code, employee_id)
+)
+comment '用户当前配置的系统状态';
+
+create table tenant_version_sys_personal_control
+(
+	id bigint(11) unsigned auto_increment comment '业务无关主键'
+		primary key,
+	sys_name varchar(128) default '' not null comment '系统名称',
+	employee_id bigint not null comment '版本生效人',
+	version int not null comment '版本号',
+	creator_id bigint(11) default 0 not null comment '记录创建人id',
+	creator_name varchar(255) default '' not null comment '记录创建人姓名',
+	modify_id bigint(11) default 0 not null comment '记录修改人id',
+	modify_name varchar(255) default '' not null comment '记录修改人姓名',
+	create_time datetime not null comment '记录创建时间',
+	modify_time datetime not null comment '记录修改时间',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	constraint uniq_sysname_employeeid
+		unique (tenant_code, sys_name, employee_id)
+)
+comment '配置版本控制表';
+
+create table tenant_widget_action
+(
+	id bigint unsigned auto_increment comment '用户类型ID，自增主键'
+		primary key,
+	sys_name varchar(255) default '' not null,
+	name varchar(128) not null comment 'name',
+	description varchar(255) default '' not null,
+	item_type varchar(255) default 'regular' not null comment 'regular,search,filter,table,action',
+	seq int(255) default 100 not null,
+	label varchar(255) default '' not null,
+	required tinyint(255) default 1 not null,
+	editable tinyint(255) default 1 not null,
+	visible tinyint(255) default 1 not null,
+	btn_type varchar(255) default 'submit' not null comment 'redirect,submit',
+	target_page_name varchar(255) default '' not null,
+	target_service_url varchar(255) default '' not null,
+	host_type varchar(255) default 'page' not null comment 'page,segment,page item',
+	host_name varchar(255) default '' not null,
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建者名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改者名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	version int default 0 not null comment '多版本控制',
+	tenant_code varchar(128) default 'byteDance' not null comment 'tenantCode',
+	constraint uniq_name_version
+		unique (tenant_code, name, version)
+);
+
+create index idx_modify_time
+	on tenant_widget_action (modify_time);
+
+create index idx_sys_name
+	on tenant_widget_action (sys_name);
+
+create table unique_check
+(
+	id bigint auto_increment comment '自增主键'
+		primary key,
+	value varchar(128) default '' not null comment '校验的值',
+	type varchar(64) charset utf8 default '' not null comment '业务类型，1: devProject和tenantCompany',
+	tenant_code varchar(128) default '' not null comment '租户/项目',
+	sys_name varchar(128) default '' not null comment '应用',
+	version int default 0 not null comment '版本号',
+	creator_id bigint default 0 not null comment '创建人ID',
+	creator_name varchar(64) default '' not null comment '创建人名称',
+	modify_id bigint default 0 not null comment '修改人ID',
+	modify_name varchar(64) default '' not null comment '修改人名称',
+	create_time datetime default CURRENT_TIMESTAMP not null comment '记录创建时间',
+	modify_time datetime default CURRENT_TIMESTAMP not null comment '记录修改时间',
+	constraint uniq_check
+		unique (type, value, tenant_code, sys_name, version)
+)
+comment '用于多表联合校验唯一';
+

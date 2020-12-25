@@ -12,6 +12,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import org.apache.commons.io.IOUtils;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
@@ -27,6 +28,7 @@ import java.util.stream.Collectors;
  * @author cqx
  * @date 2018/7/10 19:13
  */
+@Ignore
 public class TestTest {
 
     @Test

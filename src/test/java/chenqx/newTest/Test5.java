@@ -3,6 +3,7 @@ package chenqx.newTest;
 import chenqx.pojo.Obj;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.RateLimiter;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.text.MessageFormat;
@@ -20,6 +21,7 @@ import static java.util.stream.Collectors.toCollection;
  * @date 2019-07-12 17:03
  * @instruction
  */
+@Ignore
 public class Test5 {
     @Test
     public void hh() {

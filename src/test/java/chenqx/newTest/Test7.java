@@ -3,6 +3,7 @@ package chenqx.newTest;
 import chenqx.pojo.Book;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
@@ -19,6 +20,7 @@ import java.util.stream.Stream;
  * @author chenqx 2019-10-23
  * @instruction
  */
+@Ignore
 public class Test7 {
     @Test
     public void should_lambda() {

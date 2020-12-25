@@ -5,6 +5,7 @@ import chenqx.pojo.Book1;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import lombok.NonNull;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -17,6 +18,7 @@ import java.util.Scanner;
  * @date 2019-08-01 14:55
  * @instruction
  */
+@Ignore
 public class Test6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

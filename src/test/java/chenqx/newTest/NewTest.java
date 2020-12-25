@@ -1,10 +1,13 @@
 package chenqx.newTest;
 
+import org.junit.Ignore;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+@Ignore
 public class NewTest {
     private static AtomicInteger i=new AtomicInteger();
     static Lock lock = new ReentrantLock();
