@@ -16,6 +16,6 @@ public class MyTry {
         System.out.println(java8._1);
         System.out.println(java8._2);
         final Try<Void> run = Try.run(() -> System.out.println("123"));
-        run.andThen(()-> System.out.println("321"));
+        run.andThen(()-> System.out.println("321"));;;
     }
 }
