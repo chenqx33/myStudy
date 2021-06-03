@@ -55,14 +55,41 @@ public class MyMain {
 //        System.out.println(parse);
 //
 //    }
+//    public static void main(String[] args) throws Exception {
+//        String msg = "{\"ToB_ProductDemand\":\"销售预测\",\"authCoworkers\":[{\"role\":\"解决方案\"," +
+//                "\"roleI18Value\":\"解决方案\",\"employeeIds\":null,\"authType\":null,\"employeeDTOS\":[{\"id\":2897250," +
+//                "\"name\":\"马天武\",\"departmentName\":null},{\"id\":2298180,\"name\":\"赵景钰\",\"departmentName\":null}," +
+//                "{\"id\":3938867,\"name\":\"张中一\",\"departmentName\":null}]},{\"role\":\"coworker read\"," +
+//                "\"roleI18Value\":\"coworker read\",\"employeeIds\":null,\"authType\":null," +
+//                "\"employeeDTOS\":[{\"id\":7603372,\"name\":\"师超\",\"departmentName\":null},{\"id\":1226813," +
+//                "\"name\":\"文前波\",\"departmentName\":null}]}]}";
+//
+//        DefaultContext cmd = JSON.parseObject(msg, DefaultContext.class);
+////        String parse = parse(cmd,
+////                "label = new StringBuilder();if (authCoworkers!=null&&((List)authCoworkers).size()>0){ for(i=0;" +
+////                        "i<authCoworkers.size();i++){ label.append(authCoworkers.get(i).roleI18Value).append(\": \");" +
+////                        "for(j=0;j<authCoworkers.get(i).employeeDTOS.size();j++){label.append(authCoworkers.get(i)" +
+////                        ".employeeDTOS.get(j).name);if(j==authCoworkers.get(i).employeeDTOS.size()-1){label.append" +
+////                        "(\"; \");}else{label.append(\", \")}}}}");
+////        System.out.println(parse);
+//        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(1601192476000L));
+//        System.out.println(parse(cmd,"timeFormat(1601192476000L,\"yyyy-MM-dd\")"));
+////        Joiner.on(",").join()
+////        StringBuilder label = new StringBuilder();
+////        for(i=0;i<authCoworkers.size();i++){
+////            label.add(authCoworkers[i].roleI18Value);
+////            label.append(authCoworkers[i].roleI18Value).append(":");
+////            for (int j = 0; j < authCoworkers[i].employeeDTOS; j++) {
+////                label.append(authCoworkers[i].employeeDTOS[j].name).append(",");
+////            }
+////            label.append(";");
+////        }
+//    }
     public static void main(String[] args) throws Exception {
-        String msg = "{\"ToB_ProductDemand\":\"销售预测\",\"authCoworkers\":[{\"role\":\"解决方案\"," +
-                "\"roleI18Value\":\"解决方案\",\"employeeIds\":null,\"authType\":null,\"employeeDTOS\":[{\"id\":2897250," +
-                "\"name\":\"马天武\",\"departmentName\":null},{\"id\":2298180,\"name\":\"赵景钰\",\"departmentName\":null}," +
-                "{\"id\":3938867,\"name\":\"张中一\",\"departmentName\":null}]},{\"role\":\"coworker read\"," +
-                "\"roleI18Value\":\"coworker read\",\"employeeIds\":null,\"authType\":null," +
-                "\"employeeDTOS\":[{\"id\":7603372,\"name\":\"师超\",\"departmentName\":null},{\"id\":1226813," +
-                "\"name\":\"文前波\",\"departmentName\":null}]}]}";
+        //language=JSON
+        String msg = "{\n" +
+                "  \"JK_ProjectTypex\": \"singleSchoolBusiness\"\n" +
+                "}";
 
         DefaultContext cmd = JSON.parseObject(msg, DefaultContext.class);
 //        String parse = parse(cmd,
@@ -72,8 +99,11 @@ public class MyMain {
 //                        ".employeeDTOS.get(j).name);if(j==authCoworkers.get(i).employeeDTOS.size()-1){label.append" +
 //                        "(\"; \");}else{label.append(\", \")}}}}");
 //        System.out.println(parse);
-        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(1601192476000L));
-        System.out.println(parse(cmd,"timeFormat(1601192476000L,\"yyyy-MM-dd\")"));
+//        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(1601192476000L));
+//        System.out.println(parse(cmd,"s='';if(JK_ProjectType==null){return;}if(JK_ProjectType=='centralizedMiningBusiness'){s=\"集采业务\";}if(JK_ProjectType=='integratedBusiness'){s= \"集成业务\";}if (JK_ProjectType=='channelDevelopment'){s= \"渠道发展\";}if (JK_ProjectType=='singleSchoolBusiness'){s= \"单校业务\";}"));
+//        System.out.println(parse(cmd,"s='--';if(JK_ProjectType=='centralizedMiningBusiness'){s=\"集采业务\";}if(JK_ProjectType=='integratedBusiness'){s= \"集成业务\";}if (JK_ProjectType=='channelDevelopment'){s= \"渠道发展\";}if (JK_ProjectType=='singleSchoolBusiness'){s= \"单校业务\";}"));
+        System.out.println(parse(cmd,"s='--'; if(JK_ProjectType == null){s='123'}"));
+
 //        Joiner.on(",").join()
 //        StringBuilder label = new StringBuilder();
 //        for(i=0;i<authCoworkers.size();i++){
@@ -83,10 +113,10 @@ public class MyMain {
 //                label.append(authCoworkers[i].employeeDTOS[j].name).append(",");
 //            }
 //            label.append(";");
-//        }
-    }
+        }
 
-    private static String parse(@NonNull DefaultContext<String, Object> data,
+
+        private static String parse(@NonNull DefaultContext<String, Object> data,
                                 @NonNull String formatter) throws Exception {
         return runner.execute(formatter, data, null, true, false).toString();
 

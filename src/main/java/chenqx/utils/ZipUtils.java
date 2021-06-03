@@ -1,5 +1,6 @@
 package chenqx.utils;
 
+
 import java.io.*;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
@@ -80,10 +81,10 @@ public class ZipUtils {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ZipUtils zipUtils = new ZipUtils();
-//        zipUtils.zipFileNoBuffer();   
+//        zipUtils.zipFileNoBuffer();//30991
 //        zipUtils.zipFileBuffer();  //12275ms
-        zipUtils.zipFileChannel();
+        zipUtils.zipFileChannel(); //994
     }
 }
